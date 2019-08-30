@@ -7,7 +7,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// custom
-@import 'footer';
+//common css rule
+@import 'common';
 
-@import 'custom';
+//header
+@import 'header';
+
+//main_content
+@import 'main_content';
+
+//footer
+@import 'footer';

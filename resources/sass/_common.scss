@@ -1,0 +1,16 @@
+a:hover{
+  text-decoration: none;
+  color: $grey;
+}
+
+.button{
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 1px solid $grey;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background-color: $grey;
+  color: $white;
+}
