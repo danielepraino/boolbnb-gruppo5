@@ -1,23 +1,20 @@
-@extends('layouts.app')
+@extends('index')
+
+@section('title')
+  BoolBnB
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+  {{-- img su cui effettuare uno slider automatico tramite le img inserite nel database --}}
+  <img src="https://www.tgcom24.mediaset.it/binary/47.$plit/C_4_foto_1288622_image.JPG" alt="">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+  {{-- contenuto centrale della pagina per la ricerca di un appartamento --}}
+  <div class="ricerca">
+    <h3>Ricerca un appartamento</h3>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+    <div class="box_ricerca">
+
+
     </div>
-</div>
+  </div>
 @endsection
