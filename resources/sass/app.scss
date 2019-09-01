@@ -18,3 +18,11 @@
 
 //footer
 @import 'footer';
+
+//flats
+@import 'flats/_index.scss';
+@import 'flats/_create.scss';
+
+.mt-10 {
+  margin-top: 10rem;
+}

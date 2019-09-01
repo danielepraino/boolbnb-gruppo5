@@ -11,7 +11,7 @@
 
 
     {{-- Contenuto principale pagina --}}
-      <div id = "main_content">
+      <div class="container">
         @yield('content')
       </div>
 

@@ -21,7 +21,7 @@ class CreateFlatsTable extends Migration
             $table->integer('bathroom');
             $table->integer('sm');
             $table->string('address');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->boolean('visible');
             $table->decimal('lon', 10, 6);
             $table->decimal('lat', 10, 6);

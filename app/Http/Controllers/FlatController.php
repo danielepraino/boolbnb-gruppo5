@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\flat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FlatController extends Controller
 {
@@ -14,7 +15,8 @@ class FlatController extends Controller
      */
     public function index()
     {
-        //
+      $flats = flat::orderBy('id', 'asc')->get();
+      return view('flats.index', compact('flats'));
     }
 
     /**
@@ -24,7 +26,7 @@ class FlatController extends Controller
      */
     public function create()
     {
-        //
+        return view('flats.create');
     }
 
     /**
@@ -35,7 +37,29 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validatedData = $request->validate([
+        "title" => "required|max:255",
+        // "room" => "required|max:255",
+        // "bed" => "required|max:255",
+        // "bathroom" => "required|max:255",
+        // "sm" => "required|max:255",
+        // "address" => "required|max:255",
+        // "image" => "nullable|max:255",
+        // "visible" => "required|max:255",
+        // "lon" => "required|max:255",
+        // "lat" => "required|max:255",
+        // "price" => "required|max:255",
+        // "user_id" => "required|max:255",
+      ]);
+
+      $data = $request->all();
+      $image = Storage::put('flats_images', $data['image']);
+      $newFlat = new flat();
+      $newFlat->fill($data);
+      $newFlat->image = $image;
+      $newFlat->save();
+
+      return redirect()->route('home');
     }
 
     /**

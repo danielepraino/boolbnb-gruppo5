@@ -1,16 +1,29 @@
 <header>
-  <div class="header_content">
-    <div class="logo_container">
-      <a href="{{ route('home')}}"><img src="{{asset('images/logo_3.png')}}" alt="logo bool bnb"></a>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ route('home')}}"><img src="{{asset('images/logo_3.png')}}" alt="logo bool bnb"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    </div>
-    <nav>
-      @guest
-        <a href="{{ route('register') }}">Iscriviti</a>
-        <a href="{{ route('login') }}" class="button">Accedi</a>
-      @else
-        <a href="#">Aggiungi un appartamento</a>
-          <li class="nav-item dropdown">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        @guest
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item p-2 mr-3">
+              <a href="{{ route('register') }}">Iscriviti</a>
+            </li>
+            <li class="nav-item p-2 mr-3">
+              <a href="{{ route('login') }}" class="button">Accedi</a>
+            </li>
+          </ul>
+        @else
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a href="{{ route('flats.create') }}">Aggiungi un appartamento</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name ? Auth::user()->name : Auth::user()->email }} <span class="caret"></span>
               </a>
@@ -26,12 +39,10 @@
                       @csrf
                   </form>
               </div>
-          </li>
-      @endguest
+            </li>
+          </ul>
+        @endguest
 
-
-
-
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
