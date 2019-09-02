@@ -68,6 +68,11 @@ class FlatController extends Controller
     public function show($flatId)
     {
       $flat = Flat::find($flatId);
+
+      if (empty($flat)) {
+        abort(404);
+      }
+
       return view('flats.show', compact('flat'));
     }
 

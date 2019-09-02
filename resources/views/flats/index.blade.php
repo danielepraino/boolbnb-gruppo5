@@ -13,6 +13,7 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">Titolo</th>
+      <th scope="col">Descrizione</th>
       <th scope="col">Stanze</th>
       <th scope="col">Letti</th>
       <th scope="col">Bagni</th>
@@ -35,6 +36,7 @@
         <tr>
           <th>{{ $flat->id }}</th>
           <td>{{ $flat->title }}</td>
+          <td>{{ $flat->description }}</td>
           <td>{{ $flat->room }}</td>
           <td>{{ $flat->bed }}</td>
           <td>{{ $flat->bathroom }}</td>

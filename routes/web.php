@@ -20,6 +20,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/geolocation', function() {
   return view('/geolocation');
-
 });
+
 Route::resource('flats', 'FlatController')->middleware('auth');

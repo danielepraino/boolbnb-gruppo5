@@ -19,6 +19,13 @@
         @enderror
       </div>
       <div class="form-group">
+        <label>Descrizione</label>
+        <textarea class="form-control" placeholder="Inserisci la descrizione dell'appartamento" name="description" rows="5">{{ old("description", $flat->description) }}</textarea>
+        @error('description')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+      </div>
+      <div class="form-group">
         <label>Stanze</label>
         <input type="text" class="form-control" placeholder="Inserisci il numero di stanze" name="room" value="{{ old("room", $flat->room) }}">
         @error('room')

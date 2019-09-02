@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flat extends Model
 {
-    protected $fillable = ['title', 'room', 'bed', 'bathroom', 'sm', 'address', 'image', 'visible', 'lon', 'lat', 'price', 'user_id' ];
+    protected $fillable = ['title', 'description' , 'room', 'bed', 'bathroom', 'sm', 'address', 'image', 'visible', 'lon', 'lat', 'price', 'user_id' ];
     public function users()
     {
       return $this->belongsTo(User::class, 'user_id');
