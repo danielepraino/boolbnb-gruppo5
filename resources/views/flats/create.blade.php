@@ -47,7 +47,19 @@
       </div>
       <div class="form-group">
         <label>Indirizzo</label>
-        <input type="text" class="form-control" placeholder="Inserisci l'indirizzo" name="address" value="{{ old("address") }}">
+        <input id="address" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
+        <button id="geolocate_button" type="button" name="button">Daje</button>
+
+        <div id="risposta">
+          <select class="selectaddress hidden" name="">
+            <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+
+
+          </select>
+
+        </div>
+
+        {{-- <input type="text" class="form-control" placeholder="Inserisci l'indirizzo" name="address" value="{{ old("address") }}"> --}}
         @error('address')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -68,14 +80,18 @@
       </div>
       <div class="form-group">
         <label>LAT (TEST)</label>
-        <input type="text" class="form-control" placeholder="Latitudine (TEST)" name="lat" value="{{ old("lat") }}">
+        <input id="lat" type="text" name="lat" value="" placeholder="Inserisci Latitudine">
+
+        {{-- <input type="text" class="form-control" placeholder="Latitudine (TEST)" name="lat" value="{{ old("lat") }}"> --}}
         @error('lat')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
       <div class="form-group">
         <label>LON (TEST)</label>
-        <input type="text" class="form-control" placeholder="Longitudine (TEST)" name="lon" value="{{ old("lon") }}">
+        <input id="long" type="text" name="lon" value="" placeholder="Inserisci Longitudine">
+
+        {{-- <input type="text" class="form-control" placeholder="Longitudine (TEST)" name="lon" value="{{ old("lon") }}"> --}}
         @error('lon')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
