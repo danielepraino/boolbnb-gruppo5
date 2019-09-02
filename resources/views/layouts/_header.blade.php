@@ -29,6 +29,11 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <ul>
+                    <li class="nav-item">
+                      <a href="{{ route('flats.index') }}">I miei appartamenti</a>
+                    </li>
+                  </ul>
                   <a class="dropdown-item" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

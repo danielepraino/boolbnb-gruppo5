@@ -23,7 +23,15 @@
     </tr>
   </thead>
   <tbody>
-    @forelse ($flats as $flat)
+    @php
+      //filtra il db e prende gli appartamenti dell'utente loggato
+      $currentUserFlats = DB::table('users')
+              ->join('flats', 'users.id', '=', 'flats.user_id')
+              ->where('users.id', Auth::user()->id)
+              ->get();
+    @endphp
+
+    @forelse ($currentUserFlats as $flat)
         <tr>
           <th>{{ $flat->id }}</th>
           <td>{{ $flat->title }}</td>

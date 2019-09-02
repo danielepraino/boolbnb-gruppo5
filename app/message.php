@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class message extends Model
+class Message extends Model
 {
   public function flats()
   {
