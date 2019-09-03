@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\sponsorship;
+use App\Sponsorship;
 use Illuminate\Http\Request;
 
 class SponsorshipController extends Controller
