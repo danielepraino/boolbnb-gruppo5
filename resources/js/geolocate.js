@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
     // function to geolocate by address
@@ -18,6 +20,7 @@ $(document).ready(function() {
            $('.selectaddress').append( '<option data-lon="'+result.results[i].position.lon+'" data-lat="'+result.results[i].position.lat+'" value="'+result.results[i].address.freeformAddress+'">'+result.results[i].address.freeformAddress+ '</option>');
          }
          $('.selectaddress').change(function(){
+          
            var lon = $('option:selected', this).data('lon');
            var lat = $('option:selected', this).data('lat');
            var addr =$('option:selected', this).val();
@@ -25,7 +28,7 @@ $(document).ready(function() {
            $('#lat').val(lat);
            $('#long').val(lon);
            // inizio mappa
-           $('#getmap').click(function() {
+
              var maplat = parseFloat($('#lat').val());
              var maplon = parseFloat($('#long').val());
 
@@ -46,7 +49,7 @@ $(document).ready(function() {
 
 
 
-           });
+
 
 
            // fine mappa

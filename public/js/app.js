@@ -49197,6 +49197,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49328,6 +49330,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/geolocate.js":
+/*!***********************************!*\
+  !*** ./resources/js/geolocate.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  // function to geolocate by address
+  $('#geolocate_button').click(function () {
+    /* Act on the event */
+    $('.selectaddress').find('option').remove();
+    var address;
+    $.ajax({
+      url: "https://api.tomtom.com/search/2/geocode/" + $('#address').val() + ".json?key=pRq4S3LGxAaZsWfuGGtYzBdlnBShmypz",
+      type: "GET",
+      data: {// key: ''
+      },
+      success: function success(result) {
+        for (var i = 0; i < result.results.length; i++) {
+          $('.selectaddress').removeClass('hidden');
+          $('.selectaddress').append('<option data-lon="' + result.results[i].position.lon + '" data-lat="' + result.results[i].position.lat + '" value="' + result.results[i].address.freeformAddress + '">' + result.results[i].address.freeformAddress + '</option>');
+        }
+
+        $('.selectaddress').change(function () {
+          var lon = $('option:selected', this).data('lon');
+          var lat = $('option:selected', this).data('lat');
+          var addr = $('option:selected', this).val();
+          $('#address').val(addr);
+          $('#lat').val(lat);
+          $('#long').val(lon); // inizio mappa
+
+          var maplat = parseFloat($('#lat').val());
+          var maplon = parseFloat($('#long').val());
+          var map = L.map('map-risposta').setView([maplat, maplon], 13);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors' // zoom: 10,
+            // versionNumber: 1,
+            // x: maplon,
+            // y: maplat,
+
+          }).addTo(map);
+          L.marker([maplat, maplon]).bindPopup(addr).openPopup().addTo(map); // fine mappa
+        });
+      },
+      error: function error() {
+        alert('errore');
+      }
+    });
+  }); //end function to geolocate by address
+  //start function to geolocate by coordinates
+
+  $('#rev-geolocate_button').click(function () {
+    var la = parseFloat($('#rev-lat').val());
+    var lo = parseFloat($('#rev-long').val());
+    $.ajax({
+      url: "https://api.tomtom.com/search/2/reverseGeocode/" + la + ',' + lo + ".json?key=pRq4S3LGxAaZsWfuGGtYzBdlnBShmypz",
+      type: "GET",
+      data: {// key: ''
+      },
+      success: function success(result) {
+        $('#rev-risposta-txt').text(result.addresses[0].address.freeformAddress);
+      },
+      error: function error() {
+        alert('errore');
+      }
+    });
+  });
+});
 
 /***/ }),
 

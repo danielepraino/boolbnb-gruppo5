@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./geolocate');
 
 window.Vue = require('vue');
 

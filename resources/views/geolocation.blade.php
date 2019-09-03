@@ -63,11 +63,7 @@
                 <div class="card-body">
                       {{-- input e selectbox --}}
 
-                    <div id="map-risposta">
-
-
-
-                    </div>
+                    <div id="map-risposta"></div>
                 </div>
             </div>
             {{-- fine dall'indirizzo alle coordinate --}}

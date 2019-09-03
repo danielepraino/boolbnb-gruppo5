@@ -65,6 +65,8 @@
           </select>
 
         </div>
+        <div id="map-risposta"></div>
+
 
         {{-- <input type="text" class="form-control" placeholder="Inserisci l'indirizzo" name="address" value="{{ old("address") }}"> --}}
         @error('address')
