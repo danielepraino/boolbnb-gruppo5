@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
           $newUser->surname = $faker->lastName;
           $newUser->birthdate = $faker->date($format = 'd-m-Y', $max = '01-01-2001');
           $newUser->email = $faker->safeEmail;
-          $newUser->password = $faker->password;
+          $newUser->password = '$2y$10$vLD2qTIxObGRDdmrNwkaa.PHaj5r0di1RRiJAtP33IJwvOabx6p.O';
           $newUser->save();
         }
     }

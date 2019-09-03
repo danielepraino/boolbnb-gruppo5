@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // function to geolocate by address
-  $('#geolocate_button').click(function geoByAddress() {
+  $('#geolocate_button').click(function() {
     /* Act on the event */
     $('.selectaddress').find('option').remove();
     var address;
@@ -24,6 +24,33 @@ $(document).ready(function() {
            $('#address').val(addr);
            $('#lat').val(lat);
            $('#long').val(lon);
+           // inizio mappa
+           $('#getmap').click(function() {
+             var maplat = parseFloat($('#lat').val());
+             var maplon = parseFloat($('#long').val());
+
+             var map = L.map('map-risposta')
+             .setView([maplat, maplon], 13);
+
+
+             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+             	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+             	// zoom: 10,
+              // versionNumber: 1,
+              // x: maplon,
+              // y: maplat,
+
+             }).addTo(map);
+
+             L.marker([maplat, maplon]). bindPopup(addr).openPopup().addTo(map);
+
+
+
+           });
+
+
+           // fine mappa
+
          });
         },
         error: function(){
@@ -54,6 +81,4 @@ $(document).ready(function() {
           }
         });
       });
-
-    //end function to geolocate by coordinates
   });
