@@ -1,5 +1,5 @@
-@extends('index')
-
+{{-- @extends('index') --}}
+@extends('layouts.app')
 @section('title')
   I miei appartamenti
 @endsection

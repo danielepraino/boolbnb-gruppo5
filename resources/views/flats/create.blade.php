@@ -65,25 +65,14 @@
           </select>
 
         </div>
-        <div id="map-risposta"></div>
+
+
 
 
         {{-- <input type="text" class="form-control" placeholder="Inserisci l'indirizzo" name="address" value="{{ old("address") }}"> --}}
         @error('address')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-      </div>
-      <div class="form-group">
-        <label>Prezzo di affitto per notte</label>
-        <input type="text" class="form-control" placeholder="Inserisci il prezzo di affitto per notte" name="price" value="{{ old("price") }}">
-        @error('price')
-          <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-      </div>
-      <div class="form-group">
-        <label>Vuoi che l'annuncio sia visibile da subito?</label>
-        <input type="hidden" class="form-control"  name="visible" value="0" />
-        <input type="checkbox" class="form-control" checked  name="visible" value="1" />
       </div>
       <div class="form-group">
         <label>LAT (TEST)</label>
@@ -103,6 +92,22 @@
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
+      <div id="map-risposta" class="map-risposta hidden">
+
+      </div>
+      <div class="form-group">
+        <label>Prezzo di affitto per notte</label>
+        <input type="text" class="form-control" placeholder="Inserisci il prezzo di affitto per notte" name="price" value="{{ old("price") }}">
+        @error('price')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+      </div>
+      <div class="form-group">
+        <label>Vuoi che l'annuncio sia visibile da subito?</label>
+        <input type="hidden" class="form-control"  name="visible" value="0" />
+        <input type="checkbox" class="form-control" checked  name="visible" value="1" />
+      </div>
+
       <div class="form-group">
         <input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->id }}">
       </div>

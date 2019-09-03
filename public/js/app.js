@@ -49358,6 +49358,7 @@ $(document).ready(function () {
         }
 
         $('.selectaddress').change(function () {
+          $('.map-risposta').removeClass('hidden');
           var lon = $('option:selected', this).data('lon');
           var lat = $('option:selected', this).data('lat');
           var addr = $('option:selected', this).val();

@@ -19,8 +19,9 @@ $(document).ready(function() {
            $('.selectaddress').removeClass('hidden');
            $('.selectaddress').append( '<option data-lon="'+result.results[i].position.lon+'" data-lat="'+result.results[i].position.lat+'" value="'+result.results[i].address.freeformAddress+'">'+result.results[i].address.freeformAddress+ '</option>');
          }
+
          $('.selectaddress').change(function(){
-          
+           $('.map-risposta').removeClass('hidden');
            var lon = $('option:selected', this).data('lon');
            var lat = $('option:selected', this).data('lat');
            var addr =$('option:selected', this).val();
