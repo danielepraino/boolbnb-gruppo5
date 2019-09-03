@@ -55,6 +55,22 @@
                 </div>
             </div>
             {{-- fine dall'indirizzo alle coordinate --}}
+            {{-- mappa da indirizzo --}}
+            <div class="card">
+                <div class="card-header">From address to map</div>
+                <button id="getmap" type="button" name="button">Get Map</button>
+
+                <div class="card-body">
+                      {{-- input e selectbox --}}
+
+                    <div id="map-risposta">
+
+
+
+                    </div>
+                </div>
+            </div>
+            {{-- fine dall'indirizzo alle coordinate --}}
         </div>
     </div>
 </div>
