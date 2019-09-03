@@ -10665,6 +10665,11 @@ a:hover {
   display: none;
 }
 
+#map-risposta {
+  height: 512px;
+  width: 512px;
+}
+
 header nav img {
   width: 60px;
 }

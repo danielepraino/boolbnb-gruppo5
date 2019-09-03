@@ -49241,7 +49241,23 @@ $(document).ready(function () {
           var addr = $('option:selected', this).val();
           $('#address').val(addr);
           $('#lat').val(lat);
-          $('#long').val(lon);
+          $('#long').val(lon); // inizio mappa
+
+          $('#getmap').click(function () {
+            var maplat = parseFloat($('#lat').val());
+            var maplon = parseFloat($('#long').val());
+            var map = L.map('map-risposta', {
+              center: [50, -0.09],
+              zoom: 10
+            });
+            L.tileLayer("https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&width=512&height=512&center={lo},{la}&zoom={zoom}&view=Unified&key=pRq4S3LGxAaZsWfuGGtYzBdlnBShmypz", {
+              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+              zoom: 10,
+              versionNumber: 1,
+              lo: maplon,
+              la: maplat
+            }).addTo(map);
+          }); // fine mappa
         });
       },
       error: function error() {
@@ -49266,7 +49282,7 @@ $(document).ready(function () {
         alert('errore');
       }
     });
-  }); //end function to geolocate by coordinates
+  });
 });
 
 /***/ }),
@@ -49403,8 +49419,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
