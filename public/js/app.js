@@ -49246,17 +49246,15 @@ $(document).ready(function () {
           $('#getmap').click(function () {
             var maplat = parseFloat($('#lat').val());
             var maplon = parseFloat($('#long').val());
-            var map = L.map('map-risposta', {
-              center: [50, -0.09],
-              zoom: 10
-            });
-            L.tileLayer("https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&width=512&height=512&center={lo},{la}&zoom={zoom}&view=Unified&key=pRq4S3LGxAaZsWfuGGtYzBdlnBShmypz", {
-              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-              zoom: 10,
-              versionNumber: 1,
-              lo: maplon,
-              la: maplat
+            var map = L.map('map-risposta').setView([maplat, maplon], 13);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors' // zoom: 10,
+              // versionNumber: 1,
+              // x: maplon,
+              // y: maplat,
+
             }).addTo(map);
+            L.marker([maplat, maplon]).bindPopup(addr).openPopup().addTo(map);
           }); // fine mappa
         });
       },

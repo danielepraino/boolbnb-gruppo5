@@ -75,7 +75,9 @@ $(document).ready(function() {
 
              }).addTo(map);
 
-             L.marker([maplat, maplon]).addTo(map);
+             L.marker([maplat, maplon]). bindPopup(addr).openPopup().addTo(map);
+
+
 
            });
 
