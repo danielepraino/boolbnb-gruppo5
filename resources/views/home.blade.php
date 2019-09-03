@@ -30,11 +30,11 @@
 {{-- Sezione 2: contenuto appartamenti in evidenza (da valutare se farlo tramite ajax+handlebars) --}}
 @section('appartamenti_in_evidenza')
   @for ($i = 0; $i < 8; $i++)
-    <div class="box_appartamento {{ $i }}">
+    <div class="box_appartamento">
       <div class="info_appartamento">
-        <img src="" alt="immagine appartamento">
         <h3>Titolo</h3>
-        <p>Descrizione</p>
+        <a href="#"> <img src="" alt="immagine appartamento"> </a>
+        <p>Luogo</p>
         <small>Prezzo</small>
       </div>
     </div>

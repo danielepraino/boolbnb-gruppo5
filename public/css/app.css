@@ -10719,6 +10719,13 @@ header nav img {
 
 .appartamenti_in_evidenza {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.box_appartamento {
+  width: 25%;
+  margin-bottom: 25px;
+  padding: 10px;
 }
 
 footer img {
