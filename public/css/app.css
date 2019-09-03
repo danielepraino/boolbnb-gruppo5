@@ -10669,19 +10669,14 @@ header nav img {
   width: 60px;
 }
 
-#main_content {
+.main_content {
   position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-#main_content img {
-  width: 100%;
-  height: 100%;
+  padding-top: 90px;
+  height: 80vh;
 }
 
 .ricerca {
-  width: 100%;
+  width: 70%;
   position: absolute;
   top: 65%;
   left: 50%;
@@ -10690,10 +10685,40 @@ header nav img {
 
 .box_ricerca {
   background: rgba(30, 30, 30, 0.7);
-  width: 50%;
   height: 65px;
   border-radius: 15px;
-  margin: 0 auto;
+  position: relative;
+}
+
+.box_ricerca .input_ricerca {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.box_ricerca .input_ricerca #ricerca_località {
+  width: 35%;
+}
+
+.box_ricerca .input_ricerca #ricerca_appartamento {
+  width: 52%;
+}
+
+.box_ricerca .input_ricerca input,
+.box_ricerca .input_ricerca button {
+  border: none;
+  border-radius: 15px;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.box_ricerca .input_ricerca button {
+  padding: 10px 20px;
+}
+
+.appartamenti_in_evidenza {
+  display: flex;
 }
 
 footer img {

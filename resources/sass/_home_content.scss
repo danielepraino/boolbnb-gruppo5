@@ -1,0 +1,57 @@
+// Inizio sezione 1: ricerca appartamento
+  .main_content{
+    position: relative;
+    // z-index: -1;
+    padding-top: 90px;
+    height: 80vh;
+  }
+
+  .ricerca{
+    width: 70%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+  }
+
+  .box_ricerca{
+    background: rgba(30, 30, 30, .7);
+    height: 65px;
+    border-radius: 15px;
+    position: relative;
+
+    .input_ricerca{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+
+      #ricerca_località{
+        width: 35%;
+      }
+
+      #ricerca_appartamento{
+        width: 52%;
+      }
+
+      input,
+      button{
+        border: none;
+        border-radius: 15px;
+        margin-left: 10px;
+        padding: 10px;
+      }
+      button{
+        padding: 10px 20px;
+      }
+    }
+  }
+// Fine sezione 1: ricerca appartamento
+
+// Inizio sezione 2: appartamenti in evidenza
+  .appartamenti_in_evidenza{
+    display: flex;
+  }
+
+
+// Fine sezione 2: appartamenti in evidenza
