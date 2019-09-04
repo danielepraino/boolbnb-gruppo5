@@ -22,4 +22,4 @@ Route::get('/geolocation', function() {
   return view('/geolocation');
 });
 
-Route::resource('flats', 'FlatController')->middleware('auth');
+Route::resource('flats', 'FlatController');

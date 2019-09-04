@@ -33,15 +33,26 @@
 
 {{-- Sezione 2: contenuto appartamenti in evidenza (da valutare se farlo tramite ajax+handlebars) --}}
 @section('appartamenti_in_evidenza')
-  @for ($i = 0; $i < 8; $i++)
-    <div class="box_appartamento">
-      <div class="info_appartamento">
-        <h3>Titolo</h3>
-        <a href="#"> <img src="" alt="immagine appartamento"> </a>
-        <p>Luogo</p>
-        <small>Prezzo</small>
+
+        @forelse ($flat as $flatPromoted)
+          <div class="box_appartamento">
+            <div class="info_appartamento">
+          <h3>{{ $flatPromoted->title }}</h3>
+          @if ($flatPromoted->image)
+            <img class="img-fluid" src="{{ asset('storage/'.$flatPromoted->image) }}" alt="immagine appartamento">
+          @else
+            <a href="#"> <img src="https://dummyimage.com/200x200/fff/aaa" alt="immagine appartamento"> </a>
+          @endif
+          <p>{{ $flatPromoted->address }}</p>
+          <p><small>{{ $flatPromoted->price . '€' }}</small></p>
+          <a class="btn btn-primary" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
+        </div>
       </div>
-    </div>
-  @endfor
+        @empty
+          <h1 class="text-warning">Non sono presenti appartamenti</h1>
+        @endforelse
+
 @endsection
+
+
 {{-- Fine sezione 2 --}}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Flat;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $flat = Flat::all(); //cambiare poi il controllo con gli appartamenti in evidenza (in promozione)
+      return view('home', compact('flat'));
     }
 }
