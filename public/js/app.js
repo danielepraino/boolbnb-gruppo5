@@ -49199,6 +49199,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
 
+__webpack_require__(/*! ./flat_api */ "./resources/js/flat_api.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49330,6 +49332,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/flat_api.js":
+/*!**********************************!*\
+  !*** ./resources/js/flat_api.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+
+    for (var i = 0; i < sURLVariables.length; i++) {
+      var sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] == sParam) {
+        return sParameterName[1];
+      }
+    }
+  }
+
+  ;
+  var lat = GetURLParameter('lat');
+  var lon = GetURLParameter('lon');
+  console.log(lat);
+  console.log(lon);
+  $.ajax({
+    'url': 'http://127.0.0.1:8000/api/searched_flats',
+    'method': 'GET',
+    'success': function success(flat) {
+      console.log(flat);
+    },
+    'error': function error() {
+      alert('errore');
+    }
+  });
+});
 
 /***/ }),
 

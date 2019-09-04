@@ -10705,11 +10705,11 @@ header nav img {
   width: 100%;
 }
 
-.box_ricerca .input_ricerca #ricerca_località {
+.box_ricerca .input_ricerca #ricerca_lat {
   width: 35%;
 }
 
-.box_ricerca .input_ricerca #ricerca_appartamento {
+.box_ricerca .input_ricerca #ricerca_long {
   width: 52%;
 }
 
