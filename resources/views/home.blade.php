@@ -21,9 +21,17 @@
 
     <div class="box_ricerca">
       <div class="input_ricerca">
-        <input type="text"  id = "ricerca_località" placeholder="Inserisci la località" name="" value="">
-        <input type="text"  id = "ricerca_appartamento" placeholder="Ricerca tipo appartamento" name="" value="">
-        <button type="button" name="button"> <i class="fas fa-search"></i> </button>
+
+        <form method="get" enctype="multipart/form-data" action="{{ route('search') }}">
+          @csrf
+          <div class="form-group">
+            <input type="text"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">
+          </div>
+          <div class="form-group">
+            <input type="text"  id = "ricerca_long" placeholder="Inserisci la longitude" name="lon" value="">
+          </div>
+          <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
+        </form>
       </div>
     </div>
   </div>
