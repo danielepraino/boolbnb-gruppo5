@@ -23,7 +23,7 @@
 
 
     {{-- Contenuto ricerca appartamento --}}
-      <div class="container main_content">
+      <div class="container main_content @yield('home')">
         @yield('content')
       </div>
 

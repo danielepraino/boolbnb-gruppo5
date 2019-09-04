@@ -49424,8 +49424,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

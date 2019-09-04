@@ -9,6 +9,10 @@
     <img src="https://www.tgcom24.mediaset.it/binary/47.$plit/C_4_foto_1288622_image.JPG" alt="">
 @endsection
 
+@section('home')
+  home
+@endsection
+
 {{-- Sezione 1: contenuto ricerca --}}
 @section('content')
   {{-- contenuto centrale della pagina per la ricerca di un appartamento --}}
