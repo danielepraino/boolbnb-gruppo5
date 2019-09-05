@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 
   $.ajax({
-    'url': 'http://127.0.0.1:8000/api/searched_flats',
+    'url': 'http://localhost:8000/api/searched_flats',
     'method': 'GET',
     'success': function (flat) {
       console.log(flat);

@@ -22,8 +22,8 @@ class FlatsTableSeeder extends Seeder
         $newFlat->sm = $faker->numberBetween($min = 60, $max = 200);
         $newFlat->address = $faker->address;
         $newFlat->visible = $faker->numberBetween($min = 0, $max = 1);
-        $newFlat->lon = $faker->longitude($min = -180, $max = 180);
-        $newFlat->lat = $faker->latitude($min = -90, $max = 90);
+        $newFlat->lon = $faker->longitude($min = 6, $max = 18);
+        $newFlat->lat = $faker->latitude($min = 37, $max = 46);
         $newFlat->price = $faker->numberBetween($min = 50, $max = 300);
         $newFlat->user_id = $faker->numberBetween($min = 1, $max = 10);
         $newFlat->save();
