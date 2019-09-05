@@ -6,7 +6,7 @@
 
 require('./bootstrap');
 require('./geolocate');
-require('./flat_api')
+require('./flat_api');
 
 window.Vue = require('vue');
 
