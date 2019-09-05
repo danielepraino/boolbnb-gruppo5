@@ -49346,10 +49346,13 @@ $(document).ready(function () {
   var latUser = GetURLParameter('lat');
   var lonUser = GetURLParameter('lon');
   console.log(latUser);
-  console.log(lonUser); //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
+  console.log(lonUser);
+  var flat_filtered_by_radius = [];
+  console.log(flat_filtered_by_radius);
+  console.log(' '); //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
 
   $.ajax({
-    'url': 'http://localhost:8000/api/searched_flats',
+    'url': 'http://127.0.0.1:8000/api/searched_flats',
     'method': 'GET',
     'success': function success(flat) {
       for (var i = 0; i < flat.length; i++) {
@@ -49357,7 +49360,12 @@ $(document).ready(function () {
         var currentLon = flat[i].lon; //console.log(currentLat+" "+currentLon);
 
         var distanza = distanzaAppartamenti(latUser, lonUser, currentLat, currentLon);
-        console.log("Distanza tra appartamenti: " + distanza);
+
+        if (distanza < 100) {
+          console.log("Distanza tra appartamenti: " + distanza);
+          console.log(flat[i]);
+          flat_filtered_by_radius.push(flat[i]);
+        }
       }
     },
     'error': function error() {
@@ -49492,8 +49500,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
