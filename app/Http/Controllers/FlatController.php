@@ -94,12 +94,13 @@ class FlatController extends Controller
     public function show($flatId)
     {
       $flat = Flat::find($flatId);
+      $services = Service::where('flat_id', $flatId)->first();
 
       if (empty($flat)) {
         abort(404);
       }
 
-      return view('flats.show', compact('flat'));
+      return view('flats.show', compact('flat', 'services'));
     }
 
     /**
@@ -111,8 +112,9 @@ class FlatController extends Controller
     public function edit($flatId)
     {
       $flat = Flat::find($flatId);
+      $services = Service::where('flat_id', $flatId)->first();
 
-      return view('flats.edit', compact('flat'));
+      return view('flats.edit', compact('flat', 'services'));
     }
 
     /**
@@ -132,6 +134,9 @@ class FlatController extends Controller
       $data = $request->all();
       $newFlat = Flat::find($flatId);
       $newFlat->update($data);
+
+      $newService = Service::where('flat_id', $flatId)->first();
+      $newService->update($data);
 
       return redirect()->route('flats.index');
     }

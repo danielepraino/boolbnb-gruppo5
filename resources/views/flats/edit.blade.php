@@ -79,16 +79,27 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
         </div>
+
         <div class="form-group">
-          <label>Vuoi che l'annuncio sia visibile da subito?</label>
-          <input type="hidden" class="form-control"  name="visible" value="0" />
-          <input type="checkbox" class="form-control" checked  name="visible" value="1" />
+          <label>Vuoi che l'annuncio sia visibile da subito?<input class="ml-2" type="checkbox" name="visible" @if($flat->visible == 1) checked @endif value="{{ old("visible", $flat->visible) }}"/></label>
         </div>
+
+        <div class="form-group">
+          <ul class="list-group list-unstyled">
+            <label>Servizi</label>
+            <li><label><input class="mr-2" type="checkbox" name="services[wifi]" @if($services->wifi == 1) checked @endif value="{{ old("services[wifi]", $services->wifi) }}"/>Wifi</label></li>
+            <li><label><input class="mr-2" type="checkbox" name="services[parking]" @if($services->parking == 1) checked @endif value="{{ old("services[parking]", $services->parking) }}"/>Parcheggio</label></li>
+            <li><label><input class="mr-2" type="checkbox" name="services[pool]" @if($services->pool == 1) checked @endif value="{{ old("services[pool]", $services->pool) }}"/>Piscina</label></li>
+            <li><label><input class="mr-2" type="checkbox" name="services[concierge]" @if($services->concierge == 1) checked @endif value="{{ old("services[concierge]", $services->concierge) }}"/>Portineria</label></li>
+            <li><label><input class="mr-2" type="checkbox" name="services[sauna]" @if($services->sauna == 1) checked @endif value="{{ old("services[sauna]", $services->sauna) }}"/>Sauna</label></li>
+            <li><label><input class="mr-2" type="checkbox" name="services[sea_view]" @if($services->sea_view == 1) checked @endif value="{{ old("services[sea_view]", $services->sea_view) }}"/>Vista mare</label></li>
+          </ul>
+        </div>
+
         <div class="form-group">
           <label>LAT (TEST)</label>
           <input id="lat" type="text" name="lat" value="{{ old("lat", $flat->lat) }}" placeholder="Inserisci Latitudine">
 
-          {{-- <input type="text" class="form-control" placeholder="Latitudine (TEST)" name="lat" value="{{ old("lat") }}"> --}}
           @error('lat')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
@@ -97,7 +108,6 @@
           <label>LON (TEST)</label>
           <input id="long" type="text" name="lon" value="{{ old("lon", $flat->lon) }}" placeholder="Inserisci Longitudine">
 
-          {{-- <input type="text" class="form-control" placeholder="Longitudine (TEST)" name="lon" value="{{ old("lon") }}"> --}}
           @error('lon')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
@@ -113,7 +123,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Aggiungi nuovo</button>
+        <button type="submit" class="btn btn-primary">Modifica appartamento</button>
       </form>
     @else
       <h1 class="text-danger">Non puoi modificare questo appartamento!</h1>
