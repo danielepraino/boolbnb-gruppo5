@@ -49351,10 +49351,17 @@ $(document).ready(function () {
   console.log(lonUser);
   var flat_filtered_by_radius = [];
   console.log(flat_filtered_by_radius);
-  console.log(' '); //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
+  console.log(' ');
+  var html = "";
+
+  for (var j = 0; j < flat_filtered_by_radius.length; j++) {
+    html = '<img src="https://dummyimage.com/100x100/fff/aaa" alt="">' + '<h3 id = "flat_title_' + j + '">Titolo: </h3>' + '<small id = "flat_address_' + j + '">Indirizzo: </small>' + '<p id = "flat_description_' + j + '">Descrizione: </p>' + '<small id = "flat_price_' + j + '">Prezzo: </small>';
+    console.log(html);
+  } //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
+
 
   $.ajax({
-    'url': 'http://localhost:8000/api/searched_flats',
+    'url': 'http://127.0.0.1:8000/api/searched_flats',
     'method': 'GET',
     'success': function success(flat) {
       for (var i = 0; i < flat.length; i++) {
@@ -49465,7 +49472,11 @@ $(document).ready(function () {
           var addr = $('option:selected', this).val();
           $('#address').val(addr);
           $('#lat').val(lat);
-          $('#long').val(lon); // inizio mappa
+          $('#long').val(lon); //selettore per la ricerca in home
+
+          $('#ricerca_lat').attr('value', lat); //selettore per la ricerca in home
+
+          $('#ricerca_long').attr('value', lon); // inizio mappa
 
           var maplat = parseFloat($('#lat').val());
           var maplon = parseFloat($('#long').val());
@@ -49525,8 +49536,13 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
 __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> origin/master
 
 
 /***/ })

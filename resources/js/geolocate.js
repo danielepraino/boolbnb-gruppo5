@@ -28,6 +28,12 @@ $(document).ready(function() {
            $('#address').val(addr);
            $('#lat').val(lat);
            $('#long').val(lon);
+
+           //selettore per la ricerca in home
+           $('#ricerca_lat').attr('value', lat);
+           //selettore per la ricerca in home
+           $('#ricerca_long').attr('value', lon);
+
            // inizio mappa
 
              var maplat = parseFloat($('#lat').val());
