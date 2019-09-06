@@ -56,29 +56,21 @@
         <label>Indirizzo</label>
         <input id="address" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
         <button id="geolocate_button" type="button" name="button">Daje</button>
-
         <div id="risposta">
           <select class="selectaddress hidden" name="">
             <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
-
-
           </select>
-
         </div>
 
-
-
-
-        {{-- <input type="text" class="form-control" placeholder="Inserisci l'indirizzo" name="address" value="{{ old("address") }}"> --}}
         @error('address')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
+
       <div class="form-group">
         <label>LAT (TEST)</label>
         <input id="lat" type="text" name="lat" value="" placeholder="Inserisci Latitudine">
 
-        {{-- <input type="text" class="form-control" placeholder="Latitudine (TEST)" name="lat" value="{{ old("lat") }}"> --}}
         @error('lat')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -87,7 +79,6 @@
         <label>LON (TEST)</label>
         <input id="long" type="text" name="lon" value="" placeholder="Inserisci Longitudine">
 
-        {{-- <input type="text" class="form-control" placeholder="Longitudine (TEST)" name="lon" value="{{ old("lon") }}"> --}}
         @error('lon')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -102,18 +93,20 @@
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
+
       <div class="form-group">
-        <li><label>Vuoi che l'annuncio sia visibile da subito?<input type="checkbox" name="visible" value="0"/></label></li>
+        <label>Vuoi che l'annuncio sia visibile da subito?<input class="ml-2" type="checkbox" name="visible" value="0"/></label>
       </div>
 
       <div class="form-group">
-        <ul>
-          <li><label><input type="checkbox" name="services[wifi]" value="0"/>Wifi</label></li>
-          <li><label><input type="checkbox" name="services[parking]" value="0"/>Parcheggio</label></li>
-          <li><label><input type="checkbox" name="services[pool]" value="0"/>Piscina</label></li>
-          <li><label><input type="checkbox" name="services[concierge]" value="0"/>Portineria</label></li>
-          <li><label><input type="checkbox" name="services[sauna]" value="0"/>Sauna</label></li>
-          <li><label><input type="checkbox" name="services[sea_view]" value="0"/>Vista mare</label></li>
+        <ul class="list-group list-unstyled">
+          <label>Servizi</label>
+          <li><label><input class="mr-2" type="checkbox" name="services[wifi]" value="0"/>Wifi</label></li>
+          <li><label><input class="mr-2" type="checkbox" name="services[parking]" value="0"/>Parcheggio</label></li>
+          <li><label><input class="mr-2" type="checkbox" name="services[pool]" value="0"/>Piscina</label></li>
+          <li><label><input class="mr-2" type="checkbox" name="services[concierge]" value="0"/>Portineria</label></li>
+          <li><label><input class="mr-2" type="checkbox" name="services[sauna]" value="0"/>Sauna</label></li>
+          <li><label><input class="mr-2" type="checkbox" name="services[sea_view]" value="0"/>Vista mare</label></li>
         </ul>
       </div>
 
