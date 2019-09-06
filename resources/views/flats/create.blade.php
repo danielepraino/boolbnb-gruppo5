@@ -103,15 +103,17 @@
         @enderror
       </div>
       <div class="form-group">
-        <label>Vuoi che l'annuncio sia visibile da subito?</label>
-        <input type="hidden" class="form-control"  name="visible" value="0" />
-        <input type="checkbox" class="form-control" checked  name="visible" value="1" />
+        <li><label>Vuoi che l'annuncio sia visibile da subito?<input type="checkbox" name="visible" value="0"/></label></li>
       </div>
 
       <div class="form-group">
         <ul>
-          <li><label><input type="checkbox" name="services[]" value="0"/>Wifi</label></li>
-          <li><label><input type="checkbox" name="services[]" value="0"/>Parcheggio</label></li>
+          <li><label><input type="checkbox" name="services[wifi]" value="0"/>Wifi</label></li>
+          <li><label><input type="checkbox" name="services[parking]" value="0"/>Parcheggio</label></li>
+          <li><label><input type="checkbox" name="services[pool]" value="0"/>Piscina</label></li>
+          <li><label><input type="checkbox" name="services[concierge]" value="0"/>Portineria</label></li>
+          <li><label><input type="checkbox" name="services[sauna]" value="0"/>Sauna</label></li>
+          <li><label><input type="checkbox" name="services[sea_view]" value="0"/>Vista mare</label></li>
         </ul>
       </div>
 
