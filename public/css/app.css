@@ -10670,6 +10670,11 @@ a:hover {
   width: 512px;
 }
 
+#singleflatmap {
+  height: 512px;
+  width: 100%;
+}
+
 header nav img {
   width: 60px;
 }

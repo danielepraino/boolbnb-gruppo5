@@ -16,6 +16,14 @@
       @endif
       <h1 class="float-left mb-5">Dettagli appartamento {{ $flat->title }}</h1>
     </div>
+    <input id="lat" type="text" name="lat" value="{{$flat->lat}}">
+    <input id="long" type="text" name="lon" value="{{$flat->lon}}">
+    <input id="address" type="text" name="address" value="{{$flat->address}}" >
+
+
+    <div id="singleflatmap" class="singleflatmap">
+
+    </div>
   </div>
   <div class="row">
     <div class="col-6">

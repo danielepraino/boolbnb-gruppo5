@@ -7,6 +7,7 @@
 require('./bootstrap');
 require('./geolocate');
 require('./flat_api');
+require('./flatmap');
 
 window.Vue = require('vue');
 

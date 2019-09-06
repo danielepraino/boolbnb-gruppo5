@@ -49201,6 +49201,8 @@ __webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
 
 __webpack_require__(/*! ./flat_api */ "./resources/js/flat_api.js");
 
+__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49409,6 +49411,29 @@ function distanzaAppartamenti(lat1, lon1, lat2, lon2) {
 
 /***/ }),
 
+/***/ "./resources/js/flatmap.js":
+/*!*********************************!*\
+  !*** ./resources/js/flatmap.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  // single flat map
+  var maplat = $('#lat').val();
+  var maplon = $('#long').val();
+  var addr = $('address').val();
+  console.log(maplat);
+  console.log(maplon);
+  var map = L.map('singleflatmap').setView([maplat, maplon], 13);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  L.marker([maplat, maplon]).bindPopup(addr).openPopup().addTo(map);
+});
+
+/***/ }),
+
 /***/ "./resources/js/geolocate.js":
 /*!***********************************!*\
   !*** ./resources/js/geolocate.js ***!
@@ -49500,8 +49525,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
