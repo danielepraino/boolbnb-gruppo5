@@ -109,6 +109,13 @@
       </div>
 
       <div class="form-group">
+        <ul>
+          <li><label><input type="checkbox" name="services[]" value="0"/>Wifi</label></li>
+          <li><label><input type="checkbox" name="services[]" value="0"/>Parcheggio</label></li>
+        </ul>
+      </div>
+
+      <div class="form-group">
         <input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->id }}">
       </div>
 

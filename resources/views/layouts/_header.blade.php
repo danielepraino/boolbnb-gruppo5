@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ route('home')}}"><img src="{{asset('images/logo_3.png')}}" alt="logo bool bnb"></a>
+    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('images/logo_3.png')}}" alt="logo bool bnb"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

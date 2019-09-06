@@ -17,6 +17,6 @@ class Flat extends Model
     }
     public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasOne(Service::class);
     }
 }

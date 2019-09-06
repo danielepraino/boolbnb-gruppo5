@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
   $.ajax({
-    'url': 'http://127.0.0.1:8000/api/searched_flats',
+    'url': 'http://localhost:8000/api/searched_flats',
     'method': 'GET',
     'success': function (flat) {
       for (var i = 0; i < flat.length; i++) {

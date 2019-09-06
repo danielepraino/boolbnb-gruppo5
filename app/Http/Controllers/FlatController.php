@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Flat;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -29,7 +30,8 @@ class FlatController extends Controller
      */
     public function create()
     {
-        return view('flats.create');
+        $services = Service::all();
+        return view('flats.create', compact('services'));
     }
 
     /**
@@ -40,6 +42,9 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
+
+      dd($request->all());
+
       $validatedData = $request->validate([
         "title" => "required|max:255",
         // "room" => "required|max:255",
@@ -53,6 +58,7 @@ class FlatController extends Controller
       ]);
 
       $data = $request->all();
+
       $image = Storage::put('flats_images', $data['image']);
       $newFlat = new Flat();
       $newFlat->fill($data);
