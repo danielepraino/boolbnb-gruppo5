@@ -7,10 +7,22 @@ $(document).ready(function() {
   var flat_filtered_by_radius = [];
   console.log(flat_filtered_by_radius);
   console.log(' ');
+  var html = "";
+
+  for (var j = 0; j < flat_filtered_by_radius.length; j++) {
+    html = '<img src="https://dummyimage.com/100x100/fff/aaa" alt="">'+
+    '<h3 id = "flat_title_'+j+'">Titolo: </h3>'+
+    '<small id = "flat_address_'+j+'">Indirizzo: </small>'+
+    '<p id = "flat_description_'+j+'">Descrizione: </p>'+
+    '<small id = "flat_price_'+j+'">Prezzo: </small>'
+    console.log(html);
+  }
+
+
 
 //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
   $.ajax({
-    'url': 'http://localhost:8000/api/searched_flats',
+    'url': 'http://127.0.0.1:8000/api/searched_flats',
     'method': 'GET',
     'success': function (flat) {
       for (var i = 0; i < flat.length; i++) {
@@ -30,6 +42,8 @@ $(document).ready(function() {
       alert('errore');
     }
   });
+
+
 
 });
 

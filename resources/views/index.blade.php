@@ -21,19 +21,17 @@
     {{-- Header --}}
     @include('layouts._header')
 
-
-    {{-- Contenuto ricerca appartamento --}}
+    {{-- Contenuto principale pagine--}}
       <div class="container main_content @yield('home')">
         @yield('content')
       </div>
 
-    {{-- Contenuto appartamenti in evidenza --}}
-    <div class="container appartamenti_in_evidenza">
+    {{-- Contenuto appartamenti in evidenza home--}}
       @yield('appartamenti_in_evidenza')
-    </div>
 
     {{-- Footer --}}
     @include('layouts._footer')
+
   <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
   </body>
 </html>

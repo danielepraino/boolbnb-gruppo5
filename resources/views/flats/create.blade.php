@@ -60,10 +60,7 @@
         <div id="risposta">
           <select class="selectaddress hidden" name="">
             <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
-
-
           </select>
-
         </div>
 
 
