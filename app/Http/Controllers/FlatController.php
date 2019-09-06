@@ -43,7 +43,7 @@ class FlatController extends Controller
     public function store(Request $request)
     {
 
-      dd($request->all());
+      // dd($request->all());
 
       $validatedData = $request->validate([
         "title" => "required|max:255",
@@ -63,7 +63,24 @@ class FlatController extends Controller
       $newFlat = new Flat();
       $newFlat->fill($data);
       $newFlat->image = $image;
+
+      if (isset($_POST['visible'])) {
+        $newFlat->visible = 1;
+      } else {
+        $newFlat->visible = 0;
+      }
+
       $newFlat->save();
+
+      $newService = new Service();
+      $newService->fill($data);
+
+      foreach ($_POST['services'] as $key => $value) {
+        $newService->$key = 1;
+      }
+
+      $newService->flat_id = $newFlat->id;
+      $newService->save();
 
       return redirect()->route('home');
     }
