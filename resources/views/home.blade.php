@@ -59,7 +59,7 @@
           @if ($flatPromoted->image)
             <img class="img-fluid" src="{{ asset('storage/'.$flatPromoted->image) }}" alt="immagine appartamento">
           @else
-            <a href="#"> <img src="https://dummyimage.com/200x200/fff/aaa" alt="immagine appartamento"> </a>
+            <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/200x200/fff/aaa" alt="immagine appartamento"> </a>
           @endif
           <p>{{ $flatPromoted->address }}</p>
           <p><small>{{ $flatPromoted->price . '€' }}</small></p>

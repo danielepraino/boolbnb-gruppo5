@@ -2,6 +2,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use App\Flat;
+
 class FlatsTableSeeder extends Seeder
 {
     /**
@@ -12,7 +13,7 @@ class FlatsTableSeeder extends Seeder
     public function run()
     {
       $faker = Faker::create('it_IT');
-      for ($i=0; $i < 80; $i++) {
+      for ($i=0; $i < 10; $i++) {
         $newFlat = new Flat();
         $newFlat->title = $faker->sentence($nbWords = 6, $variableNbWords = true);
         $newFlat->description = $faker->text($maxNbChars = 200);
