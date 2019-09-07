@@ -17,7 +17,8 @@ class MessagesTableSeeder extends Seeder
 
       for ($i=0; $i < 10; $i++) {
         $newMessage = new Message();
-        $newMessage->sender = $faker->sentence($nbWords = 6, $variableNbWords = true);
+        $newMessage->sender = $faker->safeEmail;
+        $newMessage->subject = $faker->sentence($nbWords = 6, $variableNbWords = true);
         $newMessage->message = $faker->text($maxNbChars = 200);
         $newMessage->flat_id = $faker->numberBetween($min = 1, $max = 10);
         $newMessage->save();
