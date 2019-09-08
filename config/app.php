@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
          Zizaco\Entrust\EntrustServiceProvider::class,
+         ConsoleTVs\Charts\ChartsServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -226,6 +227,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Charts' => ConsoleTVs\Charts\Charts::class,
 
     ],
 
