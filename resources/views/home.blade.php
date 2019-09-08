@@ -39,6 +39,9 @@
           <div class="form-group">
             <input type="hidden"  id = "ricerca_long" placeholder="Inserisci la longitude" name="lon" value="">
           </div>
+          <div class="form-group">
+            <input type="hidden"  id = "ricerca_raggio" placeholder="Inserisci la longitude" name="radius" value="20">
+          </div>
           <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
         </form>
       </div>
