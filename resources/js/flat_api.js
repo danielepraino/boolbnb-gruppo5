@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   console.log(flat_filtered_by_radius);
   console.log(' ');
-
+  
   $(".services input").click(function() {
     if ($(this).val() == '0') {
       $(this).val('1')

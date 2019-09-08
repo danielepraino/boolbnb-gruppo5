@@ -47,12 +47,12 @@
       <div class="form-group">
         <ul class="list-group list-unstyled">
           <label>Servizi</label>
-          <li><label><input class="mr-2" type="checkbox" name="wifi" value="0"/>Wifi</label></li>
-          <li><label><input class="mr-2" type="checkbox" name="parking" value="0"/>Parcheggio</label></li>
-          <li><label><input class="mr-2" type="checkbox" name="pool" value="0"/>Piscina</label></li>
-          <li><label><input class="mr-2" type="checkbox" name="concierge" value="0"/>Portineria</label></li>
-          <li><label><input class="mr-2" type="checkbox" name="sauna" value="0"/>Sauna</label></li>
-          <li><label><input class="mr-2" type="checkbox" name="sea_view" value="0"/>Vista mare</label></li>
+          <li><label><input class="mr-2" type="checkbox" autocomplete="off" name="wifi" value="0"/>Wifi</label></li>
+          <li><label><input class="mr-2" type="checkbox" autocomplete="off" name="parking" value="0"/>Parcheggio</label></li>
+          <li><label><input class="mr-2" type="checkbox" autocomplete="off" name="pool" value="0"/>Piscina</label></li>
+          <li><label><input class="mr-2" type="checkbox" autocomplete="off" name="concierge" value="0"/>Portineria</label></li>
+          <li><label><input class="mr-2" type="checkbox" autocomplete="off" name="sauna" value="0"/>Sauna</label></li>
+          <li><label><input class="mr-2" type="checkbox" autocomplete="off" name="sea_view" value="0"/>Vista mare</label></li>
         </ul>
       </div>
     </div>
