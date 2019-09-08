@@ -6,6 +6,7 @@ use App\Flat;
 use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Auth;
 
 class FlatController extends Controller
 {
@@ -30,6 +31,7 @@ class FlatController extends Controller
      */
     public function create()
     {
+
         $services = Service::all();
         return view('flats.create', compact('services'));
     }
@@ -82,7 +84,11 @@ class FlatController extends Controller
       $newService->flat_id = $newFlat->id;
       $newService->save();
 
-      return redirect()->route('home');
+      if (Auth::user()) {
+        return redirect()->route('home');
+      } else {
+        abort(403, 'Unauthorized action.');
+      }
     }
 
     /**
@@ -111,6 +117,9 @@ class FlatController extends Controller
      */
     public function edit($flatId)
     {
+
+
+
       $flat = Flat::find($flatId);
       $services = Service::where('flat_id', $flatId)->first();
 
@@ -138,7 +147,11 @@ class FlatController extends Controller
       $newService = Service::where('flat_id', $flatId)->first();
       $newService->update($data);
 
-      return redirect()->route('flats.index');
+      if (Auth::user()) {
+        return redirect()->route('flats.index');
+      } else {
+        abort(403, 'Unauthorized action.');
+      }
     }
 
     /**
@@ -149,8 +162,14 @@ class FlatController extends Controller
      */
     public function destroy($flatId)
     {
+
       $flat = Flat::find($flatId)->delete();
 
-      return redirect()->route('flats.index');
+
+      if (Auth::user()) {
+        return redirect()->route('flats.index');
+      } else {
+        abort(403, 'Unauthorized action.');
+      }
     }
 }

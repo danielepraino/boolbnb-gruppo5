@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $flat = Flat::all(); //cambiare poi il controllo con gli appartamenti in evidenza (in promozione)
+      $flat = Flat::paginate(12); //cambiare poi il controllo con gli appartamenti in evidenza (in promozione)
       return view('home', compact('flat'));
     }
 }

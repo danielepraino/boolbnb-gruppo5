@@ -17,23 +17,49 @@
             </li>
           </ul>
         @else
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a href="{{ route('flats.create') }}">Aggiungi un appartamento</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
+
+          @php
+            $currentUserFlats = DB::table('users')
+                    ->join('flats', 'users.id', '=', 'flats.user_id')
+                    ->where('users.id', Auth::user()->id)
+                    ->get();
+          @endphp
+
+          @if ($currentUserFlats->isEmpty())
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ml-5">
+                <a href="{{ route('flats.create') }}">Aggiungi un appartamento</a>
+              </li>
+            </ul>
+          @else
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ml-5">
+                <a href="{{ route('flats.create') }}">Aggiungi un appartamento</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mr-5">
+                <a href="#">Sponsorizza</a>
+              </li>
+              <li class="nav-item mr-5">
+                <a href="{{ route('statistic') }}">Statistiche</a>
+              </li>
+              <li class="nav-item mr-5">
+                <a href="#">Messaggi</a>
+              </li>
+              <li class="nav-item mr-5">
+                <a href="{{ route('flats.index') }}">I miei appartamenti</a>
+              </li>
+            </ul>
+          @endif
+
+          <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name ? Auth::user()->name : Auth::user()->email }} <span class="caret"></span>
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <ul>
-                    <li class="nav-item">
-                      <a href="{{ route('flats.index') }}">I miei appartamenti</a>
-                    </li>
-                  </ul>
                   <a class="dropdown-item" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

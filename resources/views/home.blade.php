@@ -72,6 +72,13 @@
     @empty
       <h1 class="text-warning">Non sono presenti appartamenti</h1>
     @endforelse
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-12">
+          {{ $flat->links() }}
+        </div>
+      </div>
+    </div>
   </div>
 @endsection
 

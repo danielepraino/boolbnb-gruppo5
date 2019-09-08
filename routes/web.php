@@ -18,6 +18,7 @@ Route::get('/', 'GeneralController@home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/search', 'SearchController@index')->name('search');
+Route::get('/statistic', 'StatisticController@index')->name('statistic');
 
 Route::get('/geolocation', function() {
   return view('/geolocation');
