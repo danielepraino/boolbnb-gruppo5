@@ -68,7 +68,7 @@ $(document).ready(function() {
       if ($(this).val() == 1) {
         alert('1')
         $.ajax({
-          'url': 'http://127.0.0.1:8000/api/'+type_of_service+'_service',
+          'url': 'http://localhost:8000/api/'+type_of_service+'_service',
           'method': 'GET',
           'success': function (service) {
             console.log(type_of_service+": ");

@@ -30,6 +30,8 @@
               ->join('flats', 'users.id', '=', 'flats.user_id')
               ->where('users.id', Auth::user()->id)
               ->get();
+
+
     @endphp
 
     @forelse ($currentUserFlats as $flat)
