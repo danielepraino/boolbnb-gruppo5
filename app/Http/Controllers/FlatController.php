@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Flat;
 use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Auth;
 
 class FlatController extends Controller
 {
     public function __construct() {
+
       $this->middleware('auth')->except(['show']);
+
     }
     /**
      * Display a listing of the resource.
@@ -20,8 +22,10 @@ class FlatController extends Controller
      */
     public function index()
     {
+
       $flat = Flat::orderBy('id', 'asc')->get();
       return view('flats.index', compact('flat'));
+
     }
 
     /**
@@ -31,8 +35,10 @@ class FlatController extends Controller
      */
     public function create()
     {
+
         $services = Service::all();
         return view('flats.create', compact('services'));
+
     }
 
     /**
@@ -108,7 +114,9 @@ class FlatController extends Controller
      */
     public function show($flatId)
     {
+
       $flat = Flat::find($flatId);
+      views($flat)->record();
       $services = Service::where('flat_id', $flatId)->first();
 
       if (empty($flat)) {
@@ -126,8 +134,6 @@ class FlatController extends Controller
      */
     public function edit($flatId)
     {
-
-
 
       $flat = Flat::find($flatId);
       $services = Service::where('flat_id', $flatId)->first();
@@ -202,7 +208,6 @@ class FlatController extends Controller
     {
 
       $flat = Flat::find($flatId)->delete();
-
 
       if (Auth::user()) {
         return redirect()->route('flats.index');

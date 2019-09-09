@@ -49378,7 +49378,7 @@ $(document).ready(function () {
   filterByService("sea_view"); //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
 
   $.ajax({
-    'url': 'http://127.0.0.1:8000/api/searched_flats',
+    'url': 'http://localhost:8000/api/searched_flats',
     'method': 'GET',
     'success': function success(flat) {
       for (var i = 0; i < flat.length; i++) {
@@ -49587,8 +49587,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

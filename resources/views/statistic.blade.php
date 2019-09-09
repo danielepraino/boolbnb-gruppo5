@@ -1,12 +1,12 @@
 @extends('index')
 
 @section('title')
-  Statistiche appartamento
+  Statistiche appartamenti
 @endsection
 
 @section('content')
   <div class="container mt-5">
-    <h2 class="mb-3">Appartamento 1</h2>
+    <h2 class="mb-3">Statistiche appartamenti</h2>
     <div class="row">
       <div class="col-sm-12 col-lg-6">
         {!! $flatViews->container() !!}
