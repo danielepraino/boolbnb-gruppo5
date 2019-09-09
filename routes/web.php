@@ -28,3 +28,6 @@ Route::resource('flats', 'FlatController');
 
 
 Route::post('/sendmessage', 'MessageController@store');
+Route::get('/received-messages', function() {
+  return view('/messages/received-messages');
+});
