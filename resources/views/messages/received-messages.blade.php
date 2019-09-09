@@ -22,19 +22,18 @@
   </thead>
   <tbody>
     @php
+
       //filtra il db e prende gli appartamenti dell'utente loggato
-      $messages = DB::table('messages')
-              ->join('flats', 'flats.id', '=', 'messages.flat_id')
-              ->join('users', 'users.id', '=', 'flats.user_id')
-              ->where('users.id', Auth::user()->id)
+      $messages = DB::table('flats')
+              ->join('messages', 'flats.id', '=', 'messages.flat_id')
+              ->where('flats.user_id', Auth::user()->id)
               ->get();
-
-
     @endphp
 
 
 
     @forelse ($messages as $message)
+
         <tr>
           <th>{{ $message->id }}</th>
           <td>{{ $message->sender }}</td>

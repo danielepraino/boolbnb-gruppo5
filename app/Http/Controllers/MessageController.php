@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use Illuminate\Http\Request;
+use Auth;
 
 
 class MessageController extends Controller
@@ -41,6 +42,7 @@ class MessageController extends Controller
       $newMessage = new Message();
       $newMessage->fill($data);
       $newMessage->save();
+      return redirect('/messages');
 
     }
 
@@ -59,7 +61,7 @@ class MessageController extends Controller
         abort(404);
       }
 
-      return view('messages.show', compact('message'));
+      return view('messages/show', compact('message'));
     }
 
     /**
@@ -93,11 +95,12 @@ class MessageController extends Controller
      */
     public function destroy($messageId)
     {
-      $message = Message::find($messageId)->delete();
+      $message = Message::find($messageId)->delete();;
+
 
 
       if (Auth::user()) {
-        return redirect()->route('messages.received-messages');
+          return redirect('/messages');
       } else {
         abort(403, 'Unauthorized action.');
       }
