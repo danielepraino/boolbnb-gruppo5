@@ -18,3 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/searched_flats', 'Api\ResearchFlatController@index');
+
+Route::get('/wifi_service', 'Api\ResearchFlatController@wifi_service');
+
+Route::get('/parking_service', 'Api\ResearchFlatController@parking_service');
+
+Route::get('/pool_service', 'Api\ResearchFlatController@pool_service');
+
+Route::get('/concierge_service', 'Api\ResearchFlatController@concierge_service');
+
+Route::get('/sauna_service', 'Api\ResearchFlatController@sauna_service');
+
+Route::get('/sea_view_service', 'Api\ResearchFlatController@sea_view_service');
