@@ -23,7 +23,7 @@
   <tbody>
     @php
 
-      //filtra il db e prende gli appartamenti dell'utente loggato
+      //filtra il db e prende i messaggi dell'utente loggato
       $messages = DB::table('flats')
               ->join('messages', 'flats.id', '=', 'messages.flat_id')
               ->where('flats.user_id', Auth::user()->id)
@@ -52,7 +52,7 @@
 
     @empty
       <tr>
-        <td colspan="6">Non sono presenti appartamenti</td>
+        <td colspan="6">Non sono presenti messaggi</td>
       </tr>
     @endforelse
 
