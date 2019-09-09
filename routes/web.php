@@ -25,9 +25,7 @@ Route::get('/geolocation', function() {
 });
 
 Route::resource('flats', 'FlatController');
+Route::resource('messages', 'MessageController');
 
 
 Route::post('/sendmessage', 'MessageController@store');
-Route::get('/received-messages', function() {
-  return view('/messages/received-messages');
-});

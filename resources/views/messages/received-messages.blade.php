@@ -2,7 +2,7 @@
 {{-- @extends('index') --}}
 
 @section('title')
-  I miei appartamenti
+  I miei messaggi
 @endsection
 
 @section('content')
@@ -17,6 +17,7 @@
       <th scope="col">Soggetto</th>
       <th scope="col">Messaggio</th>
       <th scope="col">Appartamento</th>
+      <th scope="col">Azioni</th>
     </tr>
   </thead>
   <tbody>
@@ -27,31 +28,22 @@
               ->join('users', 'users.id', '=', 'flats.user_id')
               ->where('users.id', Auth::user()->id)
               ->get();
-                dd($messages)
-      // $currentUserFlats = DB::table('users')
-      //         ->join('flats', 'users.id', '=', 'flats.user_id')
-      //         ->where('users.id', Auth::user()->id)
-      //         ->get();
-      //         dd($currentUserFlats);
+
+
     @endphp
 
 
 
-    {{-- @forelse ($currentUserFlats as $flat)
+    @forelse ($messages as $message)
         <tr>
           <th>{{ $message->id }}</th>
-          <td>{{ $flat->title }}</td>
-          <td>{{ $flat->description }}</td>
-          <td>{{ $flat->room }}</td>
-          <td>{{ $flat->bed }}</td>
-          <td>{{ $flat->bathroom }}</td>
-          <td>{{ $flat->sm }}</td>
-          <td>{{ $flat->address }}</td>
-          <td><img class="flat-preview" src="{{ asset('storage/'.$flat->image) }}" alt="immagine appartamento"></td>
+          <td>{{ $message->sender }}</td>
+          <td>{{ $message->subject }}</td>
+          <td>{{ $message->message }}</td>
+          <td>{{ $message->flat_id }}</td>
           <td>
-            <a class="btn btn-secondary" href="{{ route('flats.show', $flat->id) }}">Visualizza</a>
-            <a class="btn btn-warning" href="{{ route('flats.edit', $flat->id) }}">Modifica</a>
-            <form action="{{ route('flats.destroy', $flat->id) }}" method="post">
+            <a class="btn btn-secondary" href="{{ route('messages.show', $message->id) }}">Visualizza</a>
+            <form action="{{ route('messages.destroy', $message->id) }}" method="post">
               @method("DELETE")
               @csrf
               <input class="btn btn-danger" type="submit" name="" value="Cancella">
@@ -63,7 +55,7 @@
       <tr>
         <td colspan="6">Non sono presenti appartamenti</td>
       </tr>
-    @endforelse --}}
+    @endforelse
 
   </tbody>
 </table>

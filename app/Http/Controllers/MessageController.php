@@ -15,7 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+    ;
+      return view('messages.received-messages');
     }
 
     /**
@@ -49,9 +50,16 @@ class MessageController extends Controller
      * @param  \App\message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(message $message)
+    public function show($messageId)
     {
-        //
+      $message = Message::find($messageId);
+
+
+      if (empty($message)) {
+        abort(404);
+      }
+
+      return view('messages.show', compact('message'));
     }
 
     /**
@@ -83,8 +91,15 @@ class MessageController extends Controller
      * @param  \App\message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(message $message)
+    public function destroy($messageId)
     {
-        //
+      $message = Message::find($messageId)->delete();
+
+
+      if (Auth::user()) {
+        return redirect()->route('messages.received-messages');
+      } else {
+        abort(403, 'Unauthorized action.');
+      }
     }
 }
