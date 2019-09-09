@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Message;
 use Illuminate\Http\Request;
 
+
 class MessageController extends Controller
 {
     /**
@@ -39,7 +40,7 @@ class MessageController extends Controller
       $newMessage = new Message();
       $newMessage->fill($data);
       $newMessage->save();
-      
+
     }
 
     /**
