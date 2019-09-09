@@ -31,7 +31,6 @@ class FlatController extends Controller
      */
     public function create()
     {
-
         $services = Service::all();
         return view('flats.create', compact('services'));
     }
@@ -45,18 +44,16 @@ class FlatController extends Controller
     public function store(Request $request)
     {
 
-      // dd($request->all());
-
       $validatedData = $request->validate([
         "title" => "required|max:255",
-        // "room" => "required|max:255",
-        // "bed" => "required|max:255",
-        // "bathroom" => "required|max:255",
-        // "sm" => "required|max:255",
-        // "address" => "required|max:255",
-        // "image" => "nullable|max:255",
-        // "visible" => "required|max:255",
-        // "price" => "required|max:255",
+        "description" => "required|max:255",
+        "room" => "required|regex:/^[0-9]*$/|max:3",
+        "bed" => "required|regex:/^[0-9]*$/|max:3",
+        "bathroom" => "required|regex:/^[0-9]*$/|max:3",
+        "sm" => "required|regex:/^[0-9]*$/|max:5",
+        "address" => "required|max:255",
+        "image" => "nullable|max:255",
+        "price" => "required|regex:/^[0-9]*$/|max:5",
       ]);
 
       $data = $request->all();
@@ -77,8 +74,20 @@ class FlatController extends Controller
       $newService = new Service();
       $newService->fill($data);
 
-      foreach ($_POST['services'] as $key => $value) {
-        $newService->$key = 1;
+      $arr_services = ['wifi', 'parking', 'pool', 'concierge', 'sauna', 'sea_view'];
+
+      if (isset($_POST['services'])) {
+        foreach ($_POST['services'] as $key => $value) {
+          $newService->$key = 1;
+        }
+      } else {
+        foreach ($arr_services as $service) {
+          $newService->$service = 0;
+        }
+
+        $_POST['services'] = [
+          'wifi' => 0
+        ];
       }
 
       $newService->flat_id = $newFlat->id;
@@ -135,9 +144,17 @@ class FlatController extends Controller
      */
     public function update(Request $request, $flatId)
     {
+
       $validatedData = $request->validate([
         "title" => "required|max:255",
-
+        "description" => "required|max:255",
+        "room" => "required|regex:/^[0-9]*$/|max:3",
+        "bed" => "required|regex:/^[0-9]*$/|max:3",
+        "bathroom" => "required|regex:/^[0-9]*$/|max:3",
+        "sm" => "required|regex:/^[0-9]*$/|max:5",
+        "address" => "required|max:255",
+        "image" => "nullable|max:255",
+        "price" => "required|regex:/^[0-9]*$/|max:5",
       ]);
 
       $data = $request->all();
@@ -145,6 +162,26 @@ class FlatController extends Controller
       $newFlat->update($data);
 
       $newService = Service::where('flat_id', $flatId)->first();
+
+      $arr_services = ['wifi', 'parking', 'pool', 'concierge', 'sauna', 'sea_view'];
+
+      if (isset($_POST['services'])) {
+        foreach ($arr_services as $service) {
+          $newService->$service = 0;
+        }
+        foreach ($_POST['services'] as $key => $value) {
+          $newService->$key = 1;
+        }
+      } else {
+        foreach ($arr_services as $service) {
+          $newService->$service = 0;
+        }
+
+        $_POST['services'] = [
+          'wifi' => 0
+        ];
+      }
+
       $newService->update($data);
 
       if (Auth::user()) {
@@ -152,6 +189,7 @@ class FlatController extends Controller
       } else {
         abort(403, 'Unauthorized action.');
       }
+
     }
 
     /**
