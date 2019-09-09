@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   console.log(flat_filtered_by_radius);
   console.log(' ');
-  
+
   $(".services input").click(function() {
     if ($(this).val() == '0') {
       $(this).val('1')
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
 //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
   $.ajax({
-    'url': 'http://127.0.0.1:8000/api/searched_flats',
+    'url': 'http://localhost:8000/api/searched_flats',
     'method': 'GET',
     'success': function (flat) {
       for (var i = 0; i < flat.length; i++) {
@@ -68,7 +68,7 @@ $(document).ready(function() {
       if ($(this).val() == 1) {
         alert('1')
         $.ajax({
-          'url': 'http://127.0.0.1:8000/api/'+type_of_service+'_service',
+          'url': 'http://localhost:8000/api/'+type_of_service+'_service',
           'method': 'GET',
           'success': function (service) {
             console.log(type_of_service+": ");
