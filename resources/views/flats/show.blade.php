@@ -61,8 +61,9 @@
   <div class="row mt-5">
     <div class="col-12">
       <h2>Invia un messaggio al proprietario</h2>
-      <form method="post" enctype="multipart/form-data" action="">
+      <form method="post" enctype="multipart/form-data" action="{{ '/sendmessage' }}">
         @csrf
+        <input type="hidden" name="flat_id" value="{{ $flat->id }}">
         <div class="form-group">
           <label>Email</label>
           <input type="text" class="form-control" placeholder="Inserisci l'email" name="sender" value="{{ old("sender") }}">
