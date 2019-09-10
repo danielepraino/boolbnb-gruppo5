@@ -66,7 +66,7 @@
         <input type="hidden" name="flat_id" value="{{ $flat->id }}">
         <div class="form-group">
           <label>Email</label>
-          <input type="text" class="form-control" placeholder="Inserisci l'email" name="sender" value="{{ old("sender") }}">
+          <input type="text" class="form-control" placeholder="Inserisci l'email" name="sender" value="{{ Auth::user() ? Auth::user()->email : old("sender") }}">
           @error('sender')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror

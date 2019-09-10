@@ -45,7 +45,7 @@
                 <a href="{{ route('statistic') }}">Statistiche</a>
               </li>
               <li class="nav-item mr-5">
-                <a href="#">Messaggi</a>
+                <a href="{{ route('messages.index') }}">Messaggi</a>
               </li>
               <li class="nav-item mr-5">
                 <a href="{{ route('flats.index') }}">I miei appartamenti</a>

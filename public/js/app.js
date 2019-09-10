@@ -49201,7 +49201,8 @@ __webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
 
 __webpack_require__(/*! ./flat_api */ "./resources/js/flat_api.js");
 
-__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js");
+__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js"); // require('./sendmessage');
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -49405,7 +49406,7 @@ $(document).ready(function () {
       if ($(this).val() == 1) {
         alert('1');
         $.ajax({
-          'url': 'http://127.0.0.1:8000/api/' + type_of_service + '_service',
+          'url': 'http://localhost:8000/api/' + type_of_service + '_service',
           'method': 'GET',
           'success': function success(service) {
             console.log(type_of_service + ": ");
