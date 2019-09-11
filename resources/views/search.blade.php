@@ -97,15 +97,22 @@
         </div>
       </div>
 
-      <div class="col-md-9">
-        <div class="flat_box">
-          <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
-          <h3 id = "flat_title">Titolo: </h3>
-          <small id = "flat_address">Indirizzo: </small>
-          <p id = "flat_description">Descrizione: </p>
-          <small id = "flat_price">Prezzo: </small>
+      {{-- @forelse ($filtered_flat as $filtered)
+        <div class="col-md-3">
+          <div class="flat_box">
+            <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+            <h3 id = "flat_title">Titolo: {{ $filtered->title }}</h3>
+            <small id = "flat_address">Indirizzo: </small>
+            <p id = "flat_description">Descrizione: </p>
+            <small id = "flat_price">Prezzo: </small>
+          </div>
         </div>
-      </div>
+      @empty
+        <div class="col-12">
+          <h3 class="text-warning">Nessun risultato</h3>
+        </div>
+      @endforelse --}}
+
     </div>
   </div>
 @stop

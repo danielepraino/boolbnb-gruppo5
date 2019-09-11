@@ -9,7 +9,7 @@
 
 <div class="container mt-10">
   <h1 class="float-left mb-5">I miei messaggi</h1>
-  <table class="table text-center">
+  <table class="table table-striped text-center">
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -42,11 +42,29 @@
           <td>{{ $message->flat_id }}</td>
           <td>
             <a class="btn btn-secondary" href="{{ route('messages.show', $message->id) }}">Visualizza</a>
-            <form action="{{ route('messages.destroy', $message->id) }}" method="post">
-              @method("DELETE")
-              @csrf
-              <input class="btn btn-danger" type="submit" name="" value="Cancella">
-            </form>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Cancella</button>
+
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Vuoi davvero cancellare il messaggio?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <form id="deleteForm" action="{{ route('messages.destroy', $message->id) }}" method="post">
+                      @method("DELETE")
+                      @csrf
+                      <button type="submit" class="btn btn-danger" form="deleteForm" type="submit">Si</button>
+                    </form>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </td>
         </tr>
 
