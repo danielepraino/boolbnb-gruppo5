@@ -51208,19 +51208,13 @@ $(document).ready(function () {
   var lonUser = GetURLParameter('lon');
   var raggioUser = GetURLParameter('radius');
   console.log(latUser);
-  console.log(lonUser); // console.log(flat_filtered_by_radius);
-  // console.log(' ');
-
+  console.log(lonUser);
   $(".services input").click(function () {
     if ($(this).val() == '0') {
       $(this).val('1');
     } else {
       $(this).val('0');
-    } //alert($(this).val());
-    // if ($(this).val() == '1') {
-    //   alert('ok' + $(this).attr('name'))
-    // }
-
+    }
   }); //slider raggio
 
   var radius;
@@ -51263,23 +51257,14 @@ $(document).ready(function () {
       filter_data();
     }
   });
-  $("#maximum_bed").val($("#bed_range").slider("value"));
+  $("#maximum_bed").val($("#bed_range").slider("value")); //al click delle checkbox filtra i dati in base
+  //alla checkbox cliccata
+
   $('.filter_checkbox').click(function () {
     filter_data();
-  }); // //filtro wifi
-  // filterByService("wifi");
-  // //filtro parcheggio
-  // filterByService("parking");
-  // //filtro pool
-  // filterByService("pool");
-  // //filtro concierge
-  // filterByService("concierge");
-  // //filtro sauna
-  // filterByService("sauna");
-  // //filtro sea_view
-  // filterByService("sea_view");
-  //Funzioni
+  }); //Funzioni
   //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
+  //da modificare
   //http://127.0.0.1:8000
 
   function filterByRadius(radius) {
@@ -51291,14 +51276,10 @@ $(document).ready(function () {
       'success': function success(flat) {
         for (var i = 0; i < flat.length; i++) {
           var currentLat = flat[i].lat;
-          var currentLon = flat[i].lon; //console.log(currentLat+" "+currentLon);
-
+          var currentLon = flat[i].lon;
           var distanza = distanzaAppartamenti(latUser, lonUser, currentLat, currentLon);
 
           if (distanza < radius) {
-            // console.log(distanze);
-            // console.log("Distanza tra appartamenti: "+distanza);
-            // console.log(flat[i]);
             flat_filtered_by_radius.push(flat[i]);
           }
         }
@@ -51308,10 +51289,11 @@ $(document).ready(function () {
       }
     });
     return flat_filtered_by_radius;
-  }
+  } //funziona che filtra i data in base ai servizi selezionati
+  //tramite ajax in post
+
 
   function filter_data() {
-    //$('#filter-form').submit(function(e){
     var url = $('#filter-form').data('route');
     var room = $('#maximum_room').val();
     var bed = $('#maximum_bed').val();
@@ -51340,60 +51322,21 @@ $(document).ready(function () {
       'error': function error(_error) {
         console.log(_error);
       }
-    }); //e.preventDefault()
-    //});
+    });
   }
 
-  ;
+  ; //funzione per ricavare i filtri selezionati
 
   function get_filter(type_of_service) {
     var filter = [];
     $('.' + type_of_service + ':checked').each(function () {
       filter.push($(this).val());
-    }); // $(".services input[name = '"+type_of_service+"']").click(function () {
-    // if ($(this).val() == 1) {
-    //     filter.push($(this).attr("name"));
-    //   }else {
-    //     filter.splice(0,filter.length);
-    //   }
-    // console.log(filter);
-
+    });
     return filter;
   }
 
   ;
-  console.log(get_filter('wifi')); //funzione ajax per i servizi
-  // function filterByService(type_of_service) {
-  //
-  //       alert('1')
-  //       $.ajax({
-  //         'url': 'http://127.0.0.1:8000/api/'+type_of_service+'_service',
-  //         'method': 'GET',
-  //         'success': function (service) {
-  //           console.log(type_of_service+": ");
-  //           console.log(service);
-  //           for (var i = 0; i < service.length; i++) {
-  //             for (var j = 0; j < flat_filtered_by_radius.length; j++) {
-  //               if(service[i]['flat_id'] == flat_filtered_by_radius[j]['id']) {
-  //                 console.log(type_of_service+' filter: ');
-  //                 console.log(service[i]);
-  //                 console.log('flat filtered by '+type_of_service+':');
-  //                 console.log(flat_filtered_by_radius[j]);
-  //               }
-  //             }
-  //           }
-  //         },
-  //         'error': function () {
-  //           alert('errore');
-  //         }
-  //       });
-  //     }else {
-  //       alert('0')
-  //       console.log(flat_filtered_by_radius);
-  //     }
-  //   });
-  // }
-  // funzione per estrarre i parametri dall'url
+  console.log(get_filter('wifi')); // funzione per estrarre i parametri dall'url
 
   function GetURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
