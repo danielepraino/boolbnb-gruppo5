@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     {{-- fontawesome --}}
     <script src="https://kit.fontawesome.com/333654a8dc.js"></script>
-    <title>BoolBnB @yield('title')</title>
+
     {{-- leaflet map --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -16,6 +16,7 @@
      crossorigin=""></script>
 
     <!-- Styles -->
+    <title>BoolBnB @yield('title')</title>
   </head>
   <body>
     {{-- Header --}}

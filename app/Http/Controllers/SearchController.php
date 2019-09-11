@@ -14,7 +14,7 @@ class SearchController extends Controller
         $sections = $view->renderSections(); // returns an associative array of 'content', 'head' and 'footer'
         return $sections['content']; // this will only return whats in the content section
       }
-
+      
       return $view;
     }
 }

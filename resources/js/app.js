@@ -10,6 +10,12 @@ require('./flat_api');
 require('./flatmap');
 // require('./sendmessage');
 
+// jquery-ui
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import 'jquery-ui/ui/widgets/slider.js';
+
+
 window.Vue = require('vue');
 
 /**

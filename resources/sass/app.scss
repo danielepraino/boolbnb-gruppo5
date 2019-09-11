@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//jquery ui
+@import '~jquery-ui/themes/base/all.css';
+
 //common css rule
 @import 'common';
 @import 'leaflet';
