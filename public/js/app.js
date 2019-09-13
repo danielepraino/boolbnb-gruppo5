@@ -51292,13 +51292,20 @@ $(document).ready(function () {
         $('.appartamenti-filtrati').html('');
         var data = reIndexArray(data);
         var distanza;
+        var distanze = [];
         var filter_data = [];
 
         for (var i = 0; i < data.length; i++) {
           distanza = distanzaAppartamenti(userLat, userLon, data[i]['lat'], data[i]['lon']);
+          distanze.push(distanza);
+          distanze.sort(function (a, b) {
+            return a - b;
+          });
 
-          if (distanza < radius) {
-            filter_data.push(data[i]);
+          for (var j = 0; j < distanze.length; j++) {
+            if (distanze[j] < radius && !filter_data.includes(data[i])) {
+              filter_data.push(data[i]);
+            }
           }
         }
 
