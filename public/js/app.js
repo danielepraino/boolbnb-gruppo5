@@ -51418,8 +51418,8 @@ $(document).ready(function () {
       },
       success: function success(result) {
         for (var i = 0; i < result.results.length; i++) {
-          $('.selectaddress').removeClass('hidden');
           $('.selectaddress').append('<option data-lon="' + result.results[i].position.lon + '" data-lat="' + result.results[i].position.lat + '" value="' + result.results[i].address.freeformAddress + '">' + result.results[i].address.freeformAddress + '</option>');
+          $('.selectaddress').removeClass('hidden');
         }
 
         $('.selectaddress').change(function () {
@@ -51510,8 +51510,8 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

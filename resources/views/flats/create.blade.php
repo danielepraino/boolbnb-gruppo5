@@ -58,7 +58,7 @@
         <button id="geolocate_button" type="button" name="button">Daje</button>
         <div id="risposta">
           <select class="selectaddress hidden" name="">
-            <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+            <option value="Seleziona l'indirizzo corretto">Seleziona Indirizzo</option>
           </select>
         </div>
 
