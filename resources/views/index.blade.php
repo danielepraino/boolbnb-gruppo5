@@ -6,6 +6,10 @@
     {{-- fontawesome --}}
     <script src="https://kit.fontawesome.com/333654a8dc.js"></script>
 
+    {{-- handlebars --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    
+
     {{-- leaflet map --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -32,6 +36,8 @@
 
     {{-- Footer --}}
     @include('layouts._footer')
+
+    @yield('handlebars')
 
   <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
   </body>

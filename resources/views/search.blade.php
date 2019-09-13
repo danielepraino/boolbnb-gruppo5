@@ -20,24 +20,25 @@
           </select>
         </div>
 
-        <form method="get" enctype="multipart/form-data" action="{{ route('search') }}">
+        <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
           @csrf
           <div class="form-group">
-            <input type="hidden"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">
+            <input type="hidden"  id = "ricerca_lat" name="lat" value="
+            @php
+              $lat = $_POST['lat'];
+              echo "$lat";
+            @endphp">
           </div>
           <div class="form-group">
-            <input type="hidden"  id = "ricerca_long" placeholder="Inserisci la longitude" name="lon" value="">
+            <input type="hidden"  id = "ricerca_long"  name="lon" value="
+            @php
+              $lon = $_POST['lon'];
+              echo "$lon";
+            @endphp">
           </div>
-          {{-- <div class="form-group">
-            <select class="selezione_raggio" name="radius">
-              <option value="radius_select">Seleziona raggio: </option>
-              <option value="20">20</option>
-              <option value="50">50</option>
-              <option value="80">80</option>
-              <option value="100">100</option>
-              <option value="150">150</option>
-            </select>
-          </div> --}}
+          <div class="form-group">
+            <input type="hidden"  id = "ricerca_raggio"  name="radius" value="20">
+          </div>
           <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
         </form>
       </div>
@@ -58,8 +59,9 @@
               </p>
               <div id="radius_range"></div>
             </div>
+
             <form id = "filter-form" method="post" data-route ="{{route('filters')}}">
-              @csrf
+            @csrf
               <div class="room-slider slider-margin">
                 <p>
                   <label for="maximum_room">Stanze: </label>
@@ -96,23 +98,41 @@
         </form>
         </div>
       </div>
+      {{-- container appartamenti --}}
+      <div class="col-md-9 appartamenti-filtrati">
+       @forelse ($filtered_flat as $filtered)
 
-      {{-- @forelse ($filtered_flat as $filtered)
-        <div class="col-md-3">
-          <div class="flat_box">
-            <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
-            <h3 id = "flat_title">Titolo: {{ $filtered->title }}</h3>
-            <small id = "flat_address">Indirizzo: </small>
-            <p id = "flat_description">Descrizione: </p>
-            <small id = "flat_price">Prezzo: </small>
-          </div>
-        </div>
+           <div class="col-md-9">
+             <div class="flat_box">
+               <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+               <h3 id = "flat_title">Titolo: {{ $filtered->title }}</h3>
+               <small id = "flat_address">Indirizzo: {{ $filtered->address }}</small>
+               <p id = "flat_description">Descrizione: {{ $filtered->description }}</p>
+               <small id = "flat_price">Prezzo: {{ $filtered->price }} </small>
+             </div>
+           </div>
       @empty
-        <div class="col-12">
+        <div class="col-md-6 offset-md-3">
           <h3 class="text-warning">Nessun risultato</h3>
         </div>
-      @endforelse --}}
+      @endforelse
+    </div>
+
 
     </div>
   </div>
 @stop
+
+@section('handlebars')
+  <script id="template" type="text/x-handlebars-template">
+    <div class="col-md-9">
+      <div class="flat_box">
+        <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+        <h3 id = "flat_title mt-2">Titolo: @{{title}}</h3>
+        <small id = "flat_address" data-lat ="@{{lan}}" data-lon ="@{{lon}}">Indirizzo: @{{address}}</small>
+        <p id = "flat_description">Descrizione: @{{description}}</p>
+        <small id = "flat_price">Prezzo: @{{price}} </small>
+      </div>
+    </div>
+  </script>
+@endsection
