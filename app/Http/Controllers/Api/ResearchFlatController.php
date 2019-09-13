@@ -8,7 +8,6 @@ use Auth;
 use App\Flat;
 use App\Service;
 use Illuminate\Support\Facades\DB;
-use Response;
 
 class ResearchFlatController extends Controller
 {

@@ -29,3 +29,10 @@ Route::resource('messages', 'MessageController');
 
 
 Route::post('/sendmessage', 'MessageController@store');
+
+
+//--------------------------------------------------------------
+
+Route::get('/sponsorship', 'SponsorshipController@index')->name('sponsorship');
+
+Route::post('/checkout', 'CheckoutController@index')->name('checkout');

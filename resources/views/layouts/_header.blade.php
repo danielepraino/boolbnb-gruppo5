@@ -39,7 +39,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item mr-5">
-                <a href="#">Sponsorizza</a>
+                <a href="{{ url('/sponsorship') }}">Sponsorizza</a>
               </li>
               <li class="nav-item mr-5">
                 <a href="{{ route('statistic') }}">Statistiche</a>
