@@ -8,6 +8,7 @@ require('./bootstrap');
 require('./geolocate');
 require('./flat_api');
 require('./flatmap');
+require('./sponsorship');
 // require('./sendmessage');
 
 // jquery-ui

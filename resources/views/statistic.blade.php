@@ -9,7 +9,7 @@
     <h1 class="mb-5">Sommario statistiche appartamenti</h1>
     <div class="row text-center mb-5">
       <div class="col-sm-12 col-lg-6 my-5">
-        <h4>Visualizzazioni totali</h4>
+        <h4>Visualizzazioni uniche totali</h4>
         <h5>{{ $totalViews }}</h5>
       </div>
       <div class="col-sm-12 col-lg-6 my-5">

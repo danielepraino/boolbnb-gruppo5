@@ -51055,7 +51055,9 @@ __webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
 
 __webpack_require__(/*! ./flat_api */ "./resources/js/flat_api.js");
 
-__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js"); // require('./sendmessage');
+__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js");
+
+__webpack_require__(/*! ./sponsorship */ "./resources/js/sponsorship.js"); // require('./sendmessage');
 // jquery-ui
 
 
@@ -51442,8 +51444,8 @@ $(document).ready(function () {
       },
       success: function success(result) {
         for (var i = 0; i < result.results.length; i++) {
-          $('.selectaddress').removeClass('hidden');
           $('.selectaddress').append('<option data-lon="' + result.results[i].position.lon + '" data-lat="' + result.results[i].position.lat + '" value="' + result.results[i].address.freeformAddress + '">' + result.results[i].address.freeformAddress + '</option>');
+          $('.selectaddress').removeClass('hidden');
         }
 
         $('.selectaddress').change(function () {
@@ -51494,6 +51496,23 @@ $(document).ready(function () {
         alert('errore');
       }
     });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/sponsorship.js":
+/*!*************************************!*\
+  !*** ./resources/js/sponsorship.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(".setPrice").each(function () {
+  $(this).click(function () {
+    var prezzo = $(this).find('#prezzo').text();
+    console.log(prezzo);
+    $('#amount').val(prezzo);
   });
 });
 

@@ -53,33 +53,32 @@
 
 {{-- Sezione 2: contenuto appartamenti in evidenza (da valutare se farlo tramite ajax+handlebars) --}}
 @section('appartamenti_in_evidenza')
-  {{-- Contenuto appartamenti in evidenza --}}
-  <div class="container appartamenti_in_evidenza">
-    @forelse ($flat as $flatPromoted)
-      <div class="box_appartamento">
-        <div class="info_appartamento">
-          <h3>{{ $flatPromoted->title }}</h3>
-          @if ($flatPromoted->image)
-            <img class="img-fluid" src="{{ asset('storage/'.$flatPromoted->image) }}" alt="immagine appartamento">
-          @else
-            <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/200x200/fff/aaa" alt="immagine appartamento"> </a>
-          @endif
-          <p>{{ $flatPromoted->address }}</p>
-          <p><small>{{ $flatPromoted->price . '€' }}</small></p>
-          <a class="btn btn-primary" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
-        </div>
-      </div>
-    @empty
-      <h1 class="text-warning">Non sono presenti appartamenti</h1>
-    @endforelse
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-12">
-          {{ $flat->links() }}
-        </div>
-      </div>
+
+<div class="container">
+  <div class="row">
+    @foreach ($flat as $flatPromoted)
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 mb-4">
+      {{-- <h3>{{ $flatPromoted->title }}</h3> --}}
+      @if ($flatPromoted->image)
+        <img class="img-fluid" src="{{ asset('storage/'.$flatPromoted->image) }}" alt="immagine appartamento">
+      @else
+        <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/255x255/fff/aaa" alt="immagine appartamento"> </a>
+      @endif
+      <p>{{ $flatPromoted->address }}</p>
+      <p><small>{{ $flatPromoted->price . '€' }}</small></p>
+      <a class="btn btn-primary" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
+    </div>
+    @endforeach
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-12">
+      {{ $flat->links() }}
     </div>
   </div>
+</div>
+
 @endsection
 
 
