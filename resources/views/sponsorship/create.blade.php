@@ -33,7 +33,6 @@
                 <div class="row">
                   <div class="col-4">
                     <div class="card">
-                      <img src="https://dummyimage.com/50x30/fff/aaa" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Promo 24</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -43,7 +42,6 @@
                   </div>
                   <div class="col-4">
                     <div class="card">
-                      <img src="https://dummyimage.com/50x30/fff/aaa" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Promo 72</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -53,10 +51,10 @@
                   </div>
                   <div class="col-4">
                     <div class="card">
-                      <img src="https://dummyimage.com/50x30/fff/aaa" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title">Promo 144</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
                         <button class="btn btn-success setPrice" type="button" name="144"><span id='prezzo'>9.99</span>€</button>
                       </div>
                     </div>
@@ -69,7 +67,8 @@
                   <div class="col-12">
                     <label for="amount">
                         <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="">
+                          <input id="duration" name="duration" type="hidden" min="1" value="">
+                          <input id="amount" name="amount" type="hidden" min="1" value="">
                         </div>
                     </label>
 

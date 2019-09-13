@@ -15,6 +15,17 @@ class SponsorshipController extends Controller
      */
     public function index()
     {
+
+      return view('sponsorship.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
+    {
       $gateway = new Gateway([
           'environment' => config('services.braintree.environment'),
           'merchantId' => config('services.braintree.merchantId'),
@@ -24,19 +35,9 @@ class SponsorshipController extends Controller
 
       $token = $gateway->ClientToken()->generate();
 
-      return view('sponsorship', [
+      return view('sponsorship.create', [
         'token' => $token
       ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -47,7 +48,10 @@ class SponsorshipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->all();
+      $newSponsorship = new Sponsorship();
+      $newSponsorship->fill($data);
+      $newSponsorship->save();
     }
 
     /**

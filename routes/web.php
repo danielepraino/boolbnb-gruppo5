@@ -26,6 +26,7 @@ Route::get('/geolocation', function() {
 
 Route::resource('flats', 'FlatController');
 Route::resource('messages', 'MessageController');
+Route::resource('sponsorship', 'SponsorshipController');
 
 
 Route::post('/sendmessage', 'MessageController@store');
@@ -33,6 +34,6 @@ Route::post('/sendmessage', 'MessageController@store');
 
 //--------------------------------------------------------------
 
-Route::get('/sponsorship', 'SponsorshipController@index')->name('sponsorship');
+//Route::get('/sponsorship', 'SponsorshipController@index')->name('sponsorship');
 
 Route::post('/checkout', 'CheckoutController@index')->name('checkout');

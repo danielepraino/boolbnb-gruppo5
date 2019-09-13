@@ -51485,9 +51485,29 @@ $(document).ready(function () {
 $(".setPrice").each(function () {
   $(this).click(function () {
     var prezzo = $(this).find('#prezzo').text();
-    console.log(prezzo);
     $('#amount').val(prezzo);
+    var durata = $(this).attr("name");
+    $('#duration').val(durata);
+    console.log(durata);
   });
+});
+$.ajax({
+  url: sponsorship.store,
+  method: "POST",
+  data: {
+    room: room,
+    bed: bed[0],
+    wifi: wifi[0],
+    parking: parking[0],
+    pool: pool[0],
+    concierge: concierge[0],
+    sauna: sauna[0],
+    sea_view: sea_view[0]
+  },
+  success: function success(data) {},
+  'error': function error(_error) {
+    console.log(_error);
+  }
 });
 
 /***/ }),
@@ -51510,8 +51530,8 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
