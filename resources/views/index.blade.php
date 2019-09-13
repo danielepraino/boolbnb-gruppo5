@@ -8,7 +8,7 @@
 
     {{-- handlebars --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
-    
+
 
     {{-- leaflet map --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -18,6 +18,7 @@
    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
      crossorigin=""></script>
+     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Styles -->
     <title>BoolBnB @yield('title')</title>

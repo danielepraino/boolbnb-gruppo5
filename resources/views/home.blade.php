@@ -32,7 +32,7 @@
           </select>
         </div>
 
-        <form method="get" enctype="multipart/form-data" action="{{ route('search') }}">
+        <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
           @csrf
           <div class="form-group">
             <input type="hidden"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">

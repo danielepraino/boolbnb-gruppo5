@@ -48,10 +48,14 @@ class SponsorshipController extends Controller
      */
     public function store(Request $request)
     {
-      $data = $request->all();
-      $newSponsorship = new Sponsorship();
-      $newSponsorship->fill($data);
+
+      $newSponsorship = new Sponsorship;
+      $newSponsorship->price = $request->get('price');
+      $newSponsorship->duration = $request->get('duration');
+      $newSponsorship->flat_id = $request->get('flat_id');
       $newSponsorship->save();
+
+      //return redirect()->route('home');
     }
 
     /**
