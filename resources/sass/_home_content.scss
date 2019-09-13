@@ -7,17 +7,21 @@
 
   }
 
-  .home{
-    height: 80vh;
-  }
 
   .ricerca{
     width: 70%;
     position: absolute;
     top: 65%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -70%);
+      h3 {
+        color: white;
+      }
   }
+
+    .dettagli {
+      height: 150px;
+    }
 
   .box_ricerca{
     background: rgba(30, 30, 30, .7);
@@ -32,9 +36,15 @@
       width: 100%;
       height: 100%;
 
-      form{
-        display: flex;
-        justify-content: space-around;
+      // form{
+      //   display: flex;
+      //   justify-content: space-around;
+      // }
+
+      #search_button {
+        position: absolute;
+        top: 68%;
+        transform: translateX(-50%, -50%);
       }
 
       .form-group{

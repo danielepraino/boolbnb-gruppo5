@@ -12203,16 +12203,20 @@ header nav img {
   padding-top: 90px;
 }
 
-.home {
-  height: 80vh;
-}
-
 .ricerca {
   width: 70%;
   position: absolute;
   top: 65%;
   left: 50%;
-  transform: translate(-50%, -65%);
+  transform: translate(-50%, -70%);
+}
+
+.ricerca h3 {
+  color: white;
+}
+
+.dettagli {
+  height: 150px;
 }
 
 .box_ricerca {
@@ -12230,9 +12234,10 @@ header nav img {
   height: 100%;
 }
 
-.box_ricerca .input_ricerca form {
-  display: flex;
-  justify-content: space-around;
+.box_ricerca .input_ricerca #search_button {
+  position: absolute;
+  top: 68%;
+  transform: translateX(-50%, -50%);
 }
 
 .box_ricerca .input_ricerca .form-group {
