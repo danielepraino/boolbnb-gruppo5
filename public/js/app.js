@@ -51416,8 +51416,8 @@ $(document).ready(function () {
       },
       success: function success(result) {
         for (var i = 0; i < result.results.length; i++) {
-          $('.selectaddress').removeClass('hidden');
           $('.selectaddress').append('<option data-lon="' + result.results[i].position.lon + '" data-lat="' + result.results[i].position.lat + '" value="' + result.results[i].address.freeformAddress + '">' + result.results[i].address.freeformAddress + '</option>');
+          $('.selectaddress').removeClass('hidden');
         }
 
         $('.selectaddress').change(function () {
