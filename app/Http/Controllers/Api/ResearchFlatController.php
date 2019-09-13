@@ -8,26 +8,51 @@ use Auth;
 use App\Flat;
 use App\Service;
 use Illuminate\Support\Facades\DB;
-use Response;
 
 class ResearchFlatController extends Controller
 {
 
-  public function index() {
+  public function filter() {
 
-    $filtered_flat = DB::table('services')
+    $flats = DB::table('services')
                  ->join('flats', 'services.flat_id', '=', 'flats.id')
                  ->get();
 
     if (\Request::ajax()) {
 
       foreach($_POST as $filterKey => $filterValue) {
-        $filtered_flat = $filtered_flat->where($filterKey, '=', $filterValue);
+          $flats = $flats->where($filterKey, '=', $filterValue);
       }
 
-      $response =  response()->json($filtered_flat);
+      // $output = '';
+      // if (count($flats) > 0) {
+      //   foreach ($flats as $key => $value) {
+      //
+      //     $output .= '
+      //       <div class="col-md-9 appartamenti-filtrati">
+      //         <div class="flat_box">
+      //           <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+      //             <h3 id = "flat_title">Titolo:'. $value->title .'</h3>
+      //             <small id = "flat_address" data-lat ="'.$value->lat.'" data-lon ="'.$value->lon.'">Indirizzo:'.$value->address.'</small>
+      //             <p id = "flat_description">Descrizione: '.$value->description.'</p>
+      //             <small id = "flat_price">Prezzo: '.$value->price.'</small>
+      //         </div>
+      //       </div>
+      //     ';
+      //   }
+      // }else{
+      //   $output .= '
+      //   <div class="col-md-6 offset-md-3">
+      //     <h3 class="text-warning">Nessun risultato</h3>
+      //   </div>
+      //   ';
+      // }
 
-      return $response;
+
+
+     $response =  response()->json($flats);
+
+     return $response;
       //return view('search', compact($response));
     }
   }

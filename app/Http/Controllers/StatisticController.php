@@ -17,6 +17,7 @@ class StatisticController extends Controller
 
     $totalViews = 0;
     $totalMessages = 0;
+    $daysCount = 0;
     $arr_chart_dataset = [];
     $arr_chart_label = [];
 
@@ -34,9 +35,14 @@ class StatisticController extends Controller
       $totalMessages += 1;
     }
 
-    $today = Carbon::today('l jS \\of F Y h:i:s A');
+    $today = Carbon::today();
+
     for ($i=0; $i < 5; $i++) {
-      array_push($arr_chart_label, $today->subDay()->toFormattedDateString());
+      if ($i == 0) {
+        array_push($arr_chart_label, $today->toFormattedDateString());
+      } else {
+        array_push($arr_chart_label, $today->subDay()->toFormattedDateString());
+      }
     }
 
     //FlatViews chart
@@ -44,21 +50,81 @@ class StatisticController extends Controller
     $flatViews->labels($arr_chart_label);
     foreach ($userFlats as $flats) {
         $flat = Flat::find($flats->id);
-        $flatUniqueViews = views($flat)->unique()->count();
-
-        //dd(views($flat)->unique()->count(Period::subDays(1)));
-
-        $flatViews->dataset($flats->title, 'line', [$flatUniqueViews]);
+        $flatUniqueViews = views($flat)->remember(now()->subDays($daysCount))->unique()->count();
+        array_push($arr_chart_dataset, $flatUniqueViews);
+        $flatViews->dataset($flats->title, 'line', [$arr_chart_dataset]);
         $totalViews += $flatUniqueViews;
+        $daysCount++;
     }
+    //dd(views($flat)->remember(now()->subDays($daysCount))->unique()->count());
+
     $flatViews->options(['display', false]);
     $flatViews->height(250);
     $flatViews->loader(true);
 
+//-------------------------------------------------------------------------------------------
+    $arr_days = [];
+    $arr_msg_by_day = [];
+
+    $filteredMessages = DB::table('flats')
+        ->join('messages', 'flats.id', '=', 'messages.flat_id')
+        ->where('flats.user_id', Auth::user()->id)
+        ->where('messages.created_at', '>', Carbon::today()->subDays(4))
+        ->get();
+
+    $msgsGroupedByDay = $filteredMessages
+        ->sortBy('created_at')
+        ->groupBy(function($date) {
+            return Carbon::parse($date->created_at)->format('Y-m-d');
+        })
+        ->map(function ($countByDay) {
+          return $countByDay->count();
+        });
+
+        $today1 = Carbon::today()->toDateString();
+        for ($i = 0; $i < 5; $i++) {
+          array_push($arr_days, Carbon::parse($today1)->format('Y-m-d'));
+          $today1 = Carbon::parse($today1)->subDay()->toDateString();
+        }
+
+
+
+        foreach ($msgsGroupedByDay as $key => $value) {
+          $arr_msg_by_day[$key] = $value;
+        }
+
+//dd($arr_msg_by_day);
+$arr_test=[];
+
+        foreach ($arr_days as $daysKey => $daysValue ) {
+          foreach ($arr_msg_by_day as $msgKey => $msgValue) {
+            array_push($arr_test, $msgKey);
+            if ($daysValue == $msgKey) {
+              //dd($msgValue);
+              if(!in_array($daysValue, $arr_msg_by_day)) {
+                $arr_msg_by_day[$daysValue] = $msgValue;
+              }
+              //$arr_msg_by_day[$daysValue] = $msgValue;
+            // } else if (!in_array($daysValue, $arr_msg_by_day)) {
+            //   $arr_msg_by_day[$daysValue] = 0;
+            else {
+              $arr_msg_by_day[$daysValue] = 0;
+            }
+            }
+
+          }
+        }
+dd($arr_msg_by_day);
+
+
+
+
+
+
     //MessageViews chart
     $messageViews = new MessageViews;
     $messageViews->labels($arr_chart_label);
-    $messageViews->dataset('Messaggi ricevuti', 'bar', [1, 2, 2.5, 3, 4]);
+    $messageViews->dataset('Messaggi ricevuti', 'bar', array_reverse($arr_msg_by_day));
     $messageViews->height(250);
     $messageViews->loader(true);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sponsorship;
 use Illuminate\Http\Request;
+use Braintree\Gateway;
 
 class SponsorshipController extends Controller
 {
@@ -14,7 +15,18 @@ class SponsorshipController extends Controller
      */
     public function index()
     {
-        //
+      $gateway = new Gateway([
+          'environment' => config('services.braintree.environment'),
+          'merchantId' => config('services.braintree.merchantId'),
+          'publicKey' => config('services.braintree.publicKey'),
+          'privateKey' => config('services.braintree.privateKey')
+      ]);
+
+      $token = $gateway->ClientToken()->generate();
+
+      return view('sponsorship', [
+        'token' => $token
+      ]);
     }
 
     /**

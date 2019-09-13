@@ -51055,7 +51055,9 @@ __webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
 
 __webpack_require__(/*! ./flat_api */ "./resources/js/flat_api.js");
 
-__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js"); // require('./sendmessage');
+__webpack_require__(/*! ./flatmap */ "./resources/js/flatmap.js");
+
+__webpack_require__(/*! ./sponsorship */ "./resources/js/sponsorship.js"); // require('./sendmessage');
 // jquery-ui
 
 
@@ -51204,11 +51206,6 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  var latUser = GetURLParameter('lat');
-  var lonUser = GetURLParameter('lon');
-  var raggioUser = GetURLParameter('radius');
-  console.log(latUser);
-  console.log(lonUser);
   $(".services input").click(function () {
     if ($(this).val() == '0') {
       $(this).val('1');
@@ -51227,10 +51224,9 @@ $(document).ready(function () {
     step: 10,
     stop: function stop(event, ui) {
       $("#maximum_radius").val(ui.value);
-      radius = $("#maximum_radius").val(); //console.log(radius);
-
-      var radiusFilter = filterByRadius(radius);
-      console.log(radiusFilter);
+      filter_data(); //console.log(radius);
+      //var radiusFilter = filterByRadius(radius);
+      //console.log(radiusFilter);
     }
   });
   $("#maximum_radius").val($("#radius_range").slider("value")); //slider stanze
@@ -51263,38 +51259,14 @@ $(document).ready(function () {
   $('.filter_checkbox').click(function () {
     filter_data();
   }); //Funzioni
-  //funzione che filtra gli appartamenti per il raggio impostato (20km di default)
-  //da modificare
-  //http://127.0.0.1:8000
-
-  function filterByRadius(radius) {
-    var flat_filtered_by_radius = [];
-    var distanze = [];
-    $.ajax({
-      'url': 'http://127.0.0.1:8000/api/searched_flats',
-      'method': 'GET',
-      'success': function success(flat) {
-        for (var i = 0; i < flat.length; i++) {
-          var currentLat = flat[i].lat;
-          var currentLon = flat[i].lon;
-          var distanza = distanzaAppartamenti(latUser, lonUser, currentLat, currentLon);
-
-          if (distanza < radius) {
-            flat_filtered_by_radius.push(flat[i]);
-          }
-        }
-      },
-      'error': function error() {
-        alert('errore');
-      }
-    });
-    return flat_filtered_by_radius;
-  } //funziona che filtra i data in base ai servizi selezionati
+  //funziona che filtra i data in base ai servizi selezionati
   //tramite ajax in post
-
 
   function filter_data() {
     var url = $('#filter-form').data('route');
+    var radius = $('#maximum_radius').val();
+    var userLat = $('#ricerca_lat').val();
+    var userLon = $('#ricerca_long').val();
     var room = $('#maximum_room').val();
     var bed = $('#maximum_bed').val();
     var wifi = get_filter('wifi');
@@ -51317,7 +51289,35 @@ $(document).ready(function () {
         sea_view: sea_view[0]
       },
       success: function success(data) {
-        console.log(data);
+        $('.appartamenti-filtrati').html('');
+        var data = reIndexArray(data);
+        var distanza;
+        var distanze = [];
+        var filter_data = [];
+
+        for (var i = 0; i < data.length; i++) {
+          distanza = distanzaAppartamenti(userLat, userLon, data[i]['lat'], data[i]['lon']);
+          distanze.push(distanza);
+          distanze.sort(function (a, b) {
+            return a - b;
+          });
+
+          for (var j = 0; j < distanze.length; j++) {
+            if (distanze[j] < radius && !filter_data.includes(data[i])) {
+              filter_data.push(data[i]);
+            }
+          }
+        }
+
+        var flatToDraw = flatBox(filter_data);
+
+        if (flatToDraw.length > 0) {
+          drawBox(flatToDraw);
+        } else {
+          $('.appartamenti-filtrati').append('<div class="col-md-6 offset-md-3">' + '<h3 class="text-warning">Nessun risultato</h3>' + '</div>');
+        }
+
+        console.log(filter_data);
       },
       'error': function error(_error) {
         console.log(_error);
@@ -51325,7 +51325,35 @@ $(document).ready(function () {
     });
   }
 
-  ; //funzione per ricavare i filtri selezionati
+  ;
+
+  function drawBox(box) {
+    var template = Handlebars.compile($('#template').html());
+    var html;
+
+    for (var field in box) {
+      html = template(box[field]);
+      $('.appartamenti-filtrati').append(html);
+    }
+  }
+
+  function flatBox(flat) {
+    var flats = [];
+
+    for (var i = 0; i < flat.length; i++) {
+      flats.push({
+        "title": flat[i].title,
+        "lan": flat[i].lan,
+        "lon": flat[i].lon,
+        "address": flat[i].address,
+        "description": flat[i].description,
+        "price": flat[i].price
+      });
+    }
+
+    return flats;
+  } //funzione per ricavare i filtri selezionati
+
 
   function get_filter(type_of_service) {
     var filter = [];
@@ -51335,26 +51363,17 @@ $(document).ready(function () {
     return filter;
   }
 
-  ;
-  console.log(get_filter('wifi')); // funzione per estrarre i parametri dall'url
+  ; //funzione per reindicizzare un array
 
-  function GetURLParameter(sParam) {
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
+  function reIndexArray(arr) {
+    var newArr = [];
+    var count = 0;
 
-    for (var i = 0; i < sURLVariables.length; i++) {
-      var sParameterName = sURLVariables[i].split('=');
-
-      if (sParameterName[0] == sParam) {
-        return sParameterName[1];
-      }
+    for (var i in arr) {
+      newArr[count++] = arr[i];
     }
-  }
 
-  ; // Convert Degress to Radians
-
-  function deg2Rad(deg) {
-    return deg * Math.PI / 180;
+    return newArr;
   } // Get Distance between two lat/lng points using the Haversine function
 
 
@@ -51368,7 +51387,23 @@ $(document).ready(function () {
     var d = R * c; // Return Distance in Kilometers
 
     return d;
-  }
+  } // Convert Degress to Radians
+
+
+  function deg2Rad(deg) {
+    return deg * Math.PI / 180;
+  } // funzione per estrarre i parametri dall'url
+  // function GetURLParameter(sParam){
+  //   var sPageURL = window.location.search.substring(1);
+  //   var sURLVariables = sPageURL.split('&');
+  //   for (var i = 0; i < sURLVariables.length; i++){
+  //       var sParameterName = sURLVariables[i].split('=');
+  //       if (sParameterName[0] == sParam){
+  //           return sParameterName[1];
+  //       }
+  //   }
+  // };
+
 });
 
 /***/ }),
@@ -51407,8 +51442,6 @@ $(document).ready(function () {
   // function to geolocate by address
   $('#geolocate_button').click(function () {
     /* Act on the event */
-    $('.selectaddress').find('option').remove();
-    var address;
     $.ajax({
       url: "https://api.tomtom.com/search/2/geocode/" + $('#address').val() + ".json?key=pRq4S3LGxAaZsWfuGGtYzBdlnBShmypz",
       type: "GET",
@@ -51416,8 +51449,9 @@ $(document).ready(function () {
       },
       success: function success(result) {
         for (var i = 0; i < result.results.length; i++) {
+          $('.selectaddress').append('<option class"selection" data-lon="' + result.results[i].position.lon + '" data-lat="' + result.results[i].position.lat + '" value="' + result.results[i].address.freeformAddress + '">' + result.results[i].address.freeformAddress + '</option>');
           $('.selectaddress').removeClass('hidden');
-          $('.selectaddress').append('<option data-lon="' + result.results[i].position.lon + '" data-lat="' + result.results[i].position.lat + '" value="' + result.results[i].address.freeformAddress + '">' + result.results[i].address.freeformAddress + '</option>');
+          $('.selectaddress').toggle();
         }
 
         $('.selectaddress').change(function () {
@@ -51473,6 +51507,23 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/js/sponsorship.js":
+/*!*************************************!*\
+  !*** ./resources/js/sponsorship.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(".setPrice").each(function () {
+  $(this).click(function () {
+    var prezzo = $(this).find('#prezzo').text();
+    console.log(prezzo);
+    $('#amount').val(prezzo);
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -51491,8 +51542,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

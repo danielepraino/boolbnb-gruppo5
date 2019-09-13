@@ -48,11 +48,28 @@
           <td>
             <a class="btn btn-secondary" href="{{ route('flats.show', $flat->id) }}">Visualizza</a>
             <a class="btn btn-warning" href="{{ route('flats.edit', $flat->id) }}">Modifica</a>
-            <form action="{{ route('flats.destroy', $flat->id) }}" method="post">
-              @method("DELETE")
-              @csrf
-              <input class="btn btn-danger" type="submit" name="" value="Cancella">
-            </form>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteApt{!! $flat->id !!}">Cancella</button>
+
+            <div class="modal fade" id="deleteApt{!! $flat->id !!}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Vuoi davvero cancellare il messaggio?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <form id="deleteForm{!! $flat->id !!}" action="{{ route('flats.destroy', $flat->id) }}" method="post">
+                      @method("DELETE")
+                      @csrf
+                      <button type="submit" class="btn btn-danger" form="deleteForm{!! $flat->id !!}" type="submit" >Si</button>
+                    </form>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </td>
         </tr>
 

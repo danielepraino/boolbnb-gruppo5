@@ -5,8 +5,6 @@ $(document).ready(function() {
     // function to geolocate by address
   $('#geolocate_button').click(function() {
     /* Act on the event */
-    $('.selectaddress').find('option').remove();
-    var address;
         $.ajax({
 
         url:"https://api.tomtom.com/search/2/geocode/" + $('#address').val() + ".json?key=pRq4S3LGxAaZsWfuGGtYzBdlnBShmypz",
@@ -15,9 +13,13 @@ $(document).ready(function() {
           // key: ''
         },
         success:function(result){
+
          for (var i = 0; i < result.results.length; i++) {
+
+           $('.selectaddress').append( '<option class"selection" data-lon="'+result.results[i].position.lon+'" data-lat="'+result.results[i].position.lat+'" value="'+result.results[i].address.freeformAddress+'">'+result.results[i].address.freeformAddress+ '</option>');
+
            $('.selectaddress').removeClass('hidden');
-           $('.selectaddress').append( '<option data-lon="'+result.results[i].position.lon+'" data-lat="'+result.results[i].position.lat+'" value="'+result.results[i].address.freeformAddress+'">'+result.results[i].address.freeformAddress+ '</option>');
+           $('.selectaddress').toggle();
          }
 
          $('.selectaddress').change(function(){

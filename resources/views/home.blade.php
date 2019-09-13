@@ -15,7 +15,6 @@
 
 {{-- Sezione 1: contenuto ricerca --}}
 @section('content')
-      <img src="images\hotels-in-heaven-four-seasons-resort-bali-outdoor-pool-oceanview-luxury.jpg" class="img-fluid"  alt="">
   {{-- contenuto centrale della pagina per la ricerca di un appartamento --}}
   <div class="ricerca">
     <h3>Ricerca un appartamento</h3>
@@ -32,16 +31,16 @@
           </select>
         </div>
 
-        <form method="get" enctype="multipart/form-data" action="{{ route('search') }}">
+        <form method="post" id = "search-form" enctype="multipart/form-data" action="{{ route('search') }}">
           @csrf
           <div class="form-group">
-            <input type="hidden"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">
+            <input type="hidden"  id = "ricerca_lat"  name="lat" value="">
           </div>
           <div class="form-group">
-            <input type="hidden"  id = "ricerca_long" placeholder="Inserisci la longitude" name="lon" value="">
+            <input type="hidden"  id = "ricerca_long"  name="lon" value="">
           </div>
           <div class="form-group">
-            <input type="hidden"  id = "ricerca_raggio" placeholder="Inserisci la longitude" name="radius" value="20">
+            <input type="hidden"  id = "ricerca_raggio"  name="radius" value="20">
           </div>
           <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
         </form>
@@ -54,33 +53,32 @@
 
 {{-- Sezione 2: contenuto appartamenti in evidenza (da valutare se farlo tramite ajax+handlebars) --}}
 @section('appartamenti_in_evidenza')
-  {{-- Contenuto appartamenti in evidenza --}}
-  <div class="container mt-5 ">
-    <div class="row">
-      @foreach ($flat as $flatPromoted)
-      <div class="col-sm-12 col-md-4 col-lg-3">
-        {{-- <h3>{{ $flatPromoted->title }}</h3> --}}
-        @if ($flatPromoted->image)
-          <img class="img-fluid" src="{{ asset('storage/'.$flatPromoted->image) }}" alt="immagine appartamento">
-        @else
-          <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/200x200/fff/aaa" alt="immagine appartamento"> </a>
-        @endif
-        <div class="dettagli">
-        <p>{{ $flatPromoted->address }}</p>
-        <p><small>{{ $flatPromoted->price . '€' }}</small></p>
-        </div>
-        <a class="btn btn-primary mb-5" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
-      </div>
-      @endforeach
+
+<div class="container">
+  <div class="row">
+    @foreach ($flat as $flatPromoted)
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 mb-4">
+      {{-- <h3>{{ $flatPromoted->title }}</h3> --}}
+      @if ($flatPromoted->image)
+        <img class="img-fluid" src="{{ asset('storage/'.$flatPromoted->image) }}" alt="immagine appartamento">
+      @else
+        <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/255x255/fff/aaa" alt="immagine appartamento"> </a>
+      @endif
+      <p>{{ $flatPromoted->address }}</p>
+      <p><small>{{ $flatPromoted->price . '€' }}</small></p>
+      <a class="btn btn-primary" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
+    </div>
+    @endforeach
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-12">
+      {{ $flat->links() }}
     </div>
   </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-12">
-        {{ $flat->links() }}
-      </div>
-    </div>
-  </div>
+</div>
+
 @endsection
 
 
