@@ -12168,10 +12168,29 @@ a:hover {
   color: #999999;
 }
 
+i {
+  color: orange;
+}
+
+.fa-search {
+  color: black;
+}
+
+.selectaddress {
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+  margin-left: 20px;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-40%, -40%);
+}
+
 .button {
   padding: 8px 20px;
-  background-color: transparent;
-  border: 1px solid #999999;
+  background-color: orange;
+  border: none;
   border-radius: 5px;
 }
 
@@ -12192,6 +12211,19 @@ a:hover {
 #singleflatmap {
   height: 512px;
   width: 100%;
+}
+
+header nav {
+  background-color: #5f6060 !important;
+}
+
+header nav .nav-item > a {
+  color: white;
+}
+
+header nav > .button {
+  background-color: orange;
+  border: none;
 }
 
 header nav img {
@@ -12259,17 +12291,22 @@ header nav img {
 .box_ricerca .input_ricerca #search_button {
   padding: 10px 20px;
   height: 43px;
+  right: 5px;
+  position: absolute;
 }
 
-.appartamenti_in_evidenza {
+.info_flat {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
-.box_appartamento {
-  width: 25%;
-  margin-bottom: 25px;
-  padding: 10px;
+.info_flat > small {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.info_flat > small #flat_price > span {
+  font-weight: bold;
 }
 
 .slider-margin {
@@ -12282,14 +12319,64 @@ header nav img {
 
 .slider_input {
   border: 0;
-  color: #343a40;
+  color: orange;
   font-weight: bold;
-  background-color: #f8fafc;
+  background-color: #5f6060;
   width: 30px;
 }
 
 .ui-slider {
   width: 150px;
+}
+
+.filter {
+  border: 1px solid black;
+  padding: 19px;
+  border-radius: 5px;
+  background-color: #5f6060;
+  color: white;
+}
+
+.filter_reset {
+  display: flex;
+  justify-content: center;
+}
+
+.filter_reset > .reset_filter_button {
+  font-weight: bold;
+}
+
+#service_label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.flat_box {
+  border-bottom: 1px solid #5f6060;
+}
+
+.img_info_flat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img_info_flat .info_flat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.img_info_flat .info_flat #flat_price > span {
+  font-size: 18px;
+}
+
+.img_info_flat .info_flat > small {
+  display: block;
+  font-size: 14px;
+}
+
+.img_info_flat .info_flat > small > i {
+  color: orange;
 }
 
 footer img {

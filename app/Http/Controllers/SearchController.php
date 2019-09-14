@@ -9,7 +9,7 @@ use App\Flat;
 class SearchController extends Controller
 {
     public function index(){
-        $flat = Flat::all();
+        $flat = Flat::where('visible', '=', "1")->get();
         $raggio = $_POST['radius'];
         $userLat = $_POST['lat'];
         $userLon = $_POST['lon'];

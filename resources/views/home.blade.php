@@ -15,25 +15,24 @@
 
 {{-- Sezione 1: contenuto ricerca --}}
 @section('content')
-      <img src="images\hotels-in-heaven-four-seasons-resort-bali-outdoor-pool-oceanview-luxury.jpg" class="img-fluid"  alt="">
+  <img src="images\hotels-in-heaven-four-seasons-resort-bali-outdoor-pool-oceanview-luxury.jpg" class="img-fluid"  alt="">
   {{-- contenuto centrale della pagina per la ricerca di un appartamento --}}
   <div class="ricerca">
     <h3>Ricerca un appartamento</h3>
 
     <div class="box_ricerca">
       <div class="input_ricerca">
-
-        <input id="address" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
-        <button id="geolocate_button" type="button" name="button">Daje</button>
-
-        <div id="risposta">
-          <select class="selectaddress hidden" name="">
-            <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
-          </select>
-        </div>
-
         <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
           @csrf
+          <input id="address" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
+          <button id="geolocate_button" type="button" name="button">Daje</button>
+
+          <div id="risposta">
+            <select class="selectaddress hidden" name="">
+              <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+            </select>
+          </div>
+
           <div class="form-group">
             <input type="hidden"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">
           </div>
@@ -66,8 +65,12 @@
           <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/255x255/fff/aaa" alt="immagine appartamento"> </a>
         @endif
         <div class="dettagli">
-        <p>{{ $flatPromoted->address }}</p>
-        <p><small>{{ $flatPromoted->price . '€' }}</small></p>
+          <p><i class="fas fa-map-marked"></i> {{ $flatPromoted->address }}</p>
+          <div class="info_flat">
+            <small> <i class="fas fa-bed"></i> {{ $flatPromoted->bed}}</small>
+            <small> <i class="fas fa-building"></i> {{ $flatPromoted->room}}</small>
+            <small id = "flat_price"> <i class="fas fa-euro-sign" ></i> <span>{{ $flatPromoted->price}}</span>/notte</small>
+          </div>
         </div>
         <a class="btn btn-primary mb-5" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
       </div>

@@ -16,6 +16,7 @@ class ResearchFlatController extends Controller
 
     $flats = DB::table('services')
                  ->join('flats', 'services.flat_id', '=', 'flats.id')
+                 ->where('visible', '=', "1")
                  ->get();
 
     if (\Request::ajax()) {

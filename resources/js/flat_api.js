@@ -8,54 +8,64 @@ $(document).ready(function() {
     }
   });
 
+  var html_no_filtered = $('.appartamenti-filtrati').html();
+
 
   //slider raggio
-    var radius;
-    var radiusFilter;
-
-    $( "#radius_range" ).slider({
-      range: "max",
-      min: 20,
-      max: 150,
-      value: 20,
-      step: 10,
-      stop: function (event, ui) {
-        $( "#maximum_radius" ).val( ui.value );
-        filter_data()
-        //console.log(radius);
-        //var radiusFilter = filterByRadius(radius);
-        //console.log(radiusFilter);
-      }
-    });
-    $( "#maximum_radius" ).val( $( "#radius_range" ).slider( "value" ) );
-
-
-  //slider stanze
-    $( "#room_range" ).slider({
-      range: "max",
-      min: 1,
-      max: 10,
-      value: 1,
-      stop: function( event, ui ) {
-        $( "#maximum_room" ).val( ui.value );
-        filter_data();
-      }
-    });
-    $( "#maximum_room" ).val( $( "#room_range" ).slider( "value" ) );
+    function radiusSlider() {
+      $( "#radius_range" ).slider({
+        range: "max",
+        min: 20,
+        max: 150,
+        value: 20,
+        step: 10,
+        stop: function (event, ui) {
+          $( "#maximum_radius" ).val( ui.value );
+          filter_data()
+          //console.log(radius);
+          //var radiusFilter = filterByRadius(radius);
+          //console.log(radiusFilter);
+        }
+      });
+      $( "#maximum_radius" ).val( $( "#radius_range" ).slider( "value" ) );
+    }
+    radiusSlider();
 
 
-  //slider posti letto
-    $( "#bed_range" ).slider({
-      range: "max",
-      min: 2,
-      max: 20,
-      value: 2,
-      stop: function( event, ui ) {
-        $( "#maximum_bed" ).val( ui.value );
-        filter_data();
-      }
-    });
-    $( "#maximum_bed" ).val( $( "#bed_range" ).slider( "value" ) );
+    //slider stanze
+
+    function roomSlider() {
+        $( "#room_range" ).slider({
+          range: "max",
+          min: 0,
+          max: 10,
+          value: 0,
+          stop: function( event, ui ) {
+            $( "#maximum_room" ).val( ui.value );
+            filter_data();
+          }
+        });
+        $( "#maximum_room" ).val( $( "#room_range" ).slider( "value" ) );
+    }
+    roomSlider();
+
+
+    //slider posti letto
+    function bedSlider() {
+
+        $( "#bed_range" ).slider({
+          range: "max",
+          min: 0,
+          max: 20,
+          value: 0,
+          stop: function( event, ui ) {
+            $( "#maximum_bed" ).val( ui.value );
+            filter_data();
+          }
+        });
+        $( "#maximum_bed" ).val( $( "#bed_range" ).slider( "value" ) );
+    }
+    bedSlider()
 
     //al click delle checkbox filtra i dati in base
     //alla checkbox cliccata
@@ -63,6 +73,21 @@ $(document).ready(function() {
         filter_data();
     });
 
+    $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
+
+    var letti =  $('#maximum_bed').val();
+
+    $('.reset_filter_button').click(function () {
+      $( "#radius_range" ).slider("destroy");
+      $( "#bed_range" ).slider("destroy");
+      $("#room_range").slider("destroy");
+      $('#filter-form')[0].reset();
+      radiusSlider();
+      bedSlider();
+      roomSlider();
+      $('.appartamenti-filtrati').html(html_no_filtered);
+      $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
+    });
 
 
   //Funzioni
@@ -111,6 +136,8 @@ $(document).ready(function() {
             var flatToDraw = flatBox(filter_data);
             if (flatToDraw.length > 0) {
               drawBox(flatToDraw);
+              $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
+
             }else {
               $('.appartamenti-filtrati').append(
               '<div class="col-md-6 offset-md-3">'+
@@ -146,7 +173,10 @@ $(document).ready(function() {
         "lon": flat[i].lon,
         "address": flat[i].address,
         "description": flat[i].description,
-        "price": flat[i].price
+        "price": flat[i].price,
+        "counter": i,
+        "bed": flat[i].bed,
+        "room": flat[i].room
       });
     }
     return flats

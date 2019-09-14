@@ -1,6 +1,18 @@
 header {
 
   nav {
+    background-color: #5f6060 !important;
+
+    .nav-item > a{
+      color: white;
+    }
+
+    & > .button{
+      background-color: orange;
+      border: none;
+    }
+
+
 
     img {
 

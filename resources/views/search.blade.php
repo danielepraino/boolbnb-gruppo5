@@ -11,17 +11,20 @@
     <div class="box_ricerca">
       <div class="input_ricerca">
 
-        <input id="address" type="text" name="address" value="{{ old('address') }}" placeholder="Inserisci Indirizzo">
-        <button id="geolocate_button" type="button" name="button">Daje</button>
 
-        <div id="risposta">
-          <select class="selectaddress hidden" name="">
-            <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
-          </select>
-        </div>
 
         <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
           @csrf
+
+          <input id="address" type="text" name="address" value="{{ old('address') }}" placeholder="Inserisci Indirizzo">
+          <button id="geolocate_button" type="button" name="button">Daje</button>
+
+          <div id="risposta">
+            <select class="selectaddress hidden" name="">
+              <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+            </select>
+          </div>
+
           <div class="form-group">
             <input type="hidden"  id = "ricerca_lat" name="lat" value="
             @php
@@ -47,7 +50,7 @@
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-xs-12 col-sm-12 col-md-3">
         <div class="filter">
 
           <div class="filter-slider">
@@ -84,7 +87,7 @@
             <div class="services">
               <div class="form-group">
                 <ul class="list-group list-unstyled">
-                  <label>Servizi</label>
+                  <label id = "service_label">Servizi</label>
                   <li><label><input class="mr-2 wifi filter_checkbox" type="checkbox" autocomplete="off" name="wifi" value="0"/>Wifi</label></li>
                   <li><label><input class="mr-2 parking filter_checkbox" type="checkbox" autocomplete="off" name="parking" value="0"/>Parcheggio</label></li>
                   <li><label><input class="mr-2 pool filter_checkbox" type="checkbox" autocomplete="off" name="pool" value="0"/>Piscina</label></li>
@@ -96,19 +99,27 @@
             </div>
             {{-- <button type="submit">filtra</button> --}}
         </form>
+        <div class="filter_reset">
+          <button type="button" name="button" class ="btn btn-secondary reset_filter_button button">Resetta filtri</button>
+        </div>
         </div>
       </div>
       {{-- container appartamenti --}}
       <div class="col-md-9 appartamenti-filtrati">
        @forelse ($filtered_flat as $filtered)
-
-           <div class="col-md-9">
-             <div class="flat_box">
-               <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
-               <h3 id = "flat_title">Titolo: {{ $filtered->title }}</h3>
-               <small id = "flat_address">Indirizzo: {{ $filtered->address }}</small>
-               <p id = "flat_description">Descrizione: {{ $filtered->description }}</p>
-               <small id = "flat_price">Prezzo: {{ $filtered->price }} </small>
+           <div class="col-xs-12 col-sm-12 col-md-12 mt-5">
+             <div class="flat_box appartamento-@php $i = 0; echo($i++); @endphp">
+               <h3 id = "flat_title">{{ $filtered->title }}</h3>
+               <div class="img_info_flat">
+                 <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+                 <div class="info_flat">
+                   <small id = "flat_address">{{ $filtered->address }} <i class="fas fa-map-marked"></i> </small>
+                   <small id= "flat_bed">{{$filtered->bed}} <i class="fas fa-bed"></i></small>
+                   <small id= "flat_room"> {{$filtered->room}} <i class="fas fa-building"></i></small>
+                   <small id = "flat_price"><i class="fas fa-euro-sign"></i> <span>{{ $filtered->price }}</span> per notte</small>
+                 </div>
+               </div>
+               <p id = "flat_description">{{ $filtered->description }}</p>
              </div>
            </div>
       @empty
@@ -118,20 +129,25 @@
       @endforelse
     </div>
 
-
     </div>
   </div>
 @stop
 
 @section('handlebars')
   <script id="template" type="text/x-handlebars-template">
-    <div class="col-md-9">
-      <div class="flat_box">
-        <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
-        <h3 id = "flat_title mt-2">Titolo: @{{title}}</h3>
-        <small id = "flat_address" data-lat ="@{{lan}}" data-lon ="@{{lon}}">Indirizzo: @{{address}}</small>
-        <p id = "flat_description">Descrizione: @{{description}}</p>
-        <small id = "flat_price">Prezzo: @{{price}} </small>
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-5">
+      <div class="flat_box appartamento-@{{counter}}">
+        <h3 id = "flat_title">@{{title}}</h3>
+        <div class="img_info_flat">
+          <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+          <div class="info_flat">
+            <small id = "flat_address" data-lat ="@{{lan}}" data-lon ="@{{lon}}">@{{address}} <i class="fas fa-map-marked"></i> </small>
+            <small id= "flat_bed">@{{bed}} <i class="fas fa-bed"></i></small>
+            <small id= "flat_room"> @{{room}} <i class="fas fa-building"></i></small>
+            <small id = "flat_price"><i class="fas fa-euro-sign"></i> <span>@{{price}}</span> per notte</small>
+          </div>
+        </div>
+        <p id = "flat_description">@{{description}}</p>
       </div>
     </div>
   </script>
