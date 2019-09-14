@@ -8,6 +8,7 @@ use Braintree\Gateway;
 use Auth;
 use App\Flat;
 use Carbon\Carbon;
+use DB;
 
 class SponsorshipController extends Controller
 {
@@ -18,8 +19,12 @@ class SponsorshipController extends Controller
      */
     public function index()
     {
+      $sponsoreds = DB::table('flats')
+            ->join('sponsorships', 'flats.id', '=', 'sponsorships.flat_id')
+            ->whereDate('sponsorships_expires', '>', Carbon::now())
+            ->get();
 
-      return view('sponsorship.index');
+      return view('sponsorship.index',compact('sponsoreds'));
     }
 
     /**
@@ -53,10 +58,7 @@ class SponsorshipController extends Controller
         }
       }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> rebase
     }
 
     /**

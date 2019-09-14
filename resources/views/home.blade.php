@@ -68,12 +68,15 @@
   </div>
 @endsection
 {{-- Fine sezione 1 --}}
+@section('appartamento_sponsorizzati')
 
+@endsection
 
 {{-- Sezione 2: contenuto appartamenti in evidenza (da valutare se farlo tramite ajax+handlebars) --}}
 @section('appartamenti_in_evidenza')
   {{-- Contenuto appartamenti in evidenza --}}
   <div class="container mt-5 ">
+
     <div class="row">
       @foreach ($flat as $flatPromoted)
       <div class="col-sm-12 col-md-4 col-lg-3">
