@@ -13,7 +13,7 @@ class FlatsTableSeeder extends Seeder
     public function run()
     {
       $faker = Faker::create('it_IT');
-      for ($i=0; $i < 1000; $i++) {
+      for ($i=0; $i < 100; $i++) {
         $newFlat = new Flat();
         $newFlat->title = $faker->sentence($nbWords = 6, $variableNbWords = true);
         $newFlat->description = $faker->text($maxNbChars = 200);

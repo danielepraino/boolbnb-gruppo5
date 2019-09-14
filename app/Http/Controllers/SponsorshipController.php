@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Sponsorship;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
+use Auth;
+use App\Flat;
 
 class SponsorshipController extends Controller
 {
@@ -35,9 +37,22 @@ class SponsorshipController extends Controller
 
       $token = $gateway->ClientToken()->generate();
 
-      return view('sponsorship.create', [
-        'token' => $token
-      ]);
+      $flatId = $request->flatId;
+
+      $flat = Flat::where('flats.id', $flatId)->get();
+
+      foreach ($flat as $flatValue) {
+        if (Auth::user()->id == $flatValue->user_id) {
+          return view('sponsorship.create', [
+            'token' => $token,
+            'flatValue' => $flatValue
+          ]);
+        } else {
+          abort(403, 'Unauthorized action.');
+        }
+      }
+
+
     }
 
     /**
@@ -48,13 +63,6 @@ class SponsorshipController extends Controller
      */
     public function store(Request $request)
     {
-
-      $newSponsorship = new Sponsorship;
-      $newSponsorship->price = $request->get('price');
-      $newSponsorship->duration = $request->get('duration');
-      $newSponsorship->flat_id = $request->get('flat_id');
-      $newSponsorship->save();
-
       //return redirect()->route('home');
     }
 

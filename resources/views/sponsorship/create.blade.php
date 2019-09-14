@@ -6,6 +6,8 @@
 
 @section('content')
 
+  @if (Auth::user()->id == $flatValue->user_id)
+
   <div class="container mt-5">
     <div class="row">
       <div class="col">
@@ -67,7 +69,8 @@
                   <div class="col-12">
                     <label for="amount">
                         <div class="input-wrapper amount-wrapper">
-                          <input id="duration" name="duration" type="hidden" min="1" value="">
+                          <input id="flat_id" name="flat_id" type="hidden" value="{{ $_GET['flatId'] }}">
+                          <input id="duration" name="duration" type="hidden" value="">
                           <input id="amount" name="amount" type="hidden" min="1" value="">
                         </div>
                     </label>
@@ -93,6 +96,10 @@
       </div>
     </div>
   </div>
+
+  @else
+    <h1 class="text-danger">Non puoi accedere a questa pagina</h1>
+  @endif
 
   <script src="https://js.braintreegateway.com/web/dropin/1.20.1/js/dropin.min.js"></script>
   <script>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
 use Auth;
+use App\Sponsorship;
 
 class CheckoutController extends Controller
 {
@@ -25,7 +26,7 @@ class CheckoutController extends Controller
         'customer' => [
           'firstName' => Auth::user()->name ? Auth::user()->name : Auth::user()->email,
           'lastName' => Auth::user()->surname,
-          'email' => Auth::user()->email
+          'email' => Auth::user()->email,
         ],
         'options' => [
             'submitForSettlement' => true
@@ -34,6 +35,13 @@ class CheckoutController extends Controller
 
     if ($result->success) {
         $transaction = $result->transaction;
+
+        $newSponsorship = new Sponsorship;
+        $newSponsorship->price = $request->amount;
+        $newSponsorship->duration = $request->duration;
+        $newSponsorship->flat_id = $request->flat_id;
+        $newSponsorship->save();
+
         //header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
         return back()->with('success_message', 'Transaction successful. The ID is:' .$transaction->id);
     } else {

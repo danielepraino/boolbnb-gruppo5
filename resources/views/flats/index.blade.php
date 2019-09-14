@@ -49,6 +49,7 @@
             <a class="btn btn-secondary" href="{{ route('flats.show', $flat->id) }}">Visualizza</a>
             <a class="btn btn-warning" href="{{ route('flats.edit', $flat->id) }}">Modifica</a>
             <a class="btn btn-success" href="{{ route('sponsorship.create', 'flatId='.$flat->id) }}">Sponsorizza</a>
+            <a class="btn btn-info" href="{{ route('statistic', 'flatId='.$flat->id) }}">Statistiche</a>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteApt{!! $flat->id !!}">Cancella</button>
 
             <div class="modal fade" id="deleteApt{!! $flat->id !!}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
