@@ -46,17 +46,17 @@
           <td>{{ $flat->address }}</td>
           <td><img class="flat-preview" src="{{ asset('storage/'.$flat->image) }}" alt="immagine appartamento"></td>
           <td>
-            <a class="btn btn-secondary" href="{{ route('flats.show', $flat->id) }}">Visualizza</a>
-            <a class="btn btn-warning" href="{{ route('flats.edit', $flat->id) }}">Modifica</a>
-            <a class="btn btn-success" href="{{ route('sponsorship.create', 'flatId='.$flat->id) }}">Sponsorizza</a>
-            <a class="btn btn-info" href="{{ route('statistic', 'flatId='.$flat->id) }}">Statistiche</a>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteApt{!! $flat->id !!}">Cancella</button>
+            <a title="Visualizza" href="{{ route('flats.show', $flat->id) }}"><i class="fas fa-eye"></i></a>
+            <a title="Modifica" href="{{ route('flats.edit', $flat->id) }}"><i class="fas fa-edit"></i></a>
+            <a title="Sponsorizza" href="{{ route('sponsorship.create', 'flatId='.$flat->id) }}"><i class="fas fa-rocket"></i></a>
+            <a title="Statistiche" href="{{ route('statistic', 'flatId='.$flat->id) }}"><i class="fas fa-chart-line"></i></a>
+            <button type="button" title="Cancella" data-toggle="modal" data-target="#deleteApt{!! $flat->id !!}"><i class="fas fa-trash"></i></button>
 
             <div class="modal fade" id="deleteApt{!! $flat->id !!}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Vuoi davvero cancellare il messaggio?</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Vuoi davvero cancellare l'appartamento?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+  @if (Auth::user()->id == $flat->user_id)
   <div class="container mt-5">
     <h1 class="mb-5">Statistiche appartamento {{ $flat->title }}</h1>
     <div class="row text-center mb-5">
@@ -29,4 +31,8 @@
     {!! $flatViews->script() !!}
     {!! $messageViews->script() !!}
   </div>
+  @else
+    <h1 class="text-danger">Non puoi accedere a queste statistiche!</h1>
+  @endif
+
 @endsection

@@ -99,7 +99,7 @@ class FlatController extends Controller
       $newService->flat_id = $newFlat->id;
       $newService->save();
 
-      if (Auth::user()) {
+      if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('home');
       } else {
         abort(403, 'Unauthorized action.');
@@ -190,7 +190,7 @@ class FlatController extends Controller
 
       $newService->update($data);
 
-      if (Auth::user()) {
+      if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('flats.index');
       } else {
         abort(403, 'Unauthorized action.');
@@ -206,10 +206,10 @@ class FlatController extends Controller
      */
     public function destroy($flatId)
     {
-
+      $newFlat = Flat::find($flatId);
       $flat = Flat::find($flatId)->delete();
 
-      if (Auth::user()) {
+      if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('flats.index');
       } else {
         abort(403, 'Unauthorized action.');

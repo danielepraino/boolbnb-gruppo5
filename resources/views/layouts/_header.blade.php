@@ -23,6 +23,11 @@
                     ->join('flats', 'users.id', '=', 'flats.user_id')
                     ->where('users.id', Auth::user()->id)
                     ->get();
+
+            $currentUserMessages = DB::table('messages')
+                    ->join('flats', 'messages.flat_id', '=', 'flats.id')
+                    ->where('flats.user_id', Auth::user()->id)
+                    ->get();
           @endphp
 
           @if ($currentUserFlats->isEmpty())
@@ -42,7 +47,7 @@
                 <a href="{{ route('sponsorship.index') }}">Sponsorizzazioni</a>
               </li>
               <li class="nav-item mr-5">
-                <a href="{{ route('messages.index') }}">Messaggi</a>
+                <a href="{{ route('messages.index') }}">Messaggi <span class="badge badge-pill badge-warning">{{ count($currentUserMessages) }}</span></a>
               </li>
               <li class="nav-item mr-5">
                 <a href="{{ route('flats.index') }}">I miei appartamenti</a>

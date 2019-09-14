@@ -73,6 +73,10 @@ class StatisticController extends Controller
     $messageViews->height(250);
     $messageViews->loader(true);
 
-    return view('statistic', compact('flat', 'flatViews', 'messageViews', 'totalUniqueViews', 'totalMessages'));
+    if (Auth::user()->id == $flat->user_id) {
+      return view('statistic', compact('flat', 'flatViews', 'messageViews', 'totalUniqueViews', 'totalMessages'));
+    } else {
+      abort(403, 'Unauthorized action.');
+    }
   }
 }
