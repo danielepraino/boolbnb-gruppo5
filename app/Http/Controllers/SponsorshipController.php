@@ -52,6 +52,10 @@ class SponsorshipController extends Controller
         }
       }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> rebase
     }
 
     /**

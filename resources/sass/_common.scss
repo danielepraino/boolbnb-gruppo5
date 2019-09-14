@@ -3,6 +3,7 @@ a:hover{
   color: $grey;
 }
 
+<<<<<<< HEAD
 i{
   color: orange;
 }
@@ -26,6 +27,12 @@ i{
   padding: 8px 20px;
   background-color: orange;
   border: none;
+=======
+.button{
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 1px solid $grey;
+>>>>>>> rebase
   border-radius: 5px;
 }
 

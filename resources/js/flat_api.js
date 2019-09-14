@@ -8,6 +8,7 @@ $(document).ready(function() {
     }
   });
 
+<<<<<<< HEAD
   var html_no_filtered = $('.appartamenti-filtrati').html();
 
 
@@ -66,6 +67,56 @@ $(document).ready(function() {
         $( "#maximum_bed" ).val( $( "#bed_range" ).slider( "value" ) );
     }
     bedSlider()
+=======
+
+  //slider raggio
+    var radius;
+    var radiusFilter;
+
+    $( "#radius_range" ).slider({
+      range: "max",
+      min: 20,
+      max: 150,
+      value: 20,
+      step: 10,
+      stop: function (event, ui) {
+        $( "#maximum_radius" ).val( ui.value );
+        filter_data()
+        //console.log(radius);
+        //var radiusFilter = filterByRadius(radius);
+        //console.log(radiusFilter);
+      }
+    });
+    $( "#maximum_radius" ).val( $( "#radius_range" ).slider( "value" ) );
+
+
+  //slider stanze
+    $( "#room_range" ).slider({
+      range: "max",
+      min: 1,
+      max: 10,
+      value: 1,
+      stop: function( event, ui ) {
+        $( "#maximum_room" ).val( ui.value );
+        filter_data();
+      }
+    });
+    $( "#maximum_room" ).val( $( "#room_range" ).slider( "value" ) );
+
+
+  //slider posti letto
+    $( "#bed_range" ).slider({
+      range: "max",
+      min: 2,
+      max: 20,
+      value: 2,
+      stop: function( event, ui ) {
+        $( "#maximum_bed" ).val( ui.value );
+        filter_data();
+      }
+    });
+    $( "#maximum_bed" ).val( $( "#bed_range" ).slider( "value" ) );
+>>>>>>> rebase
 
     //al click delle checkbox filtra i dati in base
     //alla checkbox cliccata
@@ -73,6 +124,7 @@ $(document).ready(function() {
         filter_data();
     });
 
+<<<<<<< HEAD
     $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
 
     var letti =  $('#maximum_bed').val();
@@ -88,6 +140,8 @@ $(document).ready(function() {
       $('.appartamenti-filtrati').html(html_no_filtered);
       $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
     });
+=======
+>>>>>>> rebase
 
 
   //Funzioni
@@ -136,8 +190,11 @@ $(document).ready(function() {
             var flatToDraw = flatBox(filter_data);
             if (flatToDraw.length > 0) {
               drawBox(flatToDraw);
+<<<<<<< HEAD
               $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
 
+=======
+>>>>>>> rebase
             }else {
               $('.appartamenti-filtrati').append(
               '<div class="col-md-6 offset-md-3">'+
@@ -173,10 +230,14 @@ $(document).ready(function() {
         "lon": flat[i].lon,
         "address": flat[i].address,
         "description": flat[i].description,
+<<<<<<< HEAD
         "price": flat[i].price,
         "counter": i,
         "bed": flat[i].bed,
         "room": flat[i].room
+=======
+        "price": flat[i].price
+>>>>>>> rebase
       });
     }
     return flats

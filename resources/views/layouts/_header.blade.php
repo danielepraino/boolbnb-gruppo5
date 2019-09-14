@@ -1,5 +1,9 @@
 <header>
+<<<<<<< HEAD
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+=======
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+>>>>>>> rebase
     <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('images/logo_3.png')}}" alt="logo bool bnb"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,11 +27,14 @@
                     ->join('flats', 'users.id', '=', 'flats.user_id')
                     ->where('users.id', Auth::user()->id)
                     ->get();
+<<<<<<< HEAD
 
             $currentUserMessages = DB::table('messages')
                     ->join('flats', 'messages.flat_id', '=', 'flats.id')
                     ->where('flats.user_id', Auth::user()->id)
                     ->get();
+=======
+>>>>>>> rebase
           @endphp
 
           @if ($currentUserFlats->isEmpty())
@@ -44,10 +51,20 @@
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item mr-5">
+<<<<<<< HEAD
                 <a href="{{ route('sponsorship.index') }}">Sponsorizzazioni</a>
               </li>
               <li class="nav-item mr-5">
                 <a href="{{ route('messages.index') }}">Messaggi <span class="badge badge-pill badge-warning">{{ count($currentUserMessages) }}</span></a>
+=======
+                <a href="{{ route('sponsorship.index') }}">Sponsorizza</a>
+              </li>
+              <li class="nav-item mr-5">
+                <a href="{{ route('statistic') }}">Statistiche</a>
+              </li>
+              <li class="nav-item mr-5">
+                <a href="{{ route('messages.index') }}">Messaggi</a>
+>>>>>>> rebase
               </li>
               <li class="nav-item mr-5">
                 <a href="{{ route('flats.index') }}">I miei appartamenti</a>

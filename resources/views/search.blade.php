@@ -11,6 +11,7 @@
     <div class="box_ricerca">
       <div class="input_ricerca">
 
+<<<<<<< HEAD
 
 
         <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
@@ -25,6 +26,19 @@
             </select>
           </div>
 
+=======
+        <input id="address" type="text" name="address" value="{{ old('address') }}" placeholder="Inserisci Indirizzo">
+        <button id="geolocate_button" type="button" name="button">Daje</button>
+
+        <div id="risposta">
+          <select class="selectaddress hidden" name="">
+            <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+          </select>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
+          @csrf
+>>>>>>> rebase
           <div class="form-group">
             <input type="hidden"  id = "ricerca_lat" name="lat" value="
             @php
@@ -50,7 +64,11 @@
 
   <div class="container mt-5">
     <div class="row">
+<<<<<<< HEAD
       <div class="col-xs-12 col-sm-12 col-md-3">
+=======
+      <div class="col-md-3">
+>>>>>>> rebase
         <div class="filter">
 
           <div class="filter-slider">
@@ -87,7 +105,11 @@
             <div class="services">
               <div class="form-group">
                 <ul class="list-group list-unstyled">
+<<<<<<< HEAD
                   <label id = "service_label">Servizi</label>
+=======
+                  <label>Servizi</label>
+>>>>>>> rebase
                   <li><label><input class="mr-2 wifi filter_checkbox" type="checkbox" autocomplete="off" name="wifi" value="0"/>Wifi</label></li>
                   <li><label><input class="mr-2 parking filter_checkbox" type="checkbox" autocomplete="off" name="parking" value="0"/>Parcheggio</label></li>
                   <li><label><input class="mr-2 pool filter_checkbox" type="checkbox" autocomplete="off" name="pool" value="0"/>Piscina</label></li>
@@ -99,14 +121,18 @@
             </div>
             {{-- <button type="submit">filtra</button> --}}
         </form>
+<<<<<<< HEAD
         <div class="filter_reset">
           <button type="button" name="button" class ="btn btn-secondary reset_filter_button button">Resetta filtri</button>
         </div>
+=======
+>>>>>>> rebase
         </div>
       </div>
       {{-- container appartamenti --}}
       <div class="col-md-9 appartamenti-filtrati">
        @forelse ($filtered_flat as $filtered)
+<<<<<<< HEAD
            <div class="col-xs-12 col-sm-12 col-md-12 mt-5">
              <div class="flat_box appartamento-@php $i = 0; echo($i++); @endphp">
                <h3 id = "flat_title">{{ $filtered->title }}</h3>
@@ -120,6 +146,16 @@
                  </div>
                </div>
                <p id = "flat_description">{{ $filtered->description }}</p>
+=======
+
+           <div class="col-md-9">
+             <div class="flat_box">
+               <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+               <h3 id = "flat_title">Titolo: {{ $filtered->title }}</h3>
+               <small id = "flat_address">Indirizzo: {{ $filtered->address }}</small>
+               <p id = "flat_description">Descrizione: {{ $filtered->description }}</p>
+               <small id = "flat_price">Prezzo: {{ $filtered->price }} </small>
+>>>>>>> rebase
              </div>
            </div>
       @empty
@@ -129,12 +165,17 @@
       @endforelse
     </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> rebase
     </div>
   </div>
 @stop
 
 @section('handlebars')
   <script id="template" type="text/x-handlebars-template">
+<<<<<<< HEAD
     <div class="col-xs-12 col-sm-12 col-md-12 mt-5">
       <div class="flat_box appartamento-@{{counter}}">
         <h3 id = "flat_title">@{{title}}</h3>
@@ -148,6 +189,15 @@
           </div>
         </div>
         <p id = "flat_description">@{{description}}</p>
+=======
+    <div class="col-md-9">
+      <div class="flat_box">
+        <img src="https://dummyimage.com/100x100/fff/aaa" alt="">
+        <h3 id = "flat_title mt-2">Titolo: @{{title}}</h3>
+        <small id = "flat_address" data-lat ="@{{lan}}" data-lon ="@{{lon}}">Indirizzo: @{{address}}</small>
+        <p id = "flat_description">Descrizione: @{{description}}</p>
+        <small id = "flat_price">Prezzo: @{{price}} </small>
+>>>>>>> rebase
       </div>
     </div>
   </script>

@@ -1,11 +1,16 @@
 @extends('index')
 
 @section('title')
+<<<<<<< HEAD
   Sommario sponsorizzazioni
+=======
+  Promozioni appartamenti
+>>>>>>> rebase
 @endsection
 
 @section('content')
 
+<<<<<<< HEAD
   <div class="container mt-10">
     <h1 class="float-left mb-5">Sommario sponsorizzazioni</h1>
     <table class="table table-striped text-center table-styled">
@@ -47,4 +52,14 @@
 
   </div>
 
+=======
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+      <h1>Sommario sponsorizzazioni</h1>
+      </div>
+    </div>
+  </div>
+  
+>>>>>>> rebase
 @endsection
