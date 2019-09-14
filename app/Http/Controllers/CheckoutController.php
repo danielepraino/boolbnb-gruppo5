@@ -34,12 +34,15 @@ class CheckoutController extends Controller
     ]);
 
     if ($result->success) {
+
+        $date = Carbon::now();
         $transaction = $result->transaction;
 
         $newSponsorship = new Sponsorship;
         $newSponsorship->price = $request->amount;
         $newSponsorship->duration = $request->duration;
         $newSponsorship->flat_id = $request->flat_id;
+        $newSponsorship->sponsorships_expires = $date->add($request->duration, 'day');
         $newSponsorship->save();
 
         //header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
