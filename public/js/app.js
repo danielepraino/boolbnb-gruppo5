@@ -51577,8 +51577,13 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< Updated upstream
 __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/BoolBnbProject/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> Stashed changes
 
 
 /***/ })
