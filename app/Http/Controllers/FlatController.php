@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Flat;
 use App\Service;
+use App\Sponsorship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -58,7 +59,7 @@ class FlatController extends Controller
         "bathroom" => "required|regex:/^[0-9]*$/|max:3",
         "sm" => "required|regex:/^[0-9]*$/|max:5",
         "address" => "required|max:255",
-        "image" => "nullable|max:255",
+        "image" => "nullable|max:2550",
         "price" => "required|regex:/^[0-9]*$/|max:5",
       ]);
 
@@ -99,7 +100,7 @@ class FlatController extends Controller
       $newService->flat_id = $newFlat->id;
       $newService->save();
 
-      if (Auth::user()) {
+      if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('home');
       } else {
         abort(403, 'Unauthorized action.');
@@ -159,7 +160,7 @@ class FlatController extends Controller
         "bathroom" => "required|regex:/^[0-9]*$/|max:3",
         "sm" => "required|regex:/^[0-9]*$/|max:5",
         "address" => "required|max:255",
-        "image" => "nullable|max:255",
+        "image" => "nullable|max:2550",
         "price" => "required|regex:/^[0-9]*$/|max:5",
       ]);
 
@@ -190,7 +191,7 @@ class FlatController extends Controller
 
       $newService->update($data);
 
-      if (Auth::user()) {
+      if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('flats.index');
       } else {
         abort(403, 'Unauthorized action.');
@@ -206,10 +207,11 @@ class FlatController extends Controller
      */
     public function destroy($flatId)
     {
-
+      $newFlat = Flat::find($flatId);
       $flat = Flat::find($flatId)->delete();
 
-      if (Auth::user()) {
+
+      if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('flats.index');
       } else {
         abort(403, 'Unauthorized action.');

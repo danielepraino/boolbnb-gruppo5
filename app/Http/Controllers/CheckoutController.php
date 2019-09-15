@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Braintree\Gateway;
 use Auth;
 use App\Sponsorship;
+use Carbon\Carbon;
+
 
 class CheckoutController extends Controller
 {
@@ -34,16 +36,21 @@ class CheckoutController extends Controller
     ]);
 
     if ($result->success) {
+
+        $date = Carbon::now();
         $transaction = $result->transaction;
 
         $newSponsorship = new Sponsorship;
         $newSponsorship->price = $request->amount;
         $newSponsorship->duration = $request->duration;
         $newSponsorship->flat_id = $request->flat_id;
+        $newSponsorship->sponsorships_expires = $date->add($request->duration, 'day');
         $newSponsorship->save();
 
         //header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-        return back()->with('success_message', 'Transaction successful. The ID is:' .$transaction->id);
+
+        return back()->with('success_message', 'Transazione avvenuta con successo! ID:' .$transaction->id);
+
     } else {
         $errorString = "";
 
@@ -53,7 +60,9 @@ class CheckoutController extends Controller
 
         // $_SESSION["errors"] = $errorString;
         // header("Location: " . $baseUrl . "index.php");
-        return back()->withErrors('An error occurred with the message:' .$result->message);
+
+        return back()->withErrors('Sembra ci sia un problema con la transazione. Errore:' .$result->message);
+
     }
 
 

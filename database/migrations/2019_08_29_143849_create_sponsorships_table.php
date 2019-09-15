@@ -18,7 +18,9 @@ class CreateSponsorshipsTable extends Migration
             $table->integer('duration');
             $table->float('price', 6, 2);
             $table->integer('flat_id');
+            $table->dateTime('sponsorships_expires');
             $table->timestamps();
+
         });
     }
 

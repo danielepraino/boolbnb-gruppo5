@@ -19,8 +19,11 @@ class CreateMessagesTable extends Migration
             $table->string('subject');
             $table->string('message');
             $table->integer('flat_id');
+
             $table->timestamps();
+
         });
+
     }
 
     /**

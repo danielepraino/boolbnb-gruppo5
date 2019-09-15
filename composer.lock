@@ -3329,9 +3329,15 @@
             "authors": [
                 {
                     "name": "Marcel Pociot",
+<<<<<<< HEAD
                     "role": "Developer",
                     "email": "marcel@beyondco.de",
                     "homepage": "https://beyondco.de"
+=======
+                    "email": "marcel@beyondco.de",
+                    "homepage": "https://beyondco.de",
+                    "role": "Developer"
+>>>>>>> rebase
                 }
             ],
             "description": "Symfony Var-Dump Server for Laravel",
@@ -4253,6 +4259,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "7.5.15",
             "source": {
                 "type": "git",
@@ -4263,6 +4270,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d79c053d972856b8b941bb233e39dc521a5093f0",
                 "reference": "d79c053d972856b8b941bb233e39dc521a5093f0",
+=======
+            "version": "7.5.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "316afa6888d2562e04aeb67ea7f2017a0eb41661"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/316afa6888d2562e04aeb67ea7f2017a0eb41661",
+                "reference": "316afa6888d2562e04aeb67ea7f2017a0eb41661",
+>>>>>>> rebase
                 "shasum": ""
             },
             "require": {
@@ -4333,7 +4352,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2019-08-21T07:05:16+00:00"
+=======
+            "time": "2019-09-14T09:08:39+00:00"
+>>>>>>> rebase
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

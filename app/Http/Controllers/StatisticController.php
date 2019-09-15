@@ -61,15 +61,14 @@ class StatisticController extends Controller
     //FlatViews chart
     $flatViews = new FlatViews;
     $flatViews->labels($arr_chart_label);
-    $flatViews->dataset($flat->title, 'line', $arr_line_dataset);
-    $flatViews->options(['display', false]);
+    $flatViews->dataset($flat->title, 'line', $arr_line_dataset)->backgroundColor(collect(['#2ecc71']));
     $flatViews->height(250);
     $flatViews->loader(true);
 
     //MessageViews chart
     $messageViews = new MessageViews;
     $messageViews->labels($arr_chart_label);
-    $messageViews->dataset('Messaggi ricevuti', 'bar', $arr_bar_dataset);
+    $messageViews->dataset('Messaggi ricevuti', 'bar', $arr_bar_dataset)->backgroundColor(collect(['#3498db']));;
     $messageViews->height(250);
     $messageViews->loader(true);
 

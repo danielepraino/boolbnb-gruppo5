@@ -20,6 +20,7 @@ class SponsorshipsTableSeeder extends Seeder
         $newSponsorship->duration = $faker->randomElement($array = array (24, 72, 144));
         $newSponsorship->price = $faker->randomElement($array = array (3, 6, 10));
         $newSponsorship->flat_id = $faker->numberBetween($min = 1, $max = 10);
+        $newSponsorship->sponsorships_expires = $faker->dateTime();
         $newSponsorship->save();
       }
     }

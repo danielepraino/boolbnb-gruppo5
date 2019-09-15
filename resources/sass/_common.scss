@@ -1,3 +1,10 @@
+.container-fluid, header{
+  margin:0 !important;
+  padding:0 !important;
+
+}
+
+
 a:hover{
   text-decoration: none;
   color: $grey;
@@ -11,7 +18,7 @@ i{
   color: black;
 }
 
-.selectaddress{
+#selectaddress{
   border: none;
   border-radius: 5px;
   padding: 2px;
@@ -36,4 +43,8 @@ i{
 
 .hidden {
   display: none;
+}
+
+.view-title {
+  color: $green;
 }

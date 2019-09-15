@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Flat;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
+use App\Sponsorship;
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -24,7 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $flat = Flat::paginate(12); //cambiare poi il controllo con gli appartamenti in evidenza (in promozione)
+      $flat = DB::table('flats')
+            ->join('sponsorships', 'flats.id', '=', 'sponsorships.flat_id')
+            ->whereDate('sponsorships_expires', '>', Carbon::now())
+            ->get();
+
+       //cambiare poi il controllo con gli appartamenti in evidenza (in promozione)
       return view('home', compact('flat'));
     }
 }

@@ -23,6 +23,7 @@ class CreateServicesTable extends Migration
             $table->boolean('sea_view')->default(0);
             $table->integer('flat_id');
             $table->timestamps();
+
         });
     }
 

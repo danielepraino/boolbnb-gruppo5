@@ -1,0 +1,14 @@
+.container-statistic {
+
+  .graph {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px 30px;
+  }
+
+  .highlight {
+    font-size: 30px;
+    font-weight: bold;
+    color: $green;
+  }
+}

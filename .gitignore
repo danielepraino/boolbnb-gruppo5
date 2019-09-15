@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /node_modules
 /public/hot
 /public/storage
@@ -20,6 +21,18 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+=======
+
+# Created by https://www.gitignore.io/api/laravel
+# Edit at https://www.gitignore.io/?templates=laravel
+
+### Laravel ###
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+>>>>>>> gitignore
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
