@@ -4081,7 +4081,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3498db;
+  background-color: #3498db !important;
   border-color: #3498db;
 }
 
@@ -4271,7 +4271,7 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #c0392b;
+  background-color: #c0392b !important;
   border-color: #c0392b;
 }
 
@@ -12471,4 +12471,3 @@ footer img {
 .mt-10 {
   margin-top: 10rem;
 }
-

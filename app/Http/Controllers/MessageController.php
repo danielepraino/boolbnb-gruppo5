@@ -41,8 +41,8 @@ class MessageController extends Controller
       //validazione dati
       $validatedData = $request->validate([
         "sender" => "required|max:255|regex:/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/",
-        "subject" => "required|max:50|regex:/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/",
-        "message" => "required|regex:/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/|max:255"
+        "subject" => "required|max:50",
+        "message" => "required|max:255"
       ]);
 
       $data = $request->all();
