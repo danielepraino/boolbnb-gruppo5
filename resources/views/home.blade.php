@@ -93,7 +93,7 @@
 @endsection
 @section('appartamenti')
   @php
-    $allflats = DB::table('flats')->orderBy('created_at', 'ASC')->paginate(12);
+    $allflats = DB::table('flats')->orderBy('created_at', 'DESC')->paginate(12);
   @endphp
   {{-- Contenuto appartamenti in evidenza --}}
   <div class="container mt-5 ">
