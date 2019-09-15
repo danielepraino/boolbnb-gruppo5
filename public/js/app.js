@@ -51205,7 +51205,234 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/js/flat_api.js: Unexpected token (11:0)\n\n\u001b[0m \u001b[90m  9 | \u001b[39m  })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m  \u001b[36mvar\u001b[39m html_no_filtered \u001b[33m=\u001b[39m $(\u001b[32m'.appartamenti-filtrati'\u001b[39m)\u001b[33m.\u001b[39mhtml()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[0m\n    at Parser.raise (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Parser.unexpected (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:7642:16)\n    at Parser.parseExprAtom (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8841:20)\n    at Parser.parseExprSubscripts (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Parser.parseMaybeUnary (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Parser.parseExprOps (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Parser.parseMaybeConditional (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Parser.parseMaybeAssign (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Parser.parseExpression (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8135:23)\n    at Parser.parseStatementContent (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:9958:23)\n    at Parser.parseStatement (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:10405:25)\n    at Parser.parseBlockBody (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:10392:10)\n    at Parser.parseBlock (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:10376:10)\n    at Parser.parseFunctionBody (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:9424:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:9394:10)\n    at withTopicForbiddingContext (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:10535:12)\n    at Parser.withTopicForbiddingContext (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:9702:14)\n    at Parser.parseFunction (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:10534:10)\n    at Parser.parseFunctionExpression (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8877:17)\n    at Parser.parseExprAtom (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8790:21)\n    at Parser.parseExprSubscripts (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Parser.parseMaybeUnary (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Parser.parseExprOps (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Parser.parseMaybeConditional (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Parser.parseMaybeAssign (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Parser.parseExprListItem (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:9491:18)\n    at Parser.parseCallExpressionArguments (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8621:22)\n    at Parser.parseSubscript (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8514:29)\n    at Parser.parseSubscripts (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8433:19)\n    at Parser.parseExprSubscripts (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8422:17)\n    at Parser.parseMaybeUnary (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Parser.parseExprOps (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Parser.parseMaybeConditional (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Parser.parseMaybeAssign (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Parser.parseExpression (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/@babel/parser/lib/index.js:8135:23)");
+$(document).ready(function () {
+  $(".services input").click(function () {
+    if ($(this).val() == '0') {
+      $(this).val('1');
+    } else {
+      $(this).val('0');
+    }
+  });
+  var html_no_filtered = $('.appartamenti-filtrati').html(); //slider raggio
+
+  function radiusSlider() {
+    $("#radius_range").slider({
+      range: "max",
+      min: 20,
+      max: 150,
+      value: 20,
+      step: 10,
+      stop: function stop(event, ui) {
+        $("#maximum_radius").val(ui.value);
+        filter_data(); //console.log(radius);
+        //var radiusFilter = filterByRadius(radius);
+        //console.log(radiusFilter);
+      }
+    });
+    $("#maximum_radius").val($("#radius_range").slider("value"));
+  }
+
+  radiusSlider(); //slider stanze
+
+  function roomSlider() {
+    $("#room_range").slider({
+      range: "max",
+      min: 0,
+      max: 10,
+      value: 0,
+      stop: function stop(event, ui) {
+        $("#maximum_room").val(ui.value);
+        filter_data();
+      }
+    });
+    $("#maximum_room").val($("#room_range").slider("value"));
+  }
+
+  roomSlider(); //slider posti letto
+
+  function bedSlider() {
+    $("#bed_range").slider({
+      range: "max",
+      min: 0,
+      max: 20,
+      value: 0,
+      stop: function stop(event, ui) {
+        $("#maximum_bed").val(ui.value);
+        filter_data();
+      }
+    });
+    $("#maximum_bed").val($("#bed_range").slider("value"));
+  }
+
+  bedSlider(); //al click delle checkbox filtra i dati in base
+  //alla checkbox cliccata
+
+  $('.filter_checkbox').click(function () {
+    filter_data();
+  });
+  $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
+  var letti = $('#maximum_bed').val();
+  $('.reset_filter_button').click(function () {
+    $("#radius_range").slider("destroy");
+    $("#bed_range").slider("destroy");
+    $("#room_range").slider("destroy");
+    $('#filter-form')[0].reset();
+    radiusSlider();
+    bedSlider();
+    roomSlider();
+    $('.appartamenti-filtrati').html(html_no_filtered);
+    $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
+  }); //Funzioni
+  //funziona che filtra i data in base ai servizi selezionati
+  //tramite ajax in post
+
+  function filter_data() {
+    var url = $('#filter-form').data('route');
+    var radius = $('#maximum_radius').val();
+    var userLat = $('#ricerca_lat').val();
+    var userLon = $('#ricerca_long').val();
+    var room = $('#maximum_room').val();
+    var bed = $('#maximum_bed').val();
+    var wifi = get_filter('wifi');
+    var parking = get_filter('parking');
+    var pool = get_filter('pool');
+    var concierge = get_filter('concierge');
+    var sauna = get_filter('sauna');
+    var sea_view = get_filter('sea_view');
+    $.ajax({
+      url: url,
+      method: "POST",
+      data: {
+        room: room,
+        bed: bed[0],
+        wifi: wifi[0],
+        parking: parking[0],
+        pool: pool[0],
+        concierge: concierge[0],
+        sauna: sauna[0],
+        sea_view: sea_view[0]
+      },
+      success: function success(data) {
+        $('.appartamenti-filtrati').html('');
+        var data = reIndexArray(data);
+        var distanza;
+        var distanze = [];
+        var filter_data = [];
+
+        for (var i = 0; i < data.length; i++) {
+          distanza = distanzaAppartamenti(userLat, userLon, data[i]['lat'], data[i]['lon']);
+          distanze.push(distanza);
+          distanze.sort(function (a, b) {
+            return a - b;
+          });
+
+          for (var j = 0; j < distanze.length; j++) {
+            if (distanze[j] < radius && !filter_data.includes(data[i])) {
+              filter_data.push(data[i]);
+            }
+          }
+        }
+
+        var flatToDraw = flatBox(filter_data);
+
+        if (flatToDraw.length > 0) {
+          drawBox(flatToDraw);
+          $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
+        } else {
+          $('.appartamenti-filtrati').append('<div class="col-md-6 offset-md-3">' + '<h3 class="text-warning">Nessun risultato</h3>' + '</div>');
+        }
+
+        console.log(filter_data);
+      },
+      'error': function error(_error) {
+        console.log(_error);
+      }
+    });
+  }
+
+  ;
+
+  function drawBox(box) {
+    var template = Handlebars.compile($('#template').html());
+    var html;
+
+    for (var field in box) {
+      html = template(box[field]);
+      $('.appartamenti-filtrati').append(html);
+    }
+  }
+
+  function flatBox(flat) {
+    var flats = [];
+
+    for (var i = 0; i < flat.length; i++) {
+      flats.push({
+        "title": flat[i].title,
+        "lan": flat[i].lan,
+        "lon": flat[i].lon,
+        "address": flat[i].address,
+        "description": flat[i].description,
+        "price": flat[i].price,
+        "counter": i,
+        "bed": flat[i].bed,
+        "room": flat[i].room
+      });
+    }
+
+    return flats;
+  } //funzione per ricavare i filtri selezionati
+
+
+  function get_filter(type_of_service) {
+    var filter = [];
+    $('.' + type_of_service + ':checked').each(function () {
+      filter.push($(this).val());
+    });
+    return filter;
+  }
+
+  ; //funzione per reindicizzare un array
+
+  function reIndexArray(arr) {
+    var newArr = [];
+    var count = 0;
+
+    for (var i in arr) {
+      newArr[count++] = arr[i];
+    }
+
+    return newArr;
+  } // Get Distance between two lat/lng points using the Haversine function
+
+
+  function distanzaAppartamenti(lat1, lon1, lat2, lon2) {
+    var R = 6372.8; // Earth Radius in Kilometers
+
+    var dLat = deg2Rad(lat2 - lat1);
+    var dLon = deg2Rad(lon2 - lon1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2Rad(lat1)) * Math.cos(deg2Rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Return Distance in Kilometers
+
+    return d;
+  } // Convert Degress to Radians
+
+
+  function deg2Rad(deg) {
+    return deg * Math.PI / 180;
+  } // funzione per estrarre i parametri dall'url
+  // function GetURLParameter(sParam){
+  //   var sPageURL = window.location.search.substring(1);
+  //   var sURLVariables = sPageURL.split('&');
+  //   for (var i = 0; i < sURLVariables.length; i++){
+  //       var sParameterName = sURLVariables[i].split('=');
+  //       if (sParameterName[0] == sParam){
+  //           return sParameterName[1];
+  //       }
+  //   }
+  // };
+
+});
 
 /***/ }),
 
@@ -51367,7 +51594,7 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n$red: #c0392b;\n            ^\n      Expected \"{\".\n   ╷\n13 │ $red: #c0392b;\n   │              ^\n   ╵\n  resources/sass/_variables.scss 13:14  @import\n  stdin 5:9                             root stylesheet\n      in /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/sass/_variables.scss (line 13, column 14)\n    at runLoaders (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/webpack/lib/NormalModule.js:313:20)\n    at /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:53451:16)\n    at _render_closure1.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:33267:12)\n    at _RootZone.runBinary$3$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18257:9)\n    at _SyncCompleter._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18123:19)\n    at _SyncCompleter.completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18092:12)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:17629:25)\n    at Object._asyncRethrow (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3226:17)\n    at /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:10407:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3249:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:17664:12)\n    at _awaitOnObject_closure0.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:17656:25)\n    at _RootZone.runBinary$3$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18257:9)\n    at _SyncCompleter._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18123:19)\n    at _SyncCompleter.completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18092:12)\n    at Object.eval (eval at Closure_forwardCallTo (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:1515:14), <anonymous>:3:41)\n    at _RootZone.runBinary$3$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18257:9)");
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n  border-radius: 5px;\n                   ^\n      Expected \"{\".\n   ╷\n36 │   border-radius: 5px;\n   │                     ^\n   ╵\n  resources/sass/_common.scss 36:21  @import\n  stdin 14:9                         root stylesheet\n      in /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/sass/_common.scss (line 36, column 21)\n    at runLoaders (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/webpack/lib/NormalModule.js:313:20)\n    at /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:53451:16)\n    at _render_closure1.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:33267:12)\n    at _RootZone.runBinary$3$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18257:9)\n    at _SyncCompleter._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18123:19)\n    at _SyncCompleter.completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18092:12)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:17629:25)\n    at Object._asyncRethrow (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3226:17)\n    at /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:10407:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3249:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:17664:12)\n    at _awaitOnObject_closure0.call$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:17656:25)\n    at _RootZone.runBinary$3$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18257:9)\n    at _SyncCompleter._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18123:19)\n    at _SyncCompleter.completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18092:12)\n    at Object.eval (eval at Closure_forwardCallTo (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:1515:14), <anonymous>:3:41)\n    at _RootZone.runBinary$3$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/node_modules/sass/sass.dart.js:18257:9)");
 
 /***/ }),
 
