@@ -51501,7 +51501,7 @@ $(document).ready(function () {
 
           var maplat = parseFloat($('#lat').val());
           var maplon = parseFloat($('#long').val());
-          var map = L.map('map-risposta').setView([maplat, maplon], 13);
+          var map = L.map('map-risposta').setView([maplat, maplon], 16);
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors' // zoom: 10,
             // versionNumber: 1,
@@ -51586,8 +51586,8 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
