@@ -1,0 +1,39 @@
+a:hover{
+  text-decoration: none;
+  color: $grey;
+}
+
+i{
+  color: orange;
+}
+
+.fa-search{
+  color: black;
+}
+
+.selectaddress{
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+  margin-left: 20px;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-40%,-40%);
+}
+
+.button{
+  padding: 8px 20px;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background-color: $grey;
+  color: $white;
+}
+
+.hidden {
+  display: none;
+}

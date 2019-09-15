@@ -36,13 +36,8 @@
                   <div class="col-4">
                     <div class="card">
                       <div class="card-body">
-<<<<<<< HEAD
                         <h5 class="card-title">Promo 24 ore <i class="fas fa-plane ml-3"></i></h5>
                         <p class="card-text">Promuovi il tuo appartamento per 24 ore, verrà messo subito in evidenza!</p>
-=======
-                        <h5 class="card-title">Promo 24</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
->>>>>>> rebase
                         <button class="btn btn-success setPrice" type="button" name="24"><span id='prezzo'>2.99</span>€</button>
                       </div>
                     </div>
@@ -50,13 +45,8 @@
                   <div class="col-4">
                     <div class="card">
                       <div class="card-body">
-<<<<<<< HEAD
                         <h5 class="card-title">Promo 72 <i class="fas fa-fighter-jet ml-3"></i></h5>
                         <p class="card-text">Il tuo appartamento in evidenza per 72 ore, per gli host più esigenti!</p>
-=======
-                        <h5 class="card-title">Promo 72</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
->>>>>>> rebase
                         <button class="btn btn-success setPrice" type="button" name="72"><span id='prezzo'>5.99</span>€</button>
                       </div>
                     </div>
@@ -64,13 +54,8 @@
                   <div class="col-4">
                     <div class="card">
                       <div class="card-body">
-<<<<<<< HEAD
                         <h5 class="card-title">Promo 144 <i class="fas fa-space-shuttle ml-3"></i></h5>
                         <p class="card-text">Il tuo appartamento sempre al TOP per 144 ore! Si voooolaaaa!</p>
-=======
-                        <h5 class="card-title">Promo 144</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
->>>>>>> rebase
 
                         <button class="btn btn-success setPrice" type="button" name="144"><span id='prezzo'>9.99</span>€</button>
                       </div>

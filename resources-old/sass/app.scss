@@ -1,0 +1,37 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//jquery ui
+@import '~jquery-ui/themes/base/all.css';
+
+//common css rule
+@import 'common';
+@import 'leaflet';
+
+//header
+@import 'header';
+
+//main_content
+@import 'home_content';
+
+//search
+
+@import 'search_content';
+
+//footer
+@import 'footer';
+
+//flats
+@import 'flats/_index.scss';
+@import 'flats/_create.scss';
+
+
+.mt-10 {
+  margin-top: 10rem;
+}

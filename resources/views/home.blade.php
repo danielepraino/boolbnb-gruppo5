@@ -15,7 +15,7 @@
 
 {{-- Sezione 1: contenuto ricerca --}}
 @section('content')
-  <img src="images\hotels-in-heaven-four-seasons-resort-bali-outdoor-pool-oceanview-luxury.jpg" class="img-fluid"  alt="">
+  <img src="images\hotels-in-heaven-four-seasons-resort-bali-outdoor-pool-oceanview-luxury.jpg" class="img-fluid w-100"  alt="">
   {{-- contenuto centrale della pagina per la ricerca di un appartamento --}}
   <div class="ricerca">
     <h3>Ricerca un appartamento</h3>
@@ -80,7 +80,7 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-12">
-        {{ $flat->links() }}
+        {{-- {{ $flat->links() }} --}}
       </div>
     </div>
   </div>

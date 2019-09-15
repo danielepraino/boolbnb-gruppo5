@@ -28,10 +28,10 @@
     @include('layouts._header')
 
     {{-- Contenuto principale pagine--}}
-      <div class="container main_content @yield('home')">
+      <div class="container-fluid main_content @yield('home')">
         @yield('content')
       </div>
-      @yield('appartamenti_sponsorizzati')
+
     {{-- Contenuto appartamenti in evidenza home--}}
       @yield('appartamenti_in_evidenza')
 

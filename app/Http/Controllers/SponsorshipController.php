@@ -22,8 +22,9 @@ class SponsorshipController extends Controller
       $sponsoreds = DB::table('flats')
             ->join('sponsorships', 'flats.id', '=', 'sponsorships.flat_id')
             ->whereDate('sponsorships_expires', '>', Carbon::now())
+            ->where('flats.user_id', Auth::user()->id)
             ->get();
-
+        
       return view('sponsorship.index',compact('sponsoreds'));
     }
 

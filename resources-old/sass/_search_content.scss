@@ -1,0 +1,79 @@
+.slider-margin{
+  margin-bottom: 10px;
+  p{
+    margin: 0;
+  }
+}
+
+.slider_input{
+  border: 0;
+<<<<<<< HEAD
+  color: orange;
+  font-weight: bold;
+  background-color: #5f6060;
+=======
+  color: #343a40;
+  font-weight: bold;
+  background-color: #f8fafc;
+>>>>>>> rebase
+  width: 30px;
+}
+
+.ui-slider{
+  width: 150px;
+}
+<<<<<<< HEAD
+
+.filter{
+  border: 1px solid black;
+  padding: 19px;
+  border-radius: 5px;
+  background-color: #5f6060;
+  color: white;
+}
+
+.filter_reset{
+  display: flex;
+  justify-content: center;
+
+  & > .reset_filter_button{
+    font-weight: bold;
+  }
+}
+
+#service_label{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.flat_box{
+  border-bottom: 1px solid #5f6060;
+}
+
+.img_info_flat{
+  display: flex;
+  justify-content: space-between;
+
+  .info_flat{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+
+
+    #flat_price > span{
+      font-size: 18px;
+    }
+
+    & > small{
+      display: block;
+      font-size: 14px;
+
+      & > i {
+        color: orange;
+      }
+    }
+  }
+}
+=======
+>>>>>>> rebase
