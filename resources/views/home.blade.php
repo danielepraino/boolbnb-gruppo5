@@ -72,7 +72,7 @@
             <small id = "flat_price"> <i class="fas fa-euro-sign" ></i> <span>{{ $flatPromoted->price}}</span>/notte</small>
           </div>
         </div>
-        <a class="btn btn-primary mb-5" href="{{ route('flats.show', $flatPromoted->id) }}">Visualizza appartamento</a>
+        <a class="btn btn-primary mb-5" href="{{ route('flats.show', $flatPromoted->flat_id) }}">Visualizza appartamento</a>
       </div>
       @endforeach
     </div>

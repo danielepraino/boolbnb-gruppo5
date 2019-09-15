@@ -15,7 +15,7 @@ class GeneralController extends Controller
             ->join('sponsorships', 'flats.id', '=', 'sponsorships.flat_id')
             ->whereDate('sponsorships_expires', '>', Carbon::now())
             ->get();
-        
+
       return view('/home', compact('flat'));
     }
 
