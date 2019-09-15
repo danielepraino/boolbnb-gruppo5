@@ -53,9 +53,12 @@
 
 {{-- Sezione 2: contenuto appartamenti in evidenza (da valutare se farlo tramite ajax+handlebars) --}}
 @section('appartamenti_in_evidenza')
+
   {{-- Contenuto appartamenti in evidenza --}}
   <div class="container mt-5 ">
+        <h2>Appartamenti in evidenza</h2>
     <div class="row">
+
       @foreach ($flat as $flatPromoted)
       <div class="col-sm-12 col-md-4 col-lg-3">
         {{-- <h3>{{ $flatPromoted->title }}</h3> --}}
@@ -77,10 +80,50 @@
       @endforeach
     </div>
   </div>
+
   <div class="container text-center">
     <div class="row">
       <div class="col-12">
         {{-- {{ $flat->links() }} --}}
+      </div>
+    </div>
+  </div>
+@endsection
+@section('appartamenti')
+  @php
+    $allflats = DB::table('flats')->orderBy('created_at', 'ASC')->paginate(12);
+  @endphp
+  {{-- Contenuto appartamenti in evidenza --}}
+  <div class="container mt-5 ">
+    <h2>Ultimi appartamenti inseriti</h2>
+    <div class="row">
+
+      @foreach ($allflats as $singleflat)
+      <div class="col-sm-12 col-md-4 col-lg-3">
+        {{-- <h3>{{ $flatPromoted->title }}</h3> --}}
+        @if ($singleflat->image)
+          <img class="img-fluid" src="{{ asset('storage/'.$singleflat->image) }}" alt="immagine appartamento">
+        @else
+          <a href="{{ route('flats.show', $singleflat->id) }}"> <img src="https://dummyimage.com/255x255/fff/aaa" alt="immagine appartamento"> </a>
+        @endif
+        <div class="dettagli">
+          <p><i class="fas fa-map-marked"></i> {{ $singleflat->address }}</p>
+          <div class="info_flat">
+            <small> <i class="fas fa-bed"></i> {{ $singleflat->bed}}</small>
+            <small> <i class="fas fa-building"></i> {{ $singleflat->room}}</small>
+            <small id = "flat_price"> <i class="fas fa-euro-sign" ></i> <span>{{ $singleflat->price}}</span>/notte</small>
+          </div>
+        </div>
+        <a class="btn btn-primary mb-5" href="{{ route('flats.show', $singleflat->id) }}">Visualizza appartamento</a>
+      </div>
+      @endforeach
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-12">
+
       </div>
     </div>
   </div>

@@ -34,6 +34,7 @@
 
     {{-- Contenuto appartamenti in evidenza home--}}
       @yield('appartamenti_in_evidenza')
+      @yield('appartamenti')
 
     {{-- Footer --}}
     @include('layouts._footer')
