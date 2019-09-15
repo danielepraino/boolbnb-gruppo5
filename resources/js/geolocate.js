@@ -42,7 +42,7 @@ $(document).ready(function() {
              var maplon = parseFloat($('#long').val());
 
              var map = L.map('map-risposta')
-             .setView([maplat, maplon], 16);
+             .setView([maplat, maplon], 13);
 
 
              L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
