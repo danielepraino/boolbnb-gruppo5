@@ -21,8 +21,9 @@ class CreateServicesTable extends Migration
             $table->boolean('concierge')->default(0);
             $table->boolean('sauna')->default(0);
             $table->boolean('sea_view')->default(0);
-            $table->integer('flat_id');
+            $table->bigInteger('flat_id');
             $table->timestamps();
+
         });
     }
 

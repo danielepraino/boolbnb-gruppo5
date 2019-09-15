@@ -27,9 +27,12 @@ class CreateFlatsTable extends Migration
             $table->decimal('lon', 10, 6);
             $table->decimal('lat', 10, 6);
             $table->integer('price');
-            $table->integer('user_id');
+            $table->bigInteger('user_id');
             $table->timestamps();
+
+
         });
+
     }
 
     /**
