@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="container mt-10">
+<div class="container container-flats-index mt-10">
   <h1 class="float-left mb-5">I miei appartamenti</h1>
   <table class="table text-center">
   <thead>

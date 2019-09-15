@@ -51560,30 +51560,7 @@ $(".setPrice").each(function () {
     };
     console.log(dataToPost);
   });
-}); // function postToDb(methodType, url, data){
-//   $.ajax({
-//     url: url,
-//     method: methodType,
-//     data: data,
-//     success: function(obj){
-//     },
-//     error: function() {
-//     }
-//   });
-// }
-//
-// $.ajaxSetup({
-//   headers: {
-//       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//   }
-// });
-//
-// $("#confPayment").click(function(e){
-//     e.preventDefault();
-//     postToDb('POST','sponsorship', dataToPost);
-//     console.log(dataToPost);
-//
-// });
+});
 
 /***/ }),
 
@@ -51605,8 +51582,8 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolbnb-gruppo5\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

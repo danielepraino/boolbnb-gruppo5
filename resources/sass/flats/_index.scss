@@ -1,3 +1,19 @@
+.container-flats-index {
+
+  input, button, submit {
+    border: none;
+    background: none;
+  }
+
+  i {
+    color: $asbestos;
+    font-size: 16px;
+    padding: 8px;
+    margin-right: 2px;
+  }
+}
+
+
 .flat-preview {
   height: 50px;
 }
