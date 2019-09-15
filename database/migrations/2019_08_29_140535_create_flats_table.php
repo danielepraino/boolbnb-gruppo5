@@ -29,7 +29,10 @@ class CreateFlatsTable extends Migration
             $table->integer('price');
             $table->integer('user_id');
             $table->timestamps();
+
+
         });
+
     }
 
     /**

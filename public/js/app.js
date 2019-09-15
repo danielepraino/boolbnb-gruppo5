@@ -51082,6 +51082,10 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function (event) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').addClass('fixed-top');
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -51497,7 +51501,7 @@ $(document).ready(function () {
 
           var maplat = parseFloat($('#lat').val());
           var maplon = parseFloat($('#long').val());
-          var map = L.map('map-risposta').setView([maplat, maplon], 13);
+          var map = L.map('map-risposta').setView([maplat, maplon], 16);
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors' // zoom: 10,
             // versionNumber: 1,

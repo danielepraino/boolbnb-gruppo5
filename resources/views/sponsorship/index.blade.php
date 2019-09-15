@@ -29,7 +29,7 @@ SPONSORIZZAZIONI
           <tbody>
             @foreach ($sponsoreds as $sponsoredItem)
             <tr>
-              <td scope="row">{{ $sponsoredItem->id }}</td>
+              <td scope="row">{{ $sponsoredItem->flat_id }}</td>
               <td>{{ $sponsoredItem->title }}</td>
               <td>{{ $sponsoredItem->duration }}</td>
               <td>{{ $sponsoredItem->price }} </td>

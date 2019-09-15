@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Flat;
 use App\Service;
+use App\Sponsorship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -208,6 +209,7 @@ class FlatController extends Controller
     {
       $newFlat = Flat::find($flatId);
       $flat = Flat::find($flatId)->delete();
+
 
       if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('flats.index');
