@@ -12249,6 +12249,10 @@ header .badge-warning {
   padding-top: 90px;
 }
 
+.h60 {
+  height: 60px;
+}
+
 .ricerca {
   width: 70%;
   position: absolute;

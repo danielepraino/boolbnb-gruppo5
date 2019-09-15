@@ -67,15 +67,17 @@
         @else
           <a href="{{ route('flats.show', $flatPromoted->id) }}"> <img src="https://dummyimage.com/255x255/fff/aaa" alt="immagine appartamento"> </a>
         @endif
+
         <div class="dettagli">
-          <p><i class="fas fa-map-marked"></i> {{ $flatPromoted->address }}</p>
+          <p class="h60"><i class="fas fa-map-marked"></i> {{ $flatPromoted->address }}</p>
+            <hr>
           <div class="info_flat">
             <small> <i class="fas fa-bed"></i> {{ $flatPromoted->bed}}</small>
             <small> <i class="fas fa-building"></i> {{ $flatPromoted->room}}</small>
             <small id = "flat_price"> <i class="fas fa-euro-sign" ></i> <span>{{ $flatPromoted->price}}</span>/notte</small>
           </div>
         </div>
-        <a class="btn btn-primary mb-5" href="{{ route('flats.show', $flatPromoted->flat_id) }}">Visualizza appartamento</a>
+        <a class="btn btn-block btn-primary mb-5" href="{{ route('flats.show', $flatPromoted->flat_id) }}">Visualizza appartamento</a>
       </div>
       @endforeach
     </div>
@@ -107,14 +109,15 @@
           <a href="{{ route('flats.show', $singleflat->id) }}"> <img src="https://dummyimage.com/255x255/fff/aaa" alt="immagine appartamento"> </a>
         @endif
         <div class="dettagli">
-          <p><i class="fas fa-map-marked"></i> {{ $singleflat->address }}</p>
+          <p class="h60"><i class="fas fa-map-marked"></i> {{ $singleflat->address }}</p>
+            <hr>
           <div class="info_flat">
             <small> <i class="fas fa-bed"></i> {{ $singleflat->bed}}</small>
             <small> <i class="fas fa-building"></i> {{ $singleflat->room}}</small>
             <small id = "flat_price"> <i class="fas fa-euro-sign" ></i> <span>{{ $singleflat->price}}</span>/notte</small>
           </div>
         </div>
-        <a class="btn btn-primary mb-5" href="{{ route('flats.show', $singleflat->id) }}">Visualizza appartamento</a>
+        <a class="btn btn-block btn-primary mb-5" href="{{ route('flats.show', $singleflat->id) }}">Visualizza appartamento</a>
       </div>
       @endforeach
     </div>
