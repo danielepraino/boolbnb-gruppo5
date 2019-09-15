@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
     // function to geolocate by address
@@ -66,7 +64,7 @@ $(document).ready(function() {
          });
         },
         error: function(){
-        alert('errore');
+        alert('Non hai inseritto nessun indirizzo');
         }
       });
     });

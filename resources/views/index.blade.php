@@ -28,7 +28,7 @@
     @include('layouts._header')
 
     {{-- Contenuto principale pagine--}}
-      <div class="container-fluid main_content @yield('home')">
+      <div class="container-fluid main_content @yield('class')">
         @yield('content')
       </div>
 

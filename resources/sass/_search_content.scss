@@ -5,6 +5,10 @@
   }
 }
 
+.search{
+  padding-top: 105px !important;
+}
+
 .slider_input{
   border: 0;
   color: orange;
@@ -43,6 +47,12 @@
   border-bottom: 1px solid #5f6060;
 }
 
+.selectaddress{
+  top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
 .img_info_flat{
   display: flex;
   justify-content: space-between;
@@ -66,5 +76,19 @@
         color: orange;
       }
     }
+  }
+}
+
+
+//responsive smartphone
+.get_filter_responsive{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  & > i{
+    margin-left: 3px;
+    cursor: pointer;
   }
 }

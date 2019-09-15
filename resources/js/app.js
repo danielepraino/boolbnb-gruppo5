@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./responsive')
 require('./geolocate');
 require('./flat_api');
 require('./flatmap');

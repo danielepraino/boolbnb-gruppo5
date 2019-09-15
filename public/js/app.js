@@ -51051,6 +51051,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./responsive */ "./resources/js/responsive.js");
+
 __webpack_require__(/*! ./geolocate */ "./resources/js/geolocate.js");
 
 __webpack_require__(/*! ./flat_api */ "./resources/js/flat_api.js");
@@ -51217,7 +51219,8 @@ $(document).ready(function () {
       $(this).val('0');
     }
   });
-  var html_no_filtered = $('.appartamenti-filtrati').html(); //slider raggio
+  var html_no_filtered = $('.appartamenti-filtrati').html();
+  console.log($(window).width()); //slider raggio
 
   function radiusSlider() {
     $("#radius_range").slider({
@@ -51275,7 +51278,6 @@ $(document).ready(function () {
     filter_data();
   });
   $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
-  var letti = $('#maximum_bed').val();
   $('.reset_filter_button').click(function () {
     $("#radius_range").slider("destroy");
     $("#bed_range").slider("destroy");
@@ -51513,7 +51515,7 @@ $(document).ready(function () {
         });
       },
       error: function error() {
-        alert('errore');
+        alert('Non hai inseritto nessun indirizzo');
       }
     });
   }); //end function to geolocate by address
@@ -51535,6 +51537,38 @@ $(document).ready(function () {
       }
     });
   });
+});
+
+/***/ }),
+
+/***/ "./resources/js/responsive.js":
+/*!************************************!*\
+  !*** ./resources/js/responsive.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  //search view su smartphone
+  var filter_content = $('.filter');
+
+  if ($(window).width() < 767) {
+    filter_content.addClass('hidden_filter');
+    $('.get_filter_responsive').removeClass('hidden_filter');
+    $('.appartamenti-filtrati').addClass('mt-5'); //nascondo/mostro filtri
+
+    $('.get_filter_responsive > i').click(function () {
+      if ($('.get_filter_responsive > i').hasClass('fa-chevron-down')) {
+        filter_content.removeClass('hidden_filter');
+        $('.get_filter_responsive > i').removeClass('fa-chevron-down');
+        $('.get_filter_responsive > i').addClass('fa-chevron-up');
+      } else {
+        filter_content.addClass('hidden_filter');
+        $('.get_filter_responsive > i').removeClass('fa-chevron-up');
+        $('.get_filter_responsive > i').addClass('fa-chevron-down');
+      }
+    });
+  }
 });
 
 /***/ }),

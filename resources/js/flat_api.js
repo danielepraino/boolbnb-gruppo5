@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $(".services input").click(function() {
     if ($(this).val() == '0') {
       $(this).val('1')
@@ -9,6 +8,9 @@ $(document).ready(function() {
   });
 
   var html_no_filtered = $('.appartamenti-filtrati').html();
+
+  console.log($(window).width());
+
 
 
   //slider raggio
@@ -75,7 +77,7 @@ $(document).ready(function() {
 
     $('.appartamenti-filtrati').find('.col-md-12').first().removeClass('mt-5');
 
-    var letti =  $('#maximum_bed').val();
+
 
     $('.reset_filter_button').click(function () {
       $( "#radius_range" ).slider("destroy");

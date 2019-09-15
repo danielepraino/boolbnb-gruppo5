@@ -10,6 +10,10 @@ a:hover{
   color: $grey;
 }
 
+.hidden_filter{
+  display: none !important;
+}
+
 i{
   color: orange;
 }
@@ -22,11 +26,6 @@ i{
   border: none;
   border-radius: 5px;
   padding: 2px;
-  margin-left: 20px;
-  position: absolute;
-  top: 30%;
-  left: 55%;
-  transform: translate(-40%,-40%);
 }
 
 .button{

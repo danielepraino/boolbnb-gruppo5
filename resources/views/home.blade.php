@@ -9,7 +9,7 @@
     <img src="https://www.tgcom24.mediaset.it/binary/47.$plit/C_4_foto_1288622_image.JPG" alt="">
 @endsection
 
-@section('home')
+@section('class')
   home
 @endsection
 
@@ -18,32 +18,35 @@
   <img src="images\hotels-in-heaven-four-seasons-resort-bali-outdoor-pool-oceanview-luxury.jpg" class="img-fluid w-100"  alt="">
   {{-- contenuto centrale della pagina per la ricerca di un appartamento --}}
   <div class="ricerca">
-    <h3>Ricerca un appartamento</h3>
+    <div class="container">
+      <div class="row">
+        <h3>Ricerca un appartamento</h3>
+        <div class="box_ricerca col-md-12">
+          <div class="input_ricerca col-md-12">
+            <form method="post"  class = "col-md-12" enctype="multipart/form-data" action="{{ route('search') }}">
+              @csrf
+              <input id="address" class = "col-md-4" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
+              <button id="geolocate_button" class = "col-md-2" type="button" name="button">Verifica Indirizzo</button>
 
-    <div class="box_ricerca">
-      <div class="input_ricerca">
-        <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
-          @csrf
-          <input id="address" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
-          <button id="geolocate_button" type="button" name="button">Daje</button>
+              <div id="risposta" class = "col-md-5">
+                <select id="selectaddress" class="selectaddress hidden col-md-12" name="">
+                  <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+                </select>
+              </div>
 
-          <div id="risposta">
-            <select id="selectaddress" class="selectaddress hidden" name="">
-              <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
-            </select>
+              <div class="form-group">
+                <input type="hidden"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">
+              </div>
+              <div class="form-group">
+                <input type="hidden"  id = "ricerca_long" placeholder="Inserisci la longitude" name="lon" value="">
+              </div>
+              <div class="form-group">
+                <input type="hidden"  id = "ricerca_raggio" placeholder="Inserisci la longitude" name="radius" value="20">
+              </div>
+              <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
+            </form>
           </div>
-
-          <div class="form-group">
-            <input type="hidden"  id = "ricerca_lat" placeholder="Inserisci la latitudine" name="lat" value="">
-          </div>
-          <div class="form-group">
-            <input type="hidden"  id = "ricerca_long" placeholder="Inserisci la longitude" name="lon" value="">
-          </div>
-          <div class="form-group">
-            <input type="hidden"  id = "ricerca_raggio" placeholder="Inserisci la longitude" name="radius" value="20">
-          </div>
-          <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
-        </form>
+        </div>
       </div>
     </div>
   </div>

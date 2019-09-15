@@ -4,53 +4,59 @@
   Ricerca
 @endsection
 
+@section('class')
+ search
+@endsection
+
 @section('content')
+
   <div class="container">
+    <div class="row">
+      {{-- ricerca  indirizzo--}}
+      <div class="box_ricerca col-md-12">
+        <div class="input_ricerca col-md-12">
+          <form method="post" class = "col-md-12" enctype="multipart/form-data" action="{{ route('search') }}">
+            @csrf
 
-    {{-- ricerca  indirizzo--}}
-    <div class="box_ricerca">
-      <div class="input_ricerca">
+            <input id="address" type="text" class = "col-md-4" name="address" value="{{ old('address') }}" placeholder="Inserisci Indirizzo">
+            <button id="geolocate_button" class = "col-md-2" type="button" name="button">Verifica Indirizzo</button>
 
+            <div id="risposta" class = "col-md-5">
+              <select class="selectaddress hidden col-md-12" name="">
+                <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
+              </select>
+            </div>
 
-
-        <form method="post" enctype="multipart/form-data" action="{{ route('search') }}">
-          @csrf
-
-          <input id="address" type="text" name="address" value="{{ old('address') }}" placeholder="Inserisci Indirizzo">
-          <button id="geolocate_button" type="button" name="button">Daje</button>
-
-          <div id="risposta">
-            <select class="selectaddress hidden" name="">
-              <option value="Seleziona l'indirrizzo corretto">Seleziona Indirizzo</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <input type="hidden"  id = "ricerca_lat" name="lat" value="
-            @php
-              $lat = $_POST['lat'];
-              echo "$lat";
-            @endphp">
-          </div>
-          <div class="form-group">
-            <input type="hidden"  id = "ricerca_long"  name="lon" value="
-            @php
-              $lon = $_POST['lon'];
-              echo "$lon";
-            @endphp">
-          </div>
-          <div class="form-group">
-            <input type="hidden"  id = "ricerca_raggio"  name="radius" value="20">
-          </div>
-          <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
-        </form>
+            <div class="form-group">
+              <input type="hidden"  id = "ricerca_lat" name="lat" value="
+              @php
+                $lat = $_POST['lat'];
+                echo "$lat";
+              @endphp">
+            </div>
+            <div class="form-group">
+              <input type="hidden"  id = "ricerca_long"  name="lon" value="
+              @php
+                $lon = $_POST['lon'];
+                echo "$lon";
+              @endphp">
+            </div>
+            <div class="form-group">
+              <input type="hidden"  id = "ricerca_raggio"  name="radius" value="20">
+            </div>
+            <button type="submit" id = "search_button" > <i class="fas fa-search"></i> </button>
+          </form>
+        </div>
       </div>
     </div>
+
   </div>
 
   <div class="container mt-5">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-3">
+    <div class="row filter_row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class = "get_filter_responsive hidden_filter">Visualizza filtri <i class="fas fa-chevron-down"></i></div>
+
         <div class="filter">
 
           <div class="filter-slider">
@@ -105,7 +111,7 @@
         </div>
       </div>
       {{-- container appartamenti --}}
-      <div class="col-md-9 appartamenti-filtrati">
+      <div class="col-sm-12 col-md-8 appartamenti-filtrati">
        @forelse ($filtered_flat as $filtered)
            <div class="col-xs-12 col-sm-12 col-md-12 mt-5">
              <div class="flat_box appartamento-@php $i = 0; echo($i++); @endphp">
