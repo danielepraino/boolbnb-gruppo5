@@ -209,7 +209,7 @@ class FlatController extends Controller
     {
       $newFlat = Flat::find($flatId);
       $flat = Flat::find($flatId)->delete();
-      $flat = Flat::find($flatId)->sponsorships()->delete();
+
 
       if (Auth::user()->id == $newFlat->user_id) {
         return redirect()->route('flats.index');
