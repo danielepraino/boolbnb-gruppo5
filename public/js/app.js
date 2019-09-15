@@ -51082,6 +51082,10 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function (event) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').addClass('fixed-top');
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
