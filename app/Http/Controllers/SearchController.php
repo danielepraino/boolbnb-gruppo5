@@ -9,12 +9,7 @@ use App\Flat;
 class SearchController extends Controller
 {
     public function index(){
-<<<<<<< HEAD
       
-=======
-
-
->>>>>>> origin/master
         $flat = Flat::all();
 
         $raggio = $_POST['radius'];
