@@ -48,11 +48,9 @@ class CheckoutController extends Controller
         $newSponsorship->save();
 
         //header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-<<<<<<< HEAD
+
         return back()->with('success_message', 'Transazione avvenuta con successo! ID:' .$transaction->id);
-=======
-        return back()->with('success_message', 'Transaction successful. The ID is:' .$transaction->id);
->>>>>>> rebase
+
     } else {
         $errorString = "";
 
@@ -62,11 +60,9 @@ class CheckoutController extends Controller
 
         // $_SESSION["errors"] = $errorString;
         // header("Location: " . $baseUrl . "index.php");
-<<<<<<< HEAD
+
         return back()->withErrors('Sembra ci sia un problema con la transazione. Errore:' .$result->message);
-=======
-        return back()->withErrors('An error occurred with the message:' .$result->message);
->>>>>>> rebase
+
     }
 
 
