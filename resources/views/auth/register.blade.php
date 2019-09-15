@@ -1,7 +1,11 @@
-@extends('layouts.app')
+@extends('index')
+
+@section('title')
+  Sign Up
+@endsection
 
 @section('content')
-<div class="container">
+<div class="container mt-10">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
