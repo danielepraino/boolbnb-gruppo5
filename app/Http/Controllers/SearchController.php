@@ -9,12 +9,9 @@ use App\Flat;
 class SearchController extends Controller
 {
     public function index(){
-<<<<<<< HEAD
-        $flat = Flat::where('visible', '=', "1")->get();
-=======
+
 
         $flat = Flat::all();
->>>>>>> origin/master
 
         $raggio = $_POST['radius'];
         $userLat = $_POST['lat'];
