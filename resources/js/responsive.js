@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  console.log($(window).scroll());
+
   //search view su smartphone
   var filter_content = $('.filter');
 
@@ -21,6 +23,14 @@ $(document).ready(function() {
       }
     });
 
+  }
+
+  if ($(window).width()< 834) {
+    $('.scroll_top').removeClass('hidden')
+    $('.scroll_top > i').click(function () {
+      $('html').animate({scrollTop:0}, 'slow');//per IE e Mozilla
+      $('body').animate({scrollTop:0}, 'slow');//per  Chrome
+    })
   }
 
 });

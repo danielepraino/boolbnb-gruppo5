@@ -51549,7 +51549,8 @@ $(document).ready(function () {
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  //search view su smartphone
+  console.log($(window).scroll()); //search view su smartphone
+
   var filter_content = $('.filter');
 
   if ($(window).width() < 767) {
@@ -51567,6 +51568,19 @@ $(document).ready(function () {
         $('.get_filter_responsive > i').removeClass('fa-chevron-up');
         $('.get_filter_responsive > i').addClass('fa-chevron-down');
       }
+    });
+  }
+
+  if ($(window).width() < 834) {
+    $('.scroll_top').removeClass('hidden');
+    $('.scroll_top > i').click(function () {
+      $('html').animate({
+        scrollTop: 0
+      }, 'slow'); //per IE e Mozilla
+
+      $('body').animate({
+        scrollTop: 0
+      }, 'slow'); //per  Chrome
     });
   }
 });
@@ -51620,8 +51634,8 @@ $(".setPrice").each(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/danilor/Documents/Server_Locale/BOOLEAN-PHP/laravelBoolean/Boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

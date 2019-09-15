@@ -47,3 +47,11 @@ i{
 .view-title {
   color: $green;
 }
+
+.scroll_top{
+  position: fixed;
+  bottom: 0;
+  right: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}

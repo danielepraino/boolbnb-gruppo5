@@ -36,6 +36,11 @@
       @yield('appartamenti_in_evidenza')
       @yield('appartamenti')
 
+
+
+      <div class="scroll_top hidden">
+        <i class="fas fa-chevron-up fa-2x"></i>
+      </div>
     {{-- Footer --}}
     @include('layouts._footer')
 

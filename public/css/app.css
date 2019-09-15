@@ -4081,7 +4081,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3498db !important;
+  background-color: #3498db;
   border-color: #3498db;
 }
 
@@ -4271,7 +4271,7 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #c0392b !important;
+  background-color: #c0392b;
   border-color: #c0392b;
 }
 
@@ -12212,6 +12212,14 @@ i {
   color: #2ecc71;
 }
 
+.scroll_top {
+  position: fixed;
+  bottom: 0;
+  right: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
 #map-risposta {
   height: 512px;
   width: 512px;
@@ -12471,3 +12479,4 @@ footer img {
 .mt-10 {
   margin-top: 10rem;
 }
+
