@@ -55,7 +55,7 @@
       <div class="form-group">
         <label>Indirizzo</label>
         <input id="address" type="text" name="address" value="" placeholder="Inserisci Indirizzo">
-        <button id="geolocate_button" type="button" name="button">Daje</button>
+        <button id="geolocate_button" type="button" name="button">Verifica Indirizzo</button>
         <div id="risposta">
           <select class="selectaddress hidden" name="">
             <option id"selectOptions" value="Seleziona l'indirizzo corretto">Seleziona Indirizzo</option>
@@ -67,7 +67,7 @@
         @enderror
       </div>
 
-      <div class="form-group">
+      <div class="form-group hidden">
         <label>LAT (TEST)</label>
         <input id="lat" type="text" name="lat" value="" placeholder="Inserisci Latitudine">
 
@@ -75,7 +75,7 @@
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
-      <div class="form-group">
+      <div class=" hidden form-group">
         <label>LON (TEST)</label>
         <input id="long" type="text" name="lon" value="" placeholder="Inserisci Longitudine">
 

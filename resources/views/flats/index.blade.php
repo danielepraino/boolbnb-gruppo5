@@ -50,7 +50,7 @@
             <a title="Modifica" href="{{ route('flats.edit', $flat->id) }}"><i class="fas fa-edit"></i></a>
             <a title="Sponsorizza" href="{{ route('sponsorship.create', 'flatId='.$flat->id) }}"><i class="fas fa-rocket"></i></a>
             <a title="Statistiche" href="{{ route('statistic', 'flatId='.$flat->id) }}"><i class="fas fa-chart-line"></i></a>
-            <button type="button" title="Cancella" data-toggle="modal" data-target="#deleteApt{!! $flat->id !!}"><i class="fas fa-trash"></i></button>
+            <button id="nobg" type="button" title="Cancella" data-toggle="modal" data-target="#deleteApt{!! $flat->id !!}"><i class="fas fa-trash"></i></button>
 
             <div class="modal fade" id="deleteApt{!! $flat->id !!}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">

@@ -12454,9 +12454,7 @@ footer img {
   width: 40px;
 }
 
-.container-flats-index input,
-.container-flats-index button,
-.container-flats-index submit {
+.container-flats-index #nobg {
   border: none;
   background: none;
 }
